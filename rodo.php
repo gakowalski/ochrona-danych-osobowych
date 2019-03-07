@@ -1,6 +1,30 @@
 <?php
+  $short_text = isset($_GET['short']);
+
   function a_href($symbol, $text) {
+    global $short_text;
+
     $symbols = array(
+      '182/2011' => array(
+        'link' => 'https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=OJ:L:2011:055:TOC',
+        'title' => 'Rozporządzenie Parlamentu Europejskiego i Rady (UE) nr 182/2011 z dnia 16 lutego 2011 r. ustanawiające przepisy i zasady ogólne dotyczące trybu kontroli przez państwa członkowskie wykonywania uprawnień wykonawczych przez Komisję',
+      ),
+      '1215/2012' => array(
+        'link' => 'https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=OJ:L:2012:351:TOC',
+        'title' => 'Rozporządzenie Parlamentu Europejskiego i Rady (UE) nr 1215/2012 z dnia 12 grudnia 2012 r. w sprawie jurysdykcji i uznawania orzeczeń sądowych oraz ich wykonywania w sprawach cywilnych i handlowych',
+      ),
+      '1338/2008' => array(
+        'link' => 'https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=OJ:L:2008:354:TOC',
+        'title' => 'Rozporządzenie Parlamentu Europejskiego i Rady (WE) nr 1338/2008 z dnia 16 grudnia 2008 r. w sprawie statystyk Wspólnoty w zakresie zdrowia publicznego oraz zdrowia i bezpieczeństwa w pracy',
+      ),
+      '2003/98/WE' => array(
+        'link' => 'https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=OJ:L:2003:345:TOC',
+        'title' => 'Dyrektywa 2003/98/WE Parlamentu Europejskiego i Rady z dnia 17 listopada 2003 r. w sprawie ponownego wykorzystywania informacji sektora publiczneg',
+      ),
+      '93/13/EWG' => array(
+        'link' => 'https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=OJ:L:1993:095:TOC',
+        'title' => 'Dyrektywa Rady 93/13/EWG z dnia 5 kwietnia 1993 r. w sprawie nieuczciwych warunków w umowach konsumenckich',
+      ),
       '95/46/WE' => array(
         'link' => 'https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=OJ:L:1995:281:TOC',
         'title' => 'Directive 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data',
@@ -21,7 +45,12 @@
     );
     $link = isset($symbols[$symbol])? $symbols[$symbol]['link'] : 'broken-link';
     $title = isset($symbols[$symbol])? $symbols[$symbol]['title'] : '';
-    return "<a href='$link' title='$title'>$text</a>";
+    if ($short_text) {
+      $output = "<a href='$link' title='$title'>$symbol</a>";
+    } else {
+      $output = "<a href='$link' title='$title'>$text</a>";
+    }
+    return $output;
   }
 
   function abbr($symbol) {
@@ -116,7 +145,7 @@
       <?php break; case 41: ?>
       <p>W przypadku gdy w niniejszym rozporządzeniu jest mowa o podstawie prawnej lub akcie prawnym, niekoniecznie wymaga to przyjęcia aktu prawnego przez parlament, z zastrzeżeniem wymogów wynikających z porządku konstytucyjnego danego państwa członkowskiego. Taka podstawa prawna lub taki akt prawny powinny być jasne i precyzyjne, a ich zastosowanie przewidywalne dla osób im podlegających – jak wymaga tego orzecznictwo Trybunału Sprawiedliwości Unii Europejskiej (zwanego dalej „Trybunałem Sprawiedliwości”) i Europejskiego Trybunału Praw Człowieka.</p>
       <?php break; case 42: ?>
-      <p>Jeśli przetwarzanie odbywa się na podstawie zgody osoby, której dane dotyczą, administrator powinien być w stanie wykazać, że osoba, której dane dotyczą, wyraziła zgodę na operację przetwarzania. W szczególności w przypadku pisemnego oświadczenia składanego w innej sprawie powinny istnieć gwarancje, że osoba, której dane dotyczą, jest świadoma wyrażenia zgody oraz jej zakresu. Zgodnie z dyrektywą Rady 93/13/EWG<a id="ntc10-L_2016119PL.01000101-E0010" href="#ntr10-L_2016119PL.01000101-E0010"> (<span class="super">10</span>)</a> oświadczenie o wyrażeniu zgody przygotowane przez administratora powinno mieć zrozumiałą i łatwo dostępną formę, być sformułowane jasnym i prostym językiem i nie powinno zawierać nieuczciwych warunków. Aby wyrażenie zgody było świadome, osoba, której dane dotyczą, powinna znać przynajmniej tożsamość administratora oraz zamierzone cele przetwarzania danych osobowych. Wyrażenia zgody nie należy uznawać za dobrowolne, jeżeli osoba, której dane dotyczą, nie ma rzeczywistego lub wolnego wyboru oraz nie może odmówić ani wycofać zgody bez niekorzystnych konsekwencji.</p>
+      <p>Jeśli przetwarzanie odbywa się na podstawie zgody osoby, której dane dotyczą, administrator powinien być w stanie wykazać, że osoba, której dane dotyczą, wyraziła zgodę na operację przetwarzania. W szczególności w przypadku pisemnego oświadczenia składanego w innej sprawie powinny istnieć gwarancje, że osoba, której dane dotyczą, jest świadoma wyrażenia zgody oraz jej zakresu. Zgodnie z <?php echo a_href('93/13/EWG', 'dyrektywą Rady 93/13/EWG'); ?> oświadczenie o wyrażeniu zgody przygotowane przez administratora powinno mieć zrozumiałą i łatwo dostępną formę, być sformułowane jasnym i prostym językiem i nie powinno zawierać nieuczciwych warunków. Aby wyrażenie zgody było świadome, osoba, której dane dotyczą, powinna znać przynajmniej tożsamość administratora oraz zamierzone cele przetwarzania danych osobowych. Wyrażenia zgody nie należy uznawać za dobrowolne, jeżeli osoba, której dane dotyczą, nie ma rzeczywistego lub wolnego wyboru oraz nie może odmówić ani wycofać zgody bez niekorzystnych konsekwencji.</p>
       <?php break; case 43: ?>
       <p>Aby zapewnić dobrowolność, zgoda nie powinna stanowić ważnej podstawy prawnej przetwarzania danych osobowych w szczególnej sytuacji, w której istnieje wyraźny brak równowagi między osobą, której dane dotyczą, a administratorem, w szczególności gdy administrator jest organem publicznym i dlatego jest mało prawdopodobne, by w tej konkretnej sytuacji zgodę wyrażono dobrowolnie we wszystkich przypadkach. Zgody nie uważa się za dobrowolną, jeżeli nie można jej wyrazić z osobna na różne operacje przetwarzania danych osobowych, mimo że w danym przypadku byłoby to stosowne, lub jeżeli od zgody uzależnione jest wykonanie umowy – w tym świadczenie usługi – mimo że do jej wykonania zgoda nie jest niezbędna.</p>
       <?php break; case 44: ?>
@@ -140,7 +169,7 @@
       <?php break; case 53: ?>
       <p>Szczególne kategorie danych osobowych zasługujące na większą ochronę powinny być przetwarzane do celów zdrowotnych wyłącznie w przypadkach, gdy jest to niezbędne do realizacji tych celów z korzyścią dla osób fizycznych i ogółu społeczeństwa, w szczególności w kontekście zarządzania usługami i systemami opieki zdrowotnej i zabezpieczenia społecznego, w tym przetwarzania takich danych przez organy zarządcze i centralne krajowe organy ds. zdrowia do celów kontroli jakości, pozyskiwania informacji zarządczych oraz ogólnego krajowego i lokalnego nadzoru nad systemem opieki zdrowotnej i zabezpieczenia społecznego oraz zapewniania ciągłości opieki zdrowotnej lub zabezpieczenia społecznego oraz transgranicznej opieki zdrowotnej lub do celów bezpieczeństwa, monitorowania i ostrzegania zdrowotnego lub do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych, które mają podstawę w prawie Unii lub prawie państwa członkowskiego i służą interesowi publicznemu, a także na potrzeby analiz prowadzonych w interesie publicznym w dziedzinie zdrowia publicznego. Niniejsze rozporządzenie powinno zatem przewidywać zharmonizowane warunki przetwarzania szczególnych kategorii danych osobowych dotyczących zdrowia, ze względu na szczególne potrzeby, w szczególności gdy dane takie są przetwarzane w określonych celach zdrowotnych przez osoby podlegające prawnemu obowiązkowi zachowania tajemnicy zawodowej. Prawo Unii lub prawo państwa członkowskiego powinny przewidywać konkretne, odpowiednie środki chroniące prawa podstawowe i dane osobowe osób fizycznych. Państwa członkowskie powinny móc zachować lub wprowadzić dalsze warunki, w tym ograniczenia, przetwarzania danych genetycznych, danych biometrycznych lub danych dotyczących zdrowia. Warunki te nie powinny jednak utrudniać swobodnego przepływu danych osobowych w Unii, jeżeli odnoszą się do transgranicznego przetwarzania takich danych.</p>
       <?php break; case 54: ?>
-      <p>Niezbędne z uwagi na względy interesu publicznego w dziedzinie zdrowia publicznego może być przetwarzanie szczególnych kategorii danych osobowych bez zgody osoby, której dane dotyczą. Przetwarzanie takie powinno podlegać konkretnym, odpowiednim środkom chroniącym prawa i wolności osób fizycznych. W tym kontekście „zdrowie publiczne” należy interpretować zgodnie z definicją z rozporządzenia Parlamentu Europejskiego i Rady (WE) nr 1338/2008<a id="ntc11-L_2016119PL.01000101-E0011" href="#ntr11-L_2016119PL.01000101-E0011"> (<span class="super">11</span>)</a>, czyli jako wszystkie elementy związane ze zdrowiem, mianowicie stan zdrowia, w tym zachorowalność i niepełnosprawność, czynniki warunkujące stan zdrowia, potrzeby w zakresie opieki zdrowotnej, zasoby opieki zdrowotnej, oferowane usługi opieki zdrowotnej i powszechny dostęp do nich, wydatki na opiekę zdrowotną i sposób jej finansowania oraz przyczyny zgonów. Przetwarzanie danych dotyczących zdrowia z uwagi na względy interesu publicznego nie powinno skutkować przetwarzaniem danych osobowych do innych celów przez strony trzecie, takie jak pracodawcy, czy zakłady ubezpieczeń i banki.</p>
+      <p>Niezbędne z uwagi na względy interesu publicznego w dziedzinie zdrowia publicznego może być przetwarzanie szczególnych kategorii danych osobowych bez zgody osoby, której dane dotyczą. Przetwarzanie takie powinno podlegać konkretnym, odpowiednim środkom chroniącym prawa i wolności osób fizycznych. W tym kontekście „zdrowie publiczne” należy interpretować zgodnie z definicją z <?php echo a_href('1338/2008', 'rozporządzenia Parlamentu Europejskiego i Rady (WE) nr 1338/2008'); ?>, czyli jako wszystkie elementy związane ze zdrowiem, mianowicie stan zdrowia, w tym zachorowalność i niepełnosprawność, czynniki warunkujące stan zdrowia, potrzeby w zakresie opieki zdrowotnej, zasoby opieki zdrowotnej, oferowane usługi opieki zdrowotnej i powszechny dostęp do nich, wydatki na opiekę zdrowotną i sposób jej finansowania oraz przyczyny zgonów. Przetwarzanie danych dotyczących zdrowia z uwagi na względy interesu publicznego nie powinno skutkować przetwarzaniem danych osobowych do innych celów przez strony trzecie, takie jak pracodawcy, czy zakłady ubezpieczeń i banki.</p>
       <?php break; case 55: ?>
       <p>Przetwarzanie danych osobowych przez organy publiczne do celów – określonych w prawie konstytucyjnym lub prawie międzynarodowym publicznym – oficjalnie uznanych związków wyznaniowych odbywa się w interesie publicznym.</p>
       <?php break; case 56: ?>
@@ -244,7 +273,9 @@
       <?php break; case 105: ?>
       <p>Pozazobowiązaniami międzynarodowymipaństwa trzeciego lub organizacji międzynarodowej, Komisja powinna brać pod uwagę obowiązki wynikające z udziału państwa trzeciego lub organizacji międzynarodowej w systemach wielostronnych lub regionalnych, w szczególności w odniesieniu do ochrony danych osobowych, a także realizację takich obowiązków. W szczególności powinna wziąć pod uwagę przystąpienie państwa trzeciego do konwencji Rady Europy z dnia 28 stycznia 1981 r. o ochronie osób w związku z automatycznym przetwarzaniem danych osobowych. Oceniając stopień ochrony w państwach trzecich lub organizacjach międzynarodowych, Komisja powinna konsultować się z Europejską Radą Ochrony Danych.</p>
       <?php break; case 106: ?>
-      <p>Komisja powinna monitorować obowiązywanie decyzji o stopniu ochrony w państwie trzecim, na terytorium lub w określonym sektorze w państwie trzecim lub w organizacji międzynarodowej, oraz monitorować funkcjonowanie decyzji przyjętych na podstawie art. 25 ust. 6 lub art. 26 ust. 4 <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?>. W swoich decyzjach stwierdzających odpowiedni stopień ochrony Komisja powinna przewidzieć mechanizm okresowego przeglądu ich funkcjonowania. Taki okresowy przegląd powinna ona przeprowadzać w konsultacji z danym państwem trzecim lub daną organizacją międzynarodową i powinna w nim uwzględniać wszelkie mające znaczenie zmiany w tym państwie trzecim lub tej organizacji międzynarodowej. Prowadząc monitorowanie i dokonując okresowych przeglądów, Komisja powinna uwzględnić stanowisko i wnioski Parlamentu Europejskiego i Rady, a także innych odpowiednich organów i źródeł. Komisja powinna w rozsądnym terminie ocenić funkcjonowanie decyzji wspomnianego drugiego typu i przekazać wszelkie odpowiednie wnioski komitetowi w rozumieniu rozporządzenia Parlamentu Europejskiego i Rady (UE) nr 182/2011<a id="ntc12-L_2016119PL.01000101-E0012" href="#ntr12-L_2016119PL.01000101-E0012"> (<span class="super">12</span>)</a> ustanowionemu na mocy niniejszego rozporządzenia, Parlamentowi Europejskiemu i Radzie.</p>
+      <p>Komisja powinna monitorować obowiązywanie decyzji o stopniu ochrony w państwie trzecim, na terytorium lub w określonym sektorze w państwie trzecim lub w organizacji międzynarodowej, oraz monitorować funkcjonowanie decyzji przyjętych na podstawie art. 25 ust. 6 lub art. 26 ust. 4 <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?>. W swoich decyzjach stwierdzających odpowiedni stopień ochrony Komisja powinna przewidzieć mechanizm okresowego przeglądu ich funkcjonowania.
+        Taki okresowy przegląd powinna ona przeprowadzać w konsultacji z danym państwem trzecim lub daną organizacją międzynarodową i powinna w nim uwzględniać wszelkie mające znaczenie zmiany w tym państwie trzecim lub tej organizacji międzynarodowej. Prowadząc monitorowanie i dokonując okresowych przeglądów, Komisja powinna uwzględnić stanowisko i wnioski Parlamentu Europejskiego i Rady, a także innych odpowiednich organów i źródeł.
+        Komisja powinna w rozsądnym terminie ocenić funkcjonowanie decyzji wspomnianego drugiego typu i przekazać wszelkie odpowiednie wnioski komitetowi w rozumieniu <?php echo a_href('182/2011', 'rozporządzenia Parlamentu Europejskiego i Rady (UE) nr 182/2011'); ?> ustanowionemu na mocy niniejszego rozporządzenia, Parlamentowi Europejskiemu i Radzie.</p>
       <?php break; case 107: ?>
       <p>Komisja może uznać, że państwo trzecie, terytorium lub określony sektor w państwie trzecim, lub organizacja międzynarodowa przestały zapewniać odpowiedni stopień ochrony danych. W związku z tym przekazywanie danych osobowych do tego państwa trzeciego lub tej organizacji międzynarodowej powinno zostać zakazane, chyba że spełnione są wymogi niniejszego rozporządzenia dotyczące przekazywania z zastrzeżeniem odpowiednich zabezpieczeń, w tym wiążących reguł korporacyjnych oraz wyjątków w odniesieniu do szczególnych sytuacji. W takim przypadku należy przewidzieć konsultacje między Komisją a takimi państwami trzecimi lub organizacjami międzynarodowymi. Komisja powinna niezwłocznie poinformować to państwo trzecie lub tę organizację międzynarodową o powodach oraz podjąć z nimi konsultacje w celu rozwiązania sytuacji.</p>
       <?php break; case 108: ?>
@@ -326,7 +357,7 @@
       <?php break; case 146: ?>
       <p>Za szkodę, którą dana osoba poniosła wskutek przetwarzania w sposób naruszający niniejsze rozporządzenie, powinno przysługiwać odszkodowanie od administratora lub podmiotu przetwarzającego. Administrator lub podmiot przetwarzający powinni jednak zostać zwolnieni z odpowiedzialności prawnej, jeżeli udowodnią, że szkoda w żadnym razie nie powstała z ich winy. Pojęcie szkody należy interpretować szeroko, w świetle orzecznictwa Trybunału Sprawiedliwości, w sposób w pełni odzwierciedlający cele niniejszego rozporządzenia. Nie ma to wpływu na roszczenia z tytułu szkód wynikających z naruszenia innych przepisów prawa Unii lub prawa państwa członkowskiego. Przetwarzanie dokonywane w sposób naruszający niniejsze rozporządzenie obejmuje także przetwarzanie, które narusza akty delegowane i wykonawcze przyjęte na mocy niniejszego rozporządzenia oraz prawo państwa członkowskiego doprecyzowujące niniejsze rozporządzenie. Osoby, których dane dotyczą, powinny uzyskać pełne i skuteczne odszkodowanie za poniesione szkody. Jeżeli administratorzy lub podmioty przetwarzające uczestniczą w tym samym przetwarzaniu, każdy administrator lub podmiot przetwarzający powinien odpowiadać prawnie za całość szkody. Jeżeli jednak zostaną włączeni do jednego postępowania sądowego zgodnie z prawem państwa członkowskiego, odszkodowaniem można obarczyć każdego z administratorów i każdy z podmiotów przetwarzających stosownie do ich winy za szkodę wynikłą z przetwarzania, o ile osobie, której dane dotyczą, zapewnione zostanie pełne i skuteczne odszkodowanie za poniesioną szkodę. Każdy administrator lub podmiot przetwarzający, który wypłacił pełne odszkodowanie, może następnie dochodzić roszczeń regresowych wobec innych administratorów lub podmiotów przetwarzających uczestniczących w tym samym przetwarzaniu.</p>
       <?php break; case 147: ?>
-      <p>Jeżeli niniejsze rozporządzenie przewiduje szczegółowe przepisy o jurysdykcji – w szczególności odnośnie do postępowań w zakresie środków ochrony prawnej przed sądem, w tym odszkodowania, przeciwko administratorowi lub podmiotowi przetwarzającemu –ogólne przepisy o jurysdykcji, takie jak rozporządzenie Parlamentu Europejskiego i Rady (UE) nr 1215/2012<a id="ntc13-L_2016119PL.01000101-E0013" href="#ntr13-L_2016119PL.01000101-E0013"> (<span class="super">13</span>)</a>, nie powinny naruszać stosowania takich szczegółowych przepisów.</p>
+      <p>Jeżeli niniejsze rozporządzenie przewiduje szczegółowe przepisy o jurysdykcji – w szczególności odnośnie do postępowań w zakresie środków ochrony prawnej przed sądem, w tym odszkodowania, przeciwko administratorowi lub podmiotowi przetwarzającemu –ogólne przepisy o jurysdykcji, takie jak <?php echo a_href('1215/2012', 'rozporządzenie Parlamentu Europejskiego i Rady (UE) nr 1215/2012'); ?>, nie powinny naruszać stosowania takich szczegółowych przepisów.</p>
       <?php break; case 148: ?>
       <p>Aby egzekwowanie przepisów niniejszego rozporządzenia było skuteczniejsze, należy za jego naruszenie nakładać sankcje, w tym administracyjne kary pieniężne – oprócz lub zamiast odpowiednich środków nakładanych na mocy niniejszego rozporządzenia przez organ nadzorczy. Jeżeli naruszenie jest niewielkie lub jeżeli grożąca kara pieniężna stanowiłaby dla osoby fizycznej nieproporcjonalne obciążenie, można zamiast tego udzielić upomnienia. Powinno się jednak zwrócić należytą uwagę na charakter, wagę oraz czas trwania naruszenia, na to, czy naruszenie nie było umyślne, na działania podjęte dla zminimalizowania szkody, na stopień odpowiedzialności lub wszelkie mające znaczenie wcześniejsze naruszenia, na sposób, w jaki organ nadzorczy dowiedział się o naruszeniu, na przestrzeganie środków nałożonych na administratora lub podmiot przetwarzający, na stosowanie kodeksów postępowania oraz wszelkie inne czynniki obciążające lub łagodzące. Nakładanie sankcji, w tym administracyjnych kar pieniężnych, powinno podlegać odpowiednim zabezpieczeniom proceduralnym zgodnym z ogólnymi zasadami prawa Unii i z <?php echo a_href('KPP', 'Kartą praw podstawowych'); ?>, w tym skutecznej ochronie prawnej i prawu do rzetelnego procesu.</p>
       <?php break; case 149: ?>
@@ -340,7 +371,9 @@
       <?php break; case 153: ?>
       <p>Prawo państw członkowskich powinno godzić przepisy regulujące wolność wypowiedzi i informacji, w tym wypowiedzi dziennikarskiej, akademickiej, artystycznej lub literackiej, z prawem do ochrony danych osobowych na mocy niniejszego rozporządzenia. Przetwarzanie danych osobowych jedynie do celów dziennikarskich lub do celów wypowiedzi akademickiej, artystycznej lub literackiej powinno podlegać wyjątkom lub odstępstwom od niektórych przepisów niniejszego rozporządzenia, jeżeli jest to niezbędne, by pogodzić prawo do ochrony danych osobowych z prawem do wolności wypowiedzi i informacji, przewidzianymi w art. 11 <?php echo a_href('KPP', 'Karty praw podstawowych'); ?>. Powinno mieć to zastosowanie w szczególności do przetwarzania danych osobowych w dziedzinie audiowizualnej oraz w archiwach i bibliotekach prasowych. Państwa członkowskie powinny więc przyjąć akty prawne określające odstępstwa i wyjątki niezbędne do zapewnienia równowagi między tymi prawami podstawowymi. Państwa członkowskie powinny przyjąć takie odstępstwa i wyjątki w odniesieniu do zasad ogólnych, praw przysługujących osobie, której dane dotyczą, administratora i podmiotu przetwarzającego, przekazywania danych osobowych do państw trzecich lub organizacji międzynarodowych, niezależnych organów nadzorczych, współpracy i spójności oraz szczególnych sytuacji przetwarzania danych. Jeżeli odstępstwa i wyjątki różnią się zależnie od państwa członkowskiego, zastosowanie powinno mieć prawo państwa członkowskiego, któremu podlega administrator. Aby uwzględnić, jak ważna dla każdego demokratycznego społeczeństwa jest wolność wypowiedzi, pojęcia dotyczące tej wolności, takie jak dziennikarstwo, należy interpretować szeroko.</p>
       <?php break; case 154: ?>
-      <p>Niniejsze rozporządzenie pozwala uwzględnić przy stosowaniu jego przepisów zasadę publicznego dostępu do dokumentów urzędowych. Publiczny dostęp do dokumentów urzędowych można uznać za interes publiczny. Organ publiczny lub podmiot publiczny powinny móc publicznie ujawniać dane osobowe z dokumentów przez siebie przechowywanych, jeżeli takie ujawnienie jest przewidziane przepisami prawa Unii lub prawa państwa członkowskiego, któremu organ ten lub podmiot podlegają. Przepisy takie powinny godzić publiczny dostęp do dokumentów urzędowych i ponowne wykorzystywanie informacji sektora publicznego z prawem do ochrony danych osobowych, i dlatego mogą przewidywać niezbędne uwzględnienie prawa do ochrony danych osobowych na podstawie niniejszego rozporządzenia. Wzmianka o organach i podmiotach publicznych powinna w tym kontekście dotyczyć wszystkich organów lub innych podmiotów objętych prawem państwa członkowskiego dotyczącym publicznego dostępu do dokumentów. Dyrektywa Parlamentu Europejskiego i Rady 2003/98/WE<a id="ntc14-L_2016119PL.01000101-E0014" href="#ntr14-L_2016119PL.01000101-E0014"> (<span class="super">14</span>)</a> nie narusza ani w żaden sposób nie wpływa na stopień ochrony osób fizycznych w związku z przetwarzaniem danych osobowych wynikający z przepisów prawa Unii i prawa państwa członkowskiego, a w szczególności nie zmienia obowiązków i praw przewidzianych w niniejszym rozporządzeniu. Dyrektywa ta nie powinna mieć zastosowania w szczególności do dokumentów, do których – w ramach systemów dostępu – dostęp jest wykluczony lub ograniczony z powodu ochrony danych osobowych, ani do fragmentów dokumentów dostępnych w ramach tych systemów, ale zawierających dane osobowe, których ponowne wykorzystanie zostało określone w prawie jako niezgodne z prawem o ochronie osób fizycznych w związku z przetwarzaniem danych osobowych.</p>
+      <p>Niniejsze rozporządzenie pozwala uwzględnić przy stosowaniu jego przepisów zasadę publicznego dostępu do dokumentów urzędowych. Publiczny dostęp do dokumentów urzędowych można uznać za interes publiczny. Organ publiczny lub podmiot publiczny powinny móc publicznie ujawniać dane osobowe z dokumentów przez siebie przechowywanych, jeżeli takie ujawnienie jest przewidziane przepisami prawa Unii lub prawa państwa członkowskiego, któremu organ ten lub podmiot podlegają.
+        Przepisy takie powinny godzić publiczny dostęp do dokumentów urzędowych i ponowne wykorzystywanie informacji sektora publicznego z prawem do ochrony danych osobowych, i dlatego mogą przewidywać niezbędne uwzględnienie prawa do ochrony danych osobowych na podstawie niniejszego rozporządzenia. Wzmianka o organach i podmiotach publicznych powinna w tym kontekście dotyczyć wszystkich organów lub innych podmiotów objętych prawem państwa członkowskiego dotyczącym publicznego dostępu do dokumentów. <?php echo a_href('2003/98/WE', 'Dyrektywa Parlamentu Europejskiego i Rady 2003/98/WE'); ?> nie narusza ani w żaden sposób nie wpływa na stopień ochrony osób fizycznych w związku z przetwarzaniem danych osobowych wynikający z przepisów prawa Unii i prawa państwa członkowskiego, a w szczególności nie zmienia obowiązków i praw przewidzianych w niniejszym rozporządzeniu.
+        <?php echo a_href('2003/98/WE', 'Dyrektywa ta'); ?> nie powinna mieć zastosowania w szczególności do dokumentów, do których – w ramach systemów dostępu – dostęp jest wykluczony lub ograniczony z powodu ochrony danych osobowych, ani do fragmentów dokumentów dostępnych w ramach tych systemów, ale zawierających dane osobowe, których ponowne wykorzystanie zostało określone w prawie jako niezgodne z prawem o ochronie osób fizycznych w związku z przetwarzaniem danych osobowych.</p>
       <?php break; case 155: ?>
       <p>W prawie państwa członkowskiego lub w porozumieniach zbiorowych, w tym zakładowych porozumieniach z przedstawicielami pracowników, mogą być przewidziane przepisy szczegółowe o przetwarzaniu danych osobowych pracowników w związku z zatrudnieniem, w szczególności warunki, na których dane osobowe w związku z zatrudnieniem można przetwarzać za zgodą pracownika do celów procedury rekrutacyjnej, wykonywania umowy o pracę, w tym wykonywania obowiązków określonych w przepisach lub w porozumieniach zbiorowych, zarządzania, planowania i organizacji pracy, równości i różnorodności w miejscu pracy, bezpieczeństwa i higieny pracy oraz do celów indywidualnego lub zbiorowego wykonywania praw i korzystania ze świadczeń związanych z zatrudnieniem, a także do celów zakończenia stosunku pracy.</p>
       <?php break; case 156: ?>
@@ -366,7 +399,7 @@
       <?php break; case 166: ?>
       <p>Aby spełnić cele niniejszego rozporządzenia, mianowicie chronić podstawowe prawa i wolności osób fizycznych, w szczególności prawo do ochrony danych osobowych, oraz zagwarantować swobodny przepływ danych osobowych w Unii, należy przekazać Komisji uprawnienia do przyjmowania aktów zgodnie z art. 290 <?php echo a_href('TFUE', 'TFUE'); ?>. Akty delegowane powinny zostać w szczególności przyjęte w odniesieniu do kryteriów i wymogów obowiązujących w mechanizmach certyfikacji, w odniesieniu do informacji przedstawianych za pomocą standardowych znaków graficznych oraz w odniesieniu do procedur ustanawiania takich znaków. Szczególnie ważne jest, aby w czasie swoich prac przygotowawczych Komisja prowadziła odpowiednie konsultacje, w tym na szczeblu eksperckim. W trakcie przygotowywania i opracowywania aktów delegowanych Komisja powinna zapewnić jednoczesne, terminowe i odpowiednie przekazywanie stosownych dokumentów Parlamentowi Europejskiemu i Radzie.</p>
       <?php break; case 167: ?>
-      <p>Aby zapewnić jednolite warunki wdrażania niniejszego rozporządzenia, należy powierzyć Komisji uprawnienia wykonawcze, tak jak to przewiduje niniejsze rozporządzenie. Uprawnienia te powinny być wykonywane zgodnie z rozporządzeniem (UE) nr 182/2011. W tym kontekście Komisja powinna rozważyć wprowadzenie szczególnych środków dla mikroprzedsiębiorstw oraz małych i średnich przedsiębiorstw.</p>
+      <p>Aby zapewnić jednolite warunki wdrażania niniejszego rozporządzenia, należy powierzyć Komisji uprawnienia wykonawcze, tak jak to przewiduje niniejsze rozporządzenie. Uprawnienia te powinny być wykonywane zgodnie z <?php echo a_href('182/2011', 'rozporządzeniem (UE) nr 182/2011'); ?>. W tym kontekście Komisja powinna rozważyć wprowadzenie szczególnych środków dla mikroprzedsiębiorstw oraz małych i średnich przedsiębiorstw.</p>
       <?php break; case 168: ?>
       <p>Procedurę sprawdzającą należy stosować do przyjmowania aktów wykonawczych w odniesieniu do: standardowych klauzul umownych między administratorami a podmiotami przetwarzającymi oraz między podmiotami przetwarzającymi; kodeksów postępowania; technicznych standardów i mechanizmów certyfikacji; odpowiedniego stopnia ochrony zapewnianego przez państwo trzecie, terytorium lub określony sektor w tym państwie trzecim lub organizację międzynarodową; standardowych klauzul ochrony danych; formatów i procedur wymiany informacji drogą elektroniczną między administratorami, pomiotami przetwarzającymi i organami nadzorczymi na potrzeby wiążących reguł korporacyjnych; wzajemnej pomocy; oraz uzgodnień w sprawie wymiany informacji drogą elektroniczną między organami nadzorczymi oraz między organami nadzorczymi a Europejską Radą Ochrony Danych.</p>
       <?php break; case 169: ?>
@@ -2503,13 +2536,13 @@ function echo_article($number) {
     <p>5. Akt delegowany przyjęty na podstawie art. 12 ust. 8 i art. 43 ust. 8 wchodzi w życie tylko wówczas, gdy ani Parlament Europejski, ani Rada nie wyraziły sprzeciwu w terminie trzech miesięcy od przekazania tego aktu Parlamentowi Europejskiemu i Radzie, lub gdy, przed upływem tego terminu, zarówno Parlament Europejski, jak i Rada poinformowały Komisję, że nie wniosą sprzeciwu. Termin ten przedłuża się o trzy miesiące z inicjatywy Parlamentu Europejskiego lub Rady..</p>
     <?php break; case 93: ?>
     <p class="subtitle">Procedura komitetowa</p>
-    <p>1. Komisję wspomaga komitet. Komitet ten jest komitetem w rozumieniu rozporządzenia (UE) nr 182/2011.</p>
-    <p>2. W przypadku odesłania do niniejszego ustępu stosuje się art. 5 rozporządzenia (UE) nr 182/2011.</p>
-    <p>3. W przypadku odesłania do niniejszego ustępu stosuje się art. 8 rozporządzenia (UE) nr 182/2011 w związku z jego art. 5.</p>
+    <p>1. Komisję wspomaga komitet. Komitet ten jest komitetem w rozumieniu <?php echo a_href('182/2011', 'rozporządzenia (UE) nr 182/2011'); ?>.</p>
+    <p>2. W przypadku odesłania do niniejszego ustępu stosuje się art. 5 <?php echo a_href('182/2011', 'rozporządzenia (UE) nr 182/2011'); ?>.</p>
+    <p>3. W przypadku odesłania do niniejszego ustępu stosuje się art. 8 <?php echo a_href('182/2011', 'rozporządzenia (UE) nr 182/2011'); ?> w związku z jego art. 5.</p>
     <?php break; case 94: ?>
     <p class="subtitle">Uchylenie <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?></p>
     <p>1. <?php echo a_href('95/46/WE', 'Dyrektywa 95/46/WE'); ?> zostaje uchylona ze skutkiem od dnia 25 maja 2018 r.</p>
-    <p>2. Odesłania do uchylonej dyrektywy należy traktować jako odesłania do niniejszego rozporządzenia. Odesłania do Grupy Roboczej ds. Ochrony Osób Fizycznych w zakresie Przetwarzania Danych Osobowych, ustanowionej w art. 29 dyrektywy 95/46/WE, należy traktować jako odesłania do Europejskiej Rady Ochrony Danych, ustanowionej niniejszym rozporządzeniem.</p>
+    <p>2. Odesłania do <?php echo a_href('95/46/WE', 'uchylonej dyrektywy'); ?> należy traktować jako odesłania do niniejszego rozporządzenia. Odesłania do Grupy Roboczej ds. Ochrony Osób Fizycznych w zakresie Przetwarzania Danych Osobowych, ustanowionej w art. 29 <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?>, należy traktować jako odesłania do Europejskiej Rady Ochrony Danych, ustanowionej niniejszym rozporządzeniem.</p>
     <?php break; case 95: ?>
     <p class="subtitle">Stosunek do dyrektywy 2002/58/WE</p>
     <p>Niniejsze rozporządzenie nie nakłada dodatkowych obowiązków na osoby fizyczne ani prawne co do przetwarzania w związku ze świadczeniem ogólnodostępnych usług łączności elektronicznej w publicznych sieciach łączności w Unii w sprawach, w których podmioty te podlegają szczegółowym obowiązkom mającym ten sam cel określonym w dyrektywie 2002/58/WE.</p>
@@ -2663,7 +2696,14 @@ $structure = array(
 <head>
   <meta charset="UTF-8">
   <style>
+    body {
+      color: #444444;
+      font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
     header { text-align: center; }
+    h1 {
+      font-size: 1.7rem;
+    }
     p.subtitle {
       text-align: center;
     }
@@ -2678,12 +2718,51 @@ $structure = array(
     div.next-level div {
       padding: 0 1rem;
     }
+    div.next-level p {
+      margin: 0.3rem;
+    }
+    .not-neccessary {
+      <?php if ($short_text): ?>
+        display: none;
+      <?php endif; ?>
+    }
   </style>
+
+  <?php if ($short_text): ?>
+  <script>
+  // https://stackoverflow.com/questions/5558613/replace-words-in-the-body-text
+  function replaceInText(element, pattern, replacement) {
+    for (let node of element.childNodes) {
+      switch (node.nodeType) {
+        case Node.ELEMENT_NODE:
+            replaceInText(node, pattern, replacement);
+            break;
+        case Node.TEXT_NODE:
+            node.textContent = node.textContent.replace(pattern, replacement);
+            break;
+        case Node.DOCUMENT_NODE:
+            replaceInText(node, pattern, replacement);
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var body = document.getElementsByTagName('body')[0];
+    replaceInText(body, /[Nn]iniejsz(e|ego|emu)* rozporządzeni(a|e|u)/g, 'RODO');
+    // świadome pominięcie "niniejszym rozporządzeniem", bo tekst wychodzi nieczytelny
+  });
+  </script>
+  <?php endif; ?>
 </head>
 <body>
-  <h1>ROZPORZĄDZENIE PARLAMENTU EUROPEJSKIEGO I RADY (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?> (ogólne rozporządzenie o ochronie danych)</h1>
-     <p class="doc-ti">(Tekst mający znaczenie dla EOG)</p>
-     <p>PARLAMENT EUROPEJSKI I RADA UNII EUROPEJSKIEJ,</p>
+  <header>
+    <h1>Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679</h1>
+    <p>z dnia 27 kwietnia 2016 r.</p>
+    <p>w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?></h1>
+    <p>(ogólne rozporządzenie o ochronie danych)</p>
+  </header>
+     <p class="not-neccessary">(Tekst mający znaczenie dla EOG)</p>
+     <p class="not-neccessary">PARLAMENT EUROPEJSKI I RADA UNII EUROPEJSKIEJ,</p>
      <p>uwzględniając <?php echo a_href('TFUE', 'Traktat o funkcjonowaniu Unii Europejskiej'); ?>, w szczególności jego art. 16,</p>
      <p>uwzględniając wniosek Komisji Europejskiej,</p>
      <p>po przekazaniu projektu aktu ustawodawczego parlamentom narodowym,</p>
@@ -2703,7 +2782,7 @@ $structure = array(
        </div>
      <?php } ?>
 
-     <p>PRZYJMUJĄ NINIEJSZE ROZPORZĄDZENIE:</p>
+     <p class="not-neccessary">PRZYJMUJĄ NINIEJSZE ROZPORZĄDZENIE:</p>
 
      <?php foreach ($structure as $chapter_number => $chapter_data) { ?>
        <a id="chapter-<?php echo $chapter_number; ?>">
@@ -2733,7 +2812,7 @@ $structure = array(
        <?php } ?>
      <?php } ?>
 
-     <div class="final">
+     <div class="not-neccessary">
         <p>Niniejsze rozporządzenie wiąże w całości i jest bezpośrednio stosowane we wszystkich państwach członkowskich.</p>
         <p>Sporządzono w Brukseli dnia 27 kwietnia 2016 r.</p>
      </div>
