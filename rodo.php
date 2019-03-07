@@ -2748,8 +2748,9 @@ $structure = array(
 
   document.addEventListener("DOMContentLoaded", function() {
     var body = document.getElementsByTagName('body')[0];
-    replaceInText(body, /[Nn]iniejsz(e|ego|emu)* rozporządzeni(a|e|u)/g, 'RODO');
+    replaceInText(body, /[Nn]iniejsz(e|ego|emu) rozporządzeni(a|e|u)/g, 'RODO');
     // świadome pominięcie "niniejszym rozporządzeniem", bo tekst wychodzi nieczytelny
+    replaceInText(body, /[Ii]nspektor(a|zy|em){0,1} ochrony danych/g, 'IOD');
   });
   </script>
   <?php endif; ?>

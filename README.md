@@ -35,7 +35,7 @@ Zamieni się w:
 
 > Celem [95/46/WE](https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=OJ:L:1995:281:TOC) jest zharmonizowanie ochrony
 
-Poza tym, prawie wszystkie odwołania do "niniejszego rozporządzenia" zostają zastąpione tekstem "RODO". Czyli to:
+Poza tym, prawie wszystkie odwołania do "niniejszego rozporządzenia" zostają zastąpione tekstem "RODO" a odwołania do "inspektora ochrony danych" zastąpione skrótem "IOD". Czyli to:
 
 > Profilowanie podlega przepisom niniejszego rozporządzenia dotyczącym przetwarzania danych osobowych
 
