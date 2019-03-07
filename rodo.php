@@ -2688,7 +2688,15 @@ $structure = array(
   ),
 );
 
+if (isset($_GET['recital'])) {
+  echo_recital($_GET['recital']);
+  exit;
+}
 
+if (isset($_GET['article'])) {
+  echo_article($_GET['article']);
+  exit;
+}
 
 ?>
 <!DOCTYPE html>
