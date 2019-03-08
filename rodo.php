@@ -2444,7 +2444,7 @@ if (isset($_GET['article'])) {
         var add = '';
         if (e.tagName == 'SPAN' && e.className == 'pos' && e.innerText.match(/[a-z]+\)/)) add = 'lit. ' + e.innerText;
         if (e.tagName == 'SPAN' && e.className == 'pos' && e.innerText.match(/[0-9]+\)/)) add = 'pkt ' + e.innerText;
-        if (e.tagName == 'P' && e.innerText.match(/[0-9]+\. /)) add = 'ust. ' + e.innerText.split(' ')[0];
+        if (e.tagName == 'P' && e.innerText.match(/[0-9]+\. /)) add = 'ust. ' + e.innerText.split('.')[0];
         if (e.tagName == 'ARTICLE') add = e.id.replace('article-', 'Art. ');
         address = add + ' ' + address;
       }

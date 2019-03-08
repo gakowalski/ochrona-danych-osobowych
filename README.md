@@ -25,6 +25,29 @@ Może się pojawić:
 
 Co, więcej, po najechaniu kursorem na taki link i przytrzymaniu, pojawi sie podpowiedź z pełnym tytułem aktu prawnego.
 
+### Podpowiedzi "adresowe"
+
+Obok pozycji list pojawia się przełącznik w kształcie trójkąta. Po jego kliknięciu pojawia się podpowiedź jak wskazać w tekście daną pozycję listy.
+
+Czyli jeżeli jest taki ustęp:
+
+> 3. Podstawa przetwarzania, o którym mowa w ust. 1 lit. c) i e), musi być określona:
+> <br>a) w prawie Unii; lub
+> <br>b) w prawie państwa członkowskiego, któremu podlega administrator.
+
+To obok a) i b) pojawią się czarne trójkąty:
+
+> 3. Podstawa przetwarzania, o którym mowa w ust. 1 lit. c) i e), musi być określona:
+> <br>► a) w prawie Unii; lub
+> <br>► b) w prawie państwa członkowskiego, któremu podlega administrator.
+
+Po kliknęciu na pierwszy z trójkątów zmieni on położenie i wierzchołkiem wskaże podpowiedź:
+
+> 3. Podstawa przetwarzania, o którym mowa w ust. 1 lit. c) i e), musi być określona:
+> <br>▼ a) w prawie Unii; lub
+> <br>[Art. 6 ust. 3 lit. a) RODO]
+> <br>► b) w prawie państwa członkowskiego, któremu podlega administrator.
+
 ### Wersja skrócona
 
 Uruchomienie tekstu aktu prawnego z parametrem `short=1` w adresie URL uruchamia wersję skróconą, w której długie nazwy linków ulegają skróceniu, ale zachowują podpowiedź po najechaniu myszą i wciąż prowadzą tam gdzie powinny. Czyli to:
