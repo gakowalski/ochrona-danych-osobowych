@@ -422,6 +422,66 @@
     }
   }
 
+class Text {
+  protected $_id;
+  protected $_text_function;
+  public function __construct($id, $text_function) {
+    $this->_id = $id;
+    $this->_text_function = $text_function;
+  }
+  public function print() {
+    return ($this->_text_function)();
+  }
+  public function id() {
+    return $this->_id;
+  }
+}
+
+class Text_Array extends Text {
+  protected $_array;
+
+  public function get($id) {
+    foreach ($this->_array as $text) {
+      if ($text->id() == $id) {
+        return $text;
+      }
+    }
+    return null;
+  }
+
+  public function get_nth($n) {
+    return $this->_array[$n];
+  }
+
+  public function print() {
+    foreach ($this->_array as $text) {
+      $text->print();
+    }
+  }
+
+  public function __construct($id, $text_array) {
+    $this->_id = $id;
+    $this->_array = $text_array;
+  }
+}
+
+function echo_article2($number) {
+  $texts = array( new Text('1.', function () { ?>
+      <p>W niniejszym rozporządzeniu ustanowione zostają przepisy o ochronie osób fizycznych w związku z przetwarzaniem danych osobowych oraz przepisy o swobodnym przepływie danych osobowych.</p>
+    <?php }),       new Text('2.', function () { ?>
+      <p>Niniejsze rozporządzenie chroni podstawowe prawa i wolności osób fizycznych, w szczególności ich prawo do ochrony danych osobowych.</p>
+    <?php }),
+  );
+
+  $tmp = new Text_Array('1.', $texts);
+
+ //echo $texts[$number]->print();
+ echo $tmp->print();
+ echo $tmp->get('2.')->print();
+}
+
+//die(echo_article2(1));
+
 function echo_article($number) {
   switch ($number) {
     case 1: ?>
