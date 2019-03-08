@@ -2383,6 +2383,13 @@ if (isset($_GET['article'])) {
       font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     }
     header { text-align: center; }
+    header a {
+      text-decoration: none;
+      color: unset;
+    }
+    header a:hover {
+      text-decoration: underline;
+    }
     h1 {
       font-size: 1.7rem;
     }
@@ -2404,6 +2411,7 @@ if (isset($_GET['article'])) {
       padding: 1rem;
       z-index: 1;
       bottom: -1em;
+      border: 1px solid #444444;
     }
   </style>
 
@@ -2442,8 +2450,8 @@ if (isset($_GET['article'])) {
       for (let e = sub; e.tagName != 'BODY'; e = e.parentElement) {
         console.log(e.tagName + ' ' + address);
         var add = '';
-        if (e.tagName == 'SPAN' && e.className == 'pos' && e.innerText.match(/[a-z]+\)/)) add = 'lit. ' + e.innerText;
-        if (e.tagName == 'SPAN' && e.className == 'pos' && e.innerText.match(/[0-9]+\)/)) add = 'pkt ' + e.innerText;
+        if (e.tagName == 'SPAN' && e.className == 'next-level' && e.firstElementChild.innerText.match(/[a-z]+\)/)) add = 'lit. ' + e.firstElementChild.innerText;
+        if (e.tagName == 'SPAN' && e.className == 'next-level' && e.firstElementChild.innerText.match(/[0-9]+\)/)) add = 'pkt ' + e.firstElementChild.innerText;
         if (e.tagName == 'P' && e.innerText.match(/[0-9]+\. /)) add = 'ust. ' + e.innerText.split('.')[0];
         if (e.tagName == 'ARTICLE') add = e.id.replace('article-', 'Art. ');
         address = add + ' ' + address;
@@ -2461,6 +2469,16 @@ if (isset($_GET['article'])) {
     <p>w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?></h1>
     <p>(ogólne rozporządzenie o ochronie danych)</p>
   </header>
+<?php if ($short_text): ?>
+  <nav>
+    <details>
+      <summary>Szybkie przejście do artykułu</summary>
+      <?php foreach ($article_titles as $article_number => $article_title) { ?>
+        <a href="#article-<?php echo $article_number; ?>"><?php echo $article_number; ?></a> |
+      <?php } ?>
+    </details>
+  </nav>
+<?php endif; ?>
   <main>
      <p class="not-neccessary">(Tekst mający znaczenie dla EOG)</p>
      <p class="not-neccessary">PARLAMENT EUROPEJSKI I RADA UNII EUROPEJSKIEJ,</p>
@@ -2489,7 +2507,7 @@ if (isset($_GET['article'])) {
        <a name="chapter-<?php echo $chapter_number; ?>"></a>
        <section id="chapter-<?php echo $chapter_number ?>" class="chapter">
        <header>
-         <h2>Rozdział <?php echo $chapter_number ?></h2>
+         <h2><a href="#chapter-<?php echo $chapter_number; ?>">Rozdział <?php echo $chapter_number ?></a></h2>
          <p><?php echo $chapter_data['title']; ?></p>
        </header>
        <?php if (isset($chapter_data['sections'])) {
@@ -2503,7 +2521,7 @@ if (isset($_GET['article'])) {
            <a name="article-<?php echo $chapter_number; ?>"></a>
            <article id="article-<?php echo $article_number ?>">
            <header>
-             <h4>Artykuł <?php echo $article_number ?></h4>
+             <h4><a href="#article-<?php echo $chapter_number; ?>">Artykuł <?php echo $article_number ?></a></h4>
              <p><?php echo $article_titles[$article_number]; ?></p>
            </header>
            <?php echo_article($article_number); ?>
@@ -2515,7 +2533,7 @@ if (isset($_GET['article'])) {
            <a name="article-<?php echo $chapter_number; ?>"></a>
            <article id="article-<?php echo $article_number ?>">
            <header>
-             <h4>Artykuł <?php echo $article_number ?></h4>
+             <h4><a href="#article-<?php echo $chapter_number; ?>">Artykuł <?php echo $article_number ?></a></h4>
              <p><?php echo $article_titles[$article_number]; ?></p>
            </header>
            <?php echo_article($article_number); ?>

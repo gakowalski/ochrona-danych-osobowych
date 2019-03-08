@@ -66,6 +66,8 @@ Zamieni się w to:
 
 > Profilowanie podlega przepisom RODO dotyczącym przetwarzania danych osobowych
 
+Dodatkowo, przy wersji skróconej pod tytulem dokumentu pojawia się zetaw linków do szybkiego "skoku" do artykułów.
+
 ### W planach
 
 * dodać możliwość łatwego podglądu treści artykułów, ustępów i punków, do których odnosi się dany przepis, np. najeżdzamy myszą na "Art. 6 ust. 1 lit b)" i w dymku pojawia się jego treść - ograniczy to scrollowanie po całym dokumencie;
