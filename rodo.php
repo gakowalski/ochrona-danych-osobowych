@@ -2375,6 +2375,7 @@ if (isset($_GET['article'])) {
     <p>w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?></h1>
     <p>(ogólne rozporządzenie o ochronie danych)</p>
   </header>
+  <main>
      <p class="not-neccessary">(Tekst mający znaczenie dla EOG)</p>
      <p class="not-neccessary">PARLAMENT EUROPEJSKI I RADA UNII EUROPEJSKIEJ,</p>
      <p>uwzględniając <?php echo a_href('TFUE', 'Traktat o funkcjonowaniu Unii Europejskiej'); ?>, w szczególności jego art. 16,</p>
@@ -2401,38 +2402,49 @@ if (isset($_GET['article'])) {
      <p class="not-neccessary">PRZYJMUJĄ NINIEJSZE ROZPORZĄDZENIE:</p>
 
      <?php foreach ($structure as $chapter_number => $chapter_data) { ?>
-       <a id="chapter-<?php echo $chapter_number; ?>">
+       <a name="chapter-<?php echo $chapter_number; ?>">
+       <section id="chapter-<?php echo $chapter_number ?>" class="chapter">
        <header>
          <h2>Rozdział <?php echo $chapter_number ?></h2>
          <p><?php echo $chapter_data['title']; ?></p>
        </header>
        <?php if (isset($chapter_data['sections'])) {
          foreach ($chapter_data['sections'] as $section_number => $section_data): ?>
+         <section id="chapter-<?php echo $chapter_number ?>-section-<?php echo $section_number ?>" class="section">
          <header>
            <h3>Sekcja <?php echo $section_number ?></h3>
            <p><?php echo $section_data['title']; ?></p>
          </header>
          <?php for ($article_number = $section_data['articles'][0]; $article_number <= $section_data['articles'][1]; $article_number++): ?>
+           <a name="article-<?php echo $chapter_number; ?>">
+           <article id="article-<?php echo $article_number ?>">
            <header>
              <h4>Artykuł <?php echo $article_number ?></h4>
              <p><?php echo $article_titles[$article_number]; ?></p>
            </header>
            <?php echo_article($article_number); ?>
+          </article>
          <?php endfor; ?>
+        </section>
        <?php endforeach; } else { ?>
          <?php for ($article_number = $chapter_data['articles'][0]; $article_number <= $chapter_data['articles'][1]; $article_number++): ?>
+           <a name="article-<?php echo $chapter_number; ?>">
+           <article id="article-<?php echo $article_number ?>">
            <header>
              <h4>Artykuł <?php echo $article_number ?></h4>
              <p><?php echo $article_titles[$article_number]; ?></p>
            </header>
            <?php echo_article($article_number); ?>
+           </article>
          <?php endfor; ?>
        <?php } ?>
+      </section>
      <?php } ?>
 
      <div class="not-neccessary">
         <p>Niniejsze rozporządzenie wiąże w całości i jest bezpośrednio stosowane we wszystkich państwach członkowskich.</p>
         <p>Sporządzono w Brukseli dnia 27 kwietnia 2016 r.</p>
      </div>
+   </main>
 </body>
 </html>
