@@ -2395,10 +2395,20 @@ if (isset($_GET['article'])) {
         display: none;
       <?php endif; ?>
     }
+    details {
+      position: relative;
+    }
+    .tooltip {
+      position: relative;
+      background-color: lightyellow;
+      padding: 1rem;
+      z-index: 1;
+      bottom: -1em;
+    }
   </style>
 
-  <?php if ($short_text): ?>
   <script>
+  <?php if ($short_text): ?>
   // https://stackoverflow.com/questions/5558613/replace-words-in-the-body-text
   function replaceInText(element, pattern, replacement) {
     for (let node of element.childNodes) {
@@ -2414,15 +2424,35 @@ if (isset($_GET['article'])) {
       }
     }
   }
+  <?php endif; ?>
 
   document.addEventListener("DOMContentLoaded", function() {
     var body = document.getElementsByTagName('body')[0];
+
+    <?php if ($short_text): ?>
     replaceInText(body, /[Nn]iniejsz(e|ego|emu) rozporządzeni(a|e|u)/g, 'RODO');
     // świadome pominięcie "niniejszym rozporządzeniem", bo tekst wychodzi nieczytelny
     replaceInText(body, /[Ii]nspektor(a|zy|em){0,1} ochrony danych/g, 'IOD');
+    <?php endif; ?>
+
+    var subparagraphs = document.querySelectorAll('article span.pos')
+
+    for (var sub of subparagraphs) {
+      var address = '';
+      for (let e = sub; e.tagName != 'BODY'; e = e.parentElement) {
+        console.log(e.tagName + ' ' + address);
+        var add = '';
+        if (e.tagName == 'SPAN' && e.className == 'pos' && e.innerText.match(/[a-z]+\)/)) add = 'lit. ' + e.innerText;
+        if (e.tagName == 'SPAN' && e.className == 'pos' && e.innerText.match(/[0-9]+\)/)) add = 'pkt ' + e.innerText;
+        if (e.tagName == 'P' && e.innerText.match(/[0-9]+\. /)) add = 'ust. ' + e.innerText.split(' ')[0];
+        if (e.tagName == 'ARTICLE') add = e.id.replace('article-', 'Art.');
+        address = add + ' ' + address;
+      }
+      address += ' RODO';
+      sub.innerHTML = '<details><summary>' + sub.innerText + '</summary><span class="tooltip">' + address + '</span></details>';
+    }
   });
   </script>
-  <?php endif; ?>
 </head>
 <body>
   <header>
