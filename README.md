@@ -66,7 +66,7 @@ Zamieni się w to:
 
 > Profilowanie podlega przepisom RODO dotyczącym przetwarzania danych osobowych
 
-Dodatkowo, przy wersji skróconej pod tytulem dokumentu pojawia się zetaw linków do szybkiego "skoku" do artykułów.
+Dodatkowo, przy wersji skróconej pod tytulem dokumentu pojawia się zestaw linków do szybkiego "skoku" do artykułów.
 
 ### W planach
 

@@ -457,7 +457,7 @@ function echo_article($number) {
     <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>przez właściwe organy do celów zapobiegania przestępczości, prowadzenia postępowań przygotowawczych, wykrywania i ścigania czynów zabronionych lub wykonywania kar, w tym ochrony przed zagrożeniami dla bezpieczeństwa publicznego i zapobiegania takim zagrożeniom.
     </span>
     </p>
-    <p>3. Do przetwarzania danych osobowych przez instytucje, organy i jednostki organizacyjne Unii zastosowanie ma <?php echo a_href('45/2001', 'rozporządzenie (WE) nr 45/2001'); ?>. <?php echo a_href('45/2001', 'Rozporządzenie (WE) nr 45/2001'); ?> oraz inne unijne akty prawne mające zastosowanie do takiego przetwarzania danych osobowych zostają dostosowane do zasad i przepisów niniejszego rozporządzenia zgodnie z art. 98.</p>
+    <p>3. Do przetwarzania danych osobowych przez instytucje, organy i jednostki organizacyjne Unii zastosowanie ma <?php echo a_href('45/2001', 'rozporządzenie (WE) nr 45/2001'); ?>. <?php echo a_href('45/2001', 'Rozporządzenie (WE) nr 45/2001'); ?> oraz inne unijne akty prawne mające zastosowanie do takiego przetwarzania danych osobowych zostają dostosowane do zasad i przepisów niniejszego rozporządzenia zgodnie z <u>art. 98</u>.</p>
     <p>4. Niniejsze rozporządzenie pozostaje bez uszczerbku dla stosowania <?php echo a_href('2000/31/WE', 'dyrektywy 2000/31/WE'); ?>, w szczególności dla zasad odpowiedzialności usługodawców będących pośrednikami, o których to zasadach mowa w art. 12–15 <?php echo a_href('2000/31/WE', 'tej dyrektywy'); ?>.</p>
     <?php break; case 3: ?>
     <p>1. Niniejsze rozporządzenie ma zastosowanie do przetwarzania danych osobowych w związku z działalnością prowadzoną przez jednostkę organizacyjną administratora lub podmiotu przetwarzającego w Unii, niezależnie od tego, czy przetwarzanie odbywa się w Unii.</p>
@@ -539,7 +539,7 @@ function echo_article($number) {
     <span class="pos" style="position: absolute; top: 0; left: 0;">20)</span>„wiążące reguły korporacyjne” oznaczają polityki ochrony danych osobowych stosowane przez administratora lub podmiot przetwarzający, którzy posiadają jednostkę organizacyjną na terytorium państwa członkowskiego, przy jednorazowym lub wielokrotnym przekazaniu danych osobowych administratorowi lub podmiotowi przetwarzającemu w co najmniej jednym państwie trzecim w ramach grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą;
     </span>
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">21)</span>„organ nadzorczy” oznacza niezależny organ publiczny ustanowiony przez państwo członkowskie zgodnie z art. 51;
+    <span class="pos" style="position: absolute; top: 0; left: 0;">21)</span>„organ nadzorczy” oznacza niezależny organ publiczny ustanowiony przez państwo członkowskie zgodnie z <u>art. 51</u>;
     </span>
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
     <span class="pos" style="position: absolute; top: 0; left: 0;">22)</span>„organ nadzorczy, którego sprawa dotyczy” oznacza organ nadzorczy, którego dotyczy przetwarzanie danych osobowych, ponieważ:
@@ -577,7 +577,7 @@ function echo_article($number) {
     <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>przetwarzane zgodnie z prawem, rzetelnie i w sposób przejrzysty dla osoby, której dane dotyczą („zgodność z prawem, rzetelność i przejrzystość”);
     </span>
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>zbierane w konkretnych, wyraźnych i prawnie uzasadnionych celach i nieprzetwarzane dalej w sposób niezgodny z tymi celami; dalsze przetwarzanie do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych nie jest uznawane w myśl art. 89 ust. 1 za niezgodne z pierwotnymi celami („ograniczenie celu”);
+    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>zbierane w konkretnych, wyraźnych i prawnie uzasadnionych celach i nieprzetwarzane dalej w sposób niezgodny z tymi celami; dalsze przetwarzanie do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych nie jest uznawane w myśl <u>art. 89 ust. 1</u> za niezgodne z pierwotnymi celami („ograniczenie celu”);
     </span>
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
     <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>adekwatne, stosowne oraz ograniczone do tego, co niezbędne do celów, w których są przetwarzane („minimalizacja danych”);
@@ -586,7 +586,7 @@ function echo_article($number) {
     <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>prawidłowe i w razie potrzeby uaktualniane; należy podjąć wszelkie rozsądne działania, aby dane osobowe, które są nieprawidłowe w świetle celów ich przetwarzania, zostały niezwłocznie usunięte lub sprostowane („prawidłowość”);
     </span>
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>przechowywane w formie umożliwiającej identyfikację osoby, której dane dotyczą, przez okres nie dłuższy, niż jest to niezbędne do celów, w których dane te są przetwarzane; dane osobowe można przechowywać przez okres dłuższy, o ile będą one przetwarzane wyłącznie do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych na mocy art. 89 ust. 1, z zastrzeżeniem że wdrożone zostaną odpowiednie środki techniczne i organizacyjne wymagane na mocy niniejszego rozporządzenia w celu ochrony praw i wolności osób, których dane dotyczą („ograniczenie przechowywania”);
+    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>przechowywane w formie umożliwiającej identyfikację osoby, której dane dotyczą, przez okres nie dłuższy, niż jest to niezbędne do celów, w których dane te są przetwarzane; dane osobowe można przechowywać przez okres dłuższy, o ile będą one przetwarzane wyłącznie do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych na mocy <u>art. 89 ust. 1</u>, z zastrzeżeniem że wdrożone zostaną odpowiednie środki techniczne i organizacyjne wymagane na mocy niniejszego rozporządzenia w celu ochrony praw i wolności osób, których dane dotyczą („ograniczenie przechowywania”);
     </span>
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
     <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>przetwarzane w sposób zapewniający odpowiednie bezpieczeństwo danych osobowych, w tym ochronę przed niedozwolonym lub niezgodnym z prawem przetwarzaniem oraz przypadkową utratą, zniszczeniem lub uszkodzeniem, za pomocą odpowiednich środków technicznych lub organizacyjnych („integralność i poufność”).
@@ -625,7 +625,7 @@ function echo_article($number) {
     </span>
     </p>
     <p>Cel przetwarzania musi być określony w tej podstawie prawnej lub, w przypadku przetwarzania, o którym mowa w ust. 1 lit. e) – musi być ono niezbędne do wykonania zadania realizowanego w interesie publicznym lub w ramach sprawowania władzy publicznej powierzonej administratorowi. Podstawa prawna może zawierać przepisy szczegółowe dostosowujące stosowanie przepisów niniejszego rozporządzenia, w tym: ogólne warunki zgodności z prawem przetwarzania przez administratora; rodzaj danych podlegających przetwarzaniu; osoby, których dane dotyczą; podmioty, którym można ujawnić dane osobowe; cele, w których można je ujawnić; ograniczenia celu; okresy przechowywania; oraz operacje i procedury przetwarzania, w tym środki zapewniające zgodność z prawem i rzetelność przetwarzania, w tym w innych szczególnych sytuacjach związanych z przetwarzaniem, o których mowa w rozdziale IX. Prawo Unii lub prawo państwa członkowskiego muszą służyć realizacji celu leżącego w interesie publicznym, oraz być proporcjonalne do wyznaczonego, prawnie uzasadnionego celu.</p>
-    <p>4. Jeżeli przetwarzanie w celu innym niż cel, w którym dane osobowe zostały zebrane, nie odbywa się na podstawie zgody osoby, której dane dotyczą, ani prawa Unii lub prawa państwa członkowskiego stanowiących w demokratycznym społeczeństwie niezbędny i proporcjonalny środek służący zagwarantowaniu celów, o których mowa w art. 23 ust. 1, administrator – aby ustalić, czy przetwarzanie w innym celu jest zgodne z celem, w którym dane osobowe zostały pierwotnie zebrane – bierze pod uwagę między innymi:
+    <p>4. Jeżeli przetwarzanie w celu innym niż cel, w którym dane osobowe zostały zebrane, nie odbywa się na podstawie zgody osoby, której dane dotyczą, ani prawa Unii lub prawa państwa członkowskiego stanowiących w demokratycznym społeczeństwie niezbędny i proporcjonalny środek służący zagwarantowaniu celów, o których mowa w <u>art. 23 ust. 1</u>, administrator – aby ustalić, czy przetwarzanie w innym celu jest zgodne z celem, w którym dane osobowe zostały pierwotnie zebrane – bierze pod uwagę między innymi:
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
     <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>wszelkie związki między celami, w których zebrano dane osobowe, a celami zamierzonego dalszego przetwarzania;
     </span>
@@ -633,7 +633,7 @@ function echo_article($number) {
     <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>kontekst, w którym zebrano dane osobowe, w szczególności relację między osobami, których dane dotyczą, a administratorem;
     </span>
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>charakter danych osobowych, w szczególności czy przetwarzane są szczególne kategorie danych osobowych zgodnie z art. 9 lub dane osobowe dotyczące wyroków skazujących i naruszeń prawa zgodnie z art. 10;
+    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>charakter danych osobowych, w szczególności czy przetwarzane są szczególne kategorie danych osobowych zgodnie z <u>art. 9</u> lub dane osobowe dotyczące wyroków skazujących i naruszeń prawa zgodnie z <u>art. 10</u>;
     </span>
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
     <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>ewentualne konsekwencje zamierzonego dalszego przetwarzania dla osób, których dane dotyczą;
@@ -647,7 +647,7 @@ function echo_article($number) {
     <p>3. Osoba, której dane dotyczą, ma prawo w dowolnym momencie wycofać zgodę. Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej wycofaniem. Osoba, której dane dotyczą, jest o tym informowana, zanim wyrazi zgodę. Wycofanie zgody musi być równie łatwe jak jej wyrażenie.</p>
     <p>4. Oceniając, czy zgodę wyrażono dobrowolnie, w jak największym stopniu uwzględnia się, czy między innymi od zgody na przetwarzanie danych nie jest uzależnione wykonanie umowy, w tym świadczenie usługi, jeśli przetwarzanie danych osobowych nie jest niezbędne do wykonania tej umowy.</p>
     <?php break; case 8: ?>
-    <p>1. Jeżeli zastosowanie ma art. 6 ust. 1 lit. a), w przypadku usług społeczeństwa informacyjnego oferowanych bezpośrednio dziecku, zgodne z prawem jest przetwarzanie danych osobowych dziecka, które ukończyło 16 lat. Jeżeli dziecko nie ukończyło 16 lat, takie przetwarzanie jest zgodne z prawem wyłącznie w przypadkach, gdy zgodę wyraziła lub zaaprobowała ją osoba sprawująca władzę rodzicielską lub opiekę nad dzieckiem oraz wyłącznie w zakresie wyrażonej zgody.</p>
+    <p>1. Jeżeli zastosowanie ma <u>art. 6 ust. 1 lit. a)</u>, w przypadku usług społeczeństwa informacyjnego oferowanych bezpośrednio dziecku, zgodne z prawem jest przetwarzanie danych osobowych dziecka, które ukończyło 16 lat. Jeżeli dziecko nie ukończyło 16 lat, takie przetwarzanie jest zgodne z prawem wyłącznie w przypadkach, gdy zgodę wyraziła lub zaaprobowała ją osoba sprawująca władzę rodzicielską lub opiekę nad dzieckiem oraz wyłącznie w zakresie wyrażonej zgody.</p>
     <p>Państwa członkowskie mogą przewidzieć w swoim prawie niższą granicę wiekową, która musi wynosić co najmniej 13 lat.</p>
     <p>2. W takich przypadkach administrator, uwzględniając dostępną technologię, podejmuje rozsądne starania, by zweryfikować, czy osoba sprawująca władzę rodzicielską lub opiekę nad dzieckiem wyraziła zgodę lub ją zaaprobowała.</p>
     <p>3. Ust. 1 nie wpływa na ogólne przepisy prawa umów państw członkowskich, takie jak przepisy o ważności, zawieraniu lub skutkach umowy wobec dziecka.</p>
@@ -682,13 +682,13 @@ function echo_article($number) {
     <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>przetwarzanie jest niezbędne ze względów związanych z interesem publicznym w dziedzinie zdrowia publicznego, takich jak ochrona przed poważnymi transgranicznymi zagrożeniami zdrowotnymi lub zapewnienie wysokich standardów jakości i bezpieczeństwa opieki zdrowotnej oraz produktów leczniczych lub wyrobów medycznych, na podstawie prawa Unii lub prawa państwa członkowskiego, które przewidują odpowiednie, konkretne środki ochrony praw i wolności osoób, których dane dotyczą, w szczególności tajemnicę zawodową;
     </span>
     <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>przetwarzanie jest niezbędne do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych zgodnie z art. 89 ust. 1, na podstawie prawa Unii lub prawa państwa członkowskiego, które są proporcjonalne do wyznaczonego celu, nie naruszają istoty prawa do ochrony danych i przewidują odpowiednie, konkretne środki ochrony praw podstawowych i interesów osoby, której dane dotyczą.
+    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>przetwarzanie jest niezbędne do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych zgodnie z <u>art. 89 ust. 1</u>, na podstawie prawa Unii lub prawa państwa członkowskiego, które są proporcjonalne do wyznaczonego celu, nie naruszają istoty prawa do ochrony danych i przewidują odpowiednie, konkretne środki ochrony praw podstawowych i interesów osoby, której dane dotyczą.
     </span>
     </p>
     <p>3. Dane osobowe, o których mowa w ust. 1, mogą być przetwarzane do celów, o których mowa w ust. 2 lit. h), jeżeli są przetwarzane przez – lub na odpowiedzialność – pracownika podlegającego obowiązkowi zachowania tajemnicy zawodowej na mocy prawa Unii lub prawa państwa członkowskiego, lub przepisów ustanowionych przez właściwe organy krajowe lub przez inną osobę również podlegającą obowiązkowi zachowania tajemnicy zawodowej na mocy prawa Unii lub prawa państwa członkowskiego, lub przepisów ustanowionych przez właściwe organy krajowe.</p>
     <p>4. Państwa członkowskie mogą zachować lub wprowadzić dalsze warunki, w tym ograniczenia w odniesieniu do przetwarzania danych genetycznych, danych biometrycznych lub danych dotyczących zdrowia.</p>
     <?php break; case 10: ?>
-    <p>Przetwarzania danych osobowych dotyczących wyroków skazujących oraz naruszeń prawa lub powiązanych środków bezpieczeństwa na podstawie art. 6 ust. 1 wolno dokonywać wyłącznie pod nadzorem władz publicznych lub jeżeli przetwarzanie jest dozwolone prawem Unii lub prawem państwa członkowskiego przewidującymi odpowiednie zabezpieczenia praw i wolności osób, których dane dotyczą. Wszelkie kompletne rejestry wyroków skazujących są prowadzone wyłącznie pod nadzorem władz publicznych.</p>
+    <p>Przetwarzania danych osobowych dotyczących wyroków skazujących oraz naruszeń prawa lub powiązanych środków bezpieczeństwa na podstawie <u>art. 6 ust. 1</u> wolno dokonywać wyłącznie pod nadzorem władz publicznych lub jeżeli przetwarzanie jest dozwolone prawem Unii lub prawem państwa członkowskiego przewidującymi odpowiednie zabezpieczenia praw i wolności osób, których dane dotyczą. Wszelkie kompletne rejestry wyroków skazujących są prowadzone wyłącznie pod nadzorem władz publicznych.</p>
     <?php break; case 11: ?>
     <p>1. Jeżeli cele, w których administrator przetwarza dane osobowe, nie wymagają lub już nie wymagają zidentyfikowania przez niego osoby, której dane dotyczą, administrator nie ma obowiązku zachowania, uzyskania ani przetworzenia dodatkowych informacji w celu zidentyfikowania osoby, której dane dotyczą, wyłącznie po to, by zastosować się do niniejszego rozporządzenia.</p>
     <p>2. Jeżeli w przypadkach, o których mowa w ust. 1 niniejszego artykułu, administrator może wykazać, że nie jest w stanie zidentyfikować osoby, której dane dotyczą, w miarę możliwości informuje o tym osobę, której dane dotyczą. W takich przypadkach zastosowania nie mają art. 15–20, chyba że osoba, której dane dotyczą, w celu wykonania praw przysługujących jej na mocy tych artykułów dostarczy dodatkowych informacji pozwalających ją zidentyfikować.</p>
@@ -2418,14 +2418,27 @@ if (isset($_GET['article'])) {
     }
     details {
       position: relative;
+      display: inline;
+    }
+    details.par {
+      color: lightgray;
     }
     .tooltip {
+      color: black;
       position: relative;
       background-color: lightyellow;
       padding: 1rem;
       z-index: 1;
       bottom: -1em;
       border: 1px solid #444444;
+    }
+    details.internal-link {
+      color: blue;
+    }
+    details.internal-link > div {
+      border: 1px solid #444444;
+      padding: 0 1rem;
+      background-color: aliceblue;
     }
   </style>
 
@@ -2457,6 +2470,23 @@ if (isset($_GET['article'])) {
     replaceInText(body, /[Ii]nspektor(a|zy|em){0,1} ochrony danych/g, 'IOD');
     <?php endif; ?>
 
+    var paragraphs = document.querySelectorAll('article > p');
+
+    for (var par of paragraphs) {
+      if (par.innerText.match(/^[0-9]+/)) {
+        var address = '';
+
+        for (let e = par; e.tagName != 'BODY'; e = e.parentElement) {
+          var add = '';
+          if (e.tagName == 'P' && e.innerText.match(/[0-9]+\. /)) add = 'ust. ' + e.innerText.split('.')[0];
+          if (e.tagName == 'ARTICLE') add = e.id.replace('article-', 'Art. ');
+          address = add + ' ' + address;
+        }
+        address += ' RODO';
+        par.innerHTML = '<details class="par"><summary></summary><span class="tooltip">' + address + '</span></details>' + par.innerHTML;
+      }
+    }
+
     var subparagraphs = document.querySelectorAll('article span.pos')
 
     for (var sub of subparagraphs) {
@@ -2470,23 +2500,29 @@ if (isset($_GET['article'])) {
         address = add + ' ' + address;
       }
       address += ' RODO';
-      sub.innerHTML = '<details><summary>' + sub.innerText + '</summary><span class="tooltip">' + address + '</span></details>';
+      sub.innerHTML = '<details class="sub"><summary>' + sub.innerText + '</summary><span class="tooltip">' + address + '</span></details>';
     }
 
     var internal_links = document.querySelectorAll('u');
 
     for (var link of internal_links) {
       var address = link.innerText;
-      var components = address.split(' ');
-      var content = '';
+      var target = '';
+      var result;
 
-      for (var c of components) {
-        if (c.match(/art. [0-9]+/)) {
-          content = '#article-' + c.replace('art.', '');
-        }
+      if (result = address.match(/art. [0-9]+/)) {
+        target = result[0].replace('art. ', '#article-');
       }
 
-      link.innerHTML = '<details style="display: inline-block;"><summary>' + link.innerText + '</summary><span class="tooltip">' + content + '</span></details>';
+      link.innerHTML = '<details class="internal-link" style="display: inline-block;" data-target="' + target + '"><summary>' + link.innerText + '</summary><div>' + target + '</div></details>';
+    }
+
+    var details = document.querySelectorAll("details.internal-link");
+
+    for (var e of details) {
+      e.addEventListener("toggle", function() {
+          this.getElementsByTagName('div')[0].innerHTML = document.querySelector(this.getAttribute('data-target')).innerHTML;
+      });
     }
   });
   </script>
@@ -2550,7 +2586,7 @@ if (isset($_GET['article'])) {
            <a name="article-<?php echo $chapter_number; ?>"></a>
            <article id="article-<?php echo $article_number ?>">
            <header>
-             <h4><a href="#article-<?php echo $chapter_number; ?>">Artykuł <?php echo $article_number ?></a></h4>
+             <h4><a href="#article-<?php echo $article_number; ?>">Artykuł <?php echo $article_number ?></a></h4>
              <p><?php echo $article_titles[$article_number]; ?></p>
            </header>
            <?php echo_article($article_number); ?>
