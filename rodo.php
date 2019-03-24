@@ -1062,7 +1062,7 @@ function echo_article($number) {
     <p>6. Bez uszczerbku dla indywidualnych umów między administratorem a podmiotem przetwarzającym, umowa lub inny akt prawny, o których mowa w ust. 3 i 4 niniejszego artykułu, mogą się opierać w całości lub w części na standardowych klauzulach umownych, o których mowa w ust. 7 i 8 niniejszego artykułu, także gdy są one elementem certyfikacji udzielonej administratorowi lub podmiotowi przetwarzającemu zgodnie z <u>art. 42 i 43</u>.</p>
     <p>7. Komisja może określić standardowe klauzule umowne dotyczące kwestii, o których mowa w ust. 3 i 4 niniejszego artykułu, zgodnie z procedurą sprawdzającą, o której mowa w <u>art. 93 ust. 2</u>.</p>
     <p>8. Organ nadzorczy może przyjąć standardowe klauzule umowne dotyczące kwestii, o których mowa w ust. 3 i 4 niniejszego artykułu, zgodnie z mechanizmem spójności, o którym mowa w <u>art. 63</u>.</p>
-    <p>9. Umowa lub inny akt prawny, o których mowa w <u>art. 3 i 4</u>, mają formę pisemną, w tym formę elektroniczną.</p>
+    <p>9. Umowa lub inny akt prawny, o których mowa w <s>art.</s> 3 i 4, mają formę pisemną, w tym formę elektroniczną.</p>
     <p>10. Bez uszczerbku dla <u>art. 82, 83 i 84</u>, jeżeli podmiot przetwarzający naruszy niniejsze rozporządzenie przy określaniu celów i sposobów przetwarzania, uznaje się go za administratora w odniesieniu do tego przetwarzania.</p>
     <?php break; case 29: ?>
     <p>Podmiot przetwarzający oraz każda osoba działająca z upoważnienia administratora lub podmiotu przetwarzającego i mająca dostęp do danych osobowych przetwarzają je wyłącznie na polecenie administratora, chyba że wymaga tego prawo Unii lub prawo państwa członkowskiego.</p>
@@ -1828,7 +1828,7 @@ function echo_article($number) {
     <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>organowi nadzorczemu, o którym zależnie od sytuacji mowa w ust. 1 i 2, oraz Komisji opinię, którą podaje też do wiadomości publicznej.
     </span>
     </p>
-    <p>6. Właściwy organ nadzorczy nie przyjmuje projektu decyzji, o którym mowa w art. ust. 1 przed upływem terminu, o którym mowa w ust. 3.</p>
+    <p>6. Właściwy organ nadzorczy nie przyjmuje projektu decyzji, o którym mowa w <s>art.</s> ust. 1 przed upływem terminu, o którym mowa w ust. 3.</p>
     <p>7. Organ nadzorczy, o którym mowa w ust. 1, w jak największym stopniu uwzględnia opinię Europejskiej Rady Ochrony Danych i w terminie dwóch tygodni po otrzymaniu tej opinii informuje drogą elektroniczną przewodniczącego Europejskiej Rady Ochrony Danych, czy podtrzymuje projekt decyzji, czy też go zmieni, a w stosownym przypadku przekazuje mu w standardowym formacie zmieniony projekt decyzji.</p>
     <p>8. Jeżeli w terminie, o którym mowa w ust. 7 niniejszego artykułu, organ nadzorczy, którego sprawa dotyczy, poinformuje przewodniczącego Europejskiej Rady Ochrony Danych, że nie zamierza się zastosować do całości lub części jej opinii podając odpowiednie uzasadnienie, zastosowanie ma <u>art. 65 ust. 1</u>.</p>
     <?php break; case 65: ?>
