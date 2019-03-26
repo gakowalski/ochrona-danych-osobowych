@@ -2436,12 +2436,16 @@ if (isset($_GET['article'])) {
       border: 1px solid #444444;
     }
     details.internal-link {
-      color: blue;
+      color: blueviolet;
     }
     details.internal-link > div {
+      color: blue;
       border: 1px solid #444444;
       padding: 0 1rem;
       background-color: aliceblue;
+    }
+    details.multiple-refs {
+      color: green;
     }
     .next-level {
       padding-left: 3rem;
@@ -2516,7 +2520,81 @@ if (isset($_GET['article'])) {
       sub.innerHTML = '<details class="sub"><summary>' + sub.innerText + '</summary><span class="tooltip">' + address + '</span></details>';
     }
 
-    function expand_internal_links(container) {
+    function parse_article_references(container) {
+      var internal_links = container.querySelectorAll('u');
+
+      for (var link of internal_links) {
+        var address = link.innerText;
+        var references = '';
+        var ref_array = [];
+        var result;
+
+        if (result = address.match(/art. ([0-9]+), ([0-9]+), ([0-9]+), ([0-9]+), ([0-9]+) i ([0-9]+)/)) {
+          ref_array.push(result[1]);
+          ref_array.push(result[2]);
+          ref_array.push(result[3]);
+          ref_array.push(result[4]);
+          ref_array.push(result[5]);
+          ref_array.push(result[6]);
+        } else
+        if (result = address.match(/art. ([0-9]+), ([0-9]+), ([0-9]+), ([0-9]+) i ([0-9]+)/)) {
+          ref_array.push(result[1]);
+          ref_array.push(result[2]);
+          ref_array.push(result[3]);
+          ref_array.push(result[4]);
+          ref_array.push(result[5]);
+        } else
+        if (result = address.match(/art. ([0-9]+), ([0-9]+), ([0-9]+) (i|oraz) ([0-9]+)/)) {
+          ref_array.push(result[1]);
+          ref_array.push(result[2]);
+          ref_array.push(result[3]);
+          ref_array.push(result[5]);
+        } else
+        if (result = address.match(/art. ([0-9]+), ([0-9]+) i ([0-9]+)/)) {
+          ref_array.push(result[1]);
+          ref_array.push(result[2]);
+          ref_array.push(result[3]);
+        } else
+        if (result = address.match(/art. ([0-9]+) (i|lub|oraz|ani) ([0-9]+)/)) {
+          ref_array.push(result[1]);
+          ref_array.push(result[3]);
+        } else
+        // art. 8, 11, 25–39 oraz 42 i 43
+        if (result = address.match(/art. ([0-9]+), ([0-9]+), ([0-9]+)–([0-9]+) oraz ([0-9]+) i ([0-9]+)/)) {
+          ref_array.push(result[1]);
+          ref_array.push(result[2]);
+          let to = result[4];
+          for (let from = result[3]; from <= to; from++) {
+            ref_array.push(from);
+          }
+          ref_array.push(result[5]);
+          ref_array.push(result[6]);
+        } else
+        if (result = address.match(/art. ([0-9]+)–([0-9]+) i ([0-9]+)/)) {
+          let to = result[2];
+          for (let from = result[1]; from <= to; from++) {
+            ref_array.push(from);
+          }
+          ref_array.push(result[3]);
+        } else
+        if (result = address.match(/art. ([0-9]+)–([0-9]+)/)) {
+          let to = result[2];
+          for (let from = result[1]; from <= to; from++) {
+            ref_array.push(from);
+          }
+        }
+
+        for (article of ref_array) {
+          references += '<details class="internal-link" style="display: inline-block;" data-target="#article-' + article + '"><summary>art. ' + article + '</summary><div>#article-' + article + '</div></details> ';
+        }
+
+        if (references !== '') {
+          link.outerHTML = '<details class="multiple-refs"><summary>' + link.innerText + '</summary><div>' + references + '</div></details>';
+        }
+      }
+    }
+
+    function create_internal_links(container) {
       var internal_links = container.querySelectorAll('u');
 
       for (var link of internal_links) {
@@ -2547,7 +2625,8 @@ if (isset($_GET['article'])) {
       }
     }
 
-    expand_internal_links(document);
+    parse_article_references(document);
+    create_internal_links(document);
     bind_internal_links(document);
   });
   </script>
