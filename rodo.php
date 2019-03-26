@@ -1548,16 +1548,16 @@ function echo_article($number) {
     <?php break; case 53: ?>
     <p>1. Państwa członkowskie zapewniają, by każdy członek ich organów nadzorczych był powoływany w drodze przejrzystej procedury przez:
     <span class="next-level">
-    <span class="pos">—</span>ich parlament,
+    <span class="pos" data-name="pierwsze">—</span>ich parlament,
     </span>
     <span class="next-level">
-    <span class="pos">—</span>ich rząd,
+    <span class="pos" data-name="drugie">—</span>ich rząd,
     </span>
     <span class="next-level">
-    <span class="pos">—</span>ich głowę państwa, lub
+    <span class="pos" data-name="trzecie">—</span>ich głowę państwa, lub
     </span>
     <span class="next-level">
-    <span class="pos">—</span>niezależny organ uprawniony do powoływania członków organu nadzorczego na podstawie prawa państwa członkowskiego.
+    <span class="pos" data-name="czwarte">—</span>niezależny organ uprawniony do powoływania członków organu nadzorczego na podstawie prawa państwa członkowskiego.
     </span>
     </p>
     <p>2. Każdy członek musi posiadać kwalifikacje, doświadczenie i umiejętności – w szczególności w dziedzinie ochrony danych osobowych – potrzebne do wypełniania swoich obowiązków i wykonywania swoich uprawnień.</p>
@@ -2514,6 +2514,7 @@ if (isset($_GET['article'])) {
       var address = '';
       for (let e = sub; e.tagName != 'BODY'; e = e.parentElement) {
         var add = '';
+        if (e.tagName == 'SPAN' && e.className == 'next-level' && e.firstElementChild.innerText.match(/—/)) add = 'tiret ' + e.firstElementChild.getAttribute('data-name');
         if (e.tagName == 'SPAN' && e.className == 'next-level' && e.firstElementChild.innerText.match(/[a-z]+\)/)) add = 'lit. ' + e.firstElementChild.innerText;
         if (e.tagName == 'SPAN' && e.className == 'next-level' && e.firstElementChild.innerText.match(/[0-9]+\)/)) add = 'pkt ' + e.firstElementChild.innerText;
         if (e.tagName == 'P' && e.innerText.match(/[0-9]+\. /)) add = 'ust. ' + e.innerText.split('.')[0];
