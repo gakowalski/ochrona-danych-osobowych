@@ -2534,7 +2534,7 @@ if (isset($_GET['article'])) {
   <header>
     <h1>Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679</h1>
     <p>z dnia 27 kwietnia 2016 r.</p>
-    <p>w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?></h1>
+    <p>w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?></p>
     <p>(ogólne rozporządzenie o ochronie danych)</p>
   </header>
 <?php if ($short_text): ?>
@@ -2561,7 +2561,7 @@ if (isset($_GET['article'])) {
   <!-- <h2>(Motywy)</h2> -->
 
      <?php for ($number = 1; $number < 173; $number++) { ?>
-       <a id="recital-<?php echo $number; ?>">
+       <a id="recital-<?php echo $number; ?>"></a>
 
        <div class="next-level" style="padding-left: 3rem; position: relative;">
            <span class="pos" style="position: absolute; top: 0; left: 0;">(<?php echo $number; ?>)
