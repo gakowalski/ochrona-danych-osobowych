@@ -139,7 +139,7 @@
       <?php break; case 29: ?>
       <p>Aby zachęcić do stosowania pseudonimizacji podczas przetwarzania danych osobowych, należy umożliwić stosowanie u tego samego administratora środków pseudonimizacyjnych niewykluczających ogólnej analizy, o ile administrator ten zastosował środki techniczne i organizacyjne niezbędne do tego, by niniejsze rozporządzenie zostało wdrożone w zakresie danego przetwarzania i by dodatkowe informacje pozwalające przypisać dane osobowe konkretnej osobie, której dane dotyczą, były przechowywane osobno. Administrator przetwarzający dane osobowe powinien wskazać osoby uprawnione.</p>
       <?php break; case 30: ?>
-      <p>Osobom fizycznym mogą zostać przypisane identyfikatory internetowe – takie jak adresy IP, identyfikatory plików cookie – generowane przez ich urządzenia, aplikacje, narzędzia i protokoły, czy też inne identyfikatory, generowane na przykład przez etykiety RFID. Może to skutkować zostawianiem śladów, które w szczególności w połączeniu z unikatowymi identyfikatorami i innymi informacjami uzyskiwanymi przez serwery mogą być wykorzystywane do tworzenia profili i do identyfikowania tych osób.</p>
+      <p>Osobom fizycznym mogą zostać przypisane identyfikatory internetowe – takie jak adresy IP, identyfikatory plików cookie – generowane przez ich urządzenia, aplikacje, narzędzia i protokoły, czy też inne identyfikatory, generowane na przykład przez etykiety <a href="https://pl.wikipedia.org/wiki/RFID">RFID</a>. Może to skutkować zostawianiem śladów, które w szczególności w połączeniu z unikatowymi identyfikatorami i innymi informacjami uzyskiwanymi przez serwery mogą być wykorzystywane do tworzenia profili i do identyfikowania tych osób.</p>
       <?php break; case 31: ?>
       <p>Organy publiczne, którym ujawnia się dane osobowe w związku z ich prawnym obowiązkiem sprawowania funkcji publicznej (takich jak organy podatkowe, organy celne, finansowe jednostki analityki finansowej, niezależne organy administracyjne czy organy rynków finansowych regulujące i nadzorujące rynki papierów wartościowych), nie powinny być traktowane jako odbiorcy, jeżeli otrzymane przez nie dane osobowe są im niezbędne do przeprowadzenia określonego postępowania w interesie ogólnym zgodnie z prawem Unii lub prawem państwa członkowskiego. Żądanie ujawnienia danych osobowych, z którym występują takie organy publiczne, powinno zawsze mieć formę pisemną, być uzasadnione, mieć charakter wyjątkowy, nie powinno dotyczyć całego zbioru danych ani prowadzić do połączenia zbiorów danych. Przetwarzając otrzymane dane osobowe, takie organy powinny przestrzegać mających zastosowanie przepisów o ochronie danych, zgodnie z celami przetwarzania.</p>
       <?php break; case 32: ?>
@@ -2485,6 +2485,11 @@ if (isset($_GET['article'])) {
     replaceInText(body, /[Nn]iniejsz(e|ego|emu) rozporządzeni(a|e|u)/g, 'RODO');
     // świadome pominięcie "niniejszym rozporządzeniem", bo tekst wychodzi nieczytelny
     replaceInText(body, /[Ii]nspektor(a|zy|em){0,1} ochrony danych/g, 'IOD');
+    replaceInText(body, /Europejski(ego|m){0,1} Inspektor(a|em){0,1} Ochrony Danych/g, 'EIOD');
+    replaceInText(body, /Europejsk(a|ą|iej) Rad(a|ą|zie|ę|y) Ochrony Danych/g, 'EROD');
+    replaceInText(body, /[Aa]dministrator(a|owi){0,1}[ ]/g, 'ADO ');
+    replaceInText(body, /[Aa]dministrator(a|owi){0,1}[,]/g, 'ADO,');
+    replaceInText(body, /[Pp]odmiot(u|owi){0,1} przetwarzając(ego|emu|y)/g, 'PP');
     <?php endif; ?>
 
     var paragraphs = document.querySelectorAll('article > p');
