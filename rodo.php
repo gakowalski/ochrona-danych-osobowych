@@ -2516,30 +2516,39 @@ if (isset($_GET['article'])) {
       sub.innerHTML = '<details class="sub"><summary>' + sub.innerText + '</summary><span class="tooltip">' + address + '</span></details>';
     }
 
-    var internal_links = document.querySelectorAll('u');
+    function expand_internal_links(container) {
+      var internal_links = container.querySelectorAll('u');
 
-    for (var link of internal_links) {
-      var address = link.innerText;
-      var target = '';
-      var result;
+      for (var link of internal_links) {
+        var address = link.innerText;
+        var target = '';
+        var result;
 
-      if (result = address.match(/art. [0-9]+/)) {
-        target = result[0].replace('art. ', '#article-');
-      } else {
-        link.innerText = 'ERROR';
-        continue;
+        if (result = address.match(/art. [0-9]+/)) {
+          target = result[0].replace('art. ', '#article-');
+        } else {
+          link.innerText = 'ERROR';
+          continue;
+        }
+
+        link.innerHTML = '<details class="internal-link" style="display: inline-block;" data-target="' + target + '"><summary>' + link.innerText + '</summary><div>' + target + '</div></details>';
       }
-
-      link.innerHTML = '<details class="internal-link" style="display: inline-block;" data-target="' + target + '"><summary>' + link.innerText + '</summary><div>' + target + '</div></details>';
     }
 
-    var details = document.querySelectorAll("details.internal-link");
+    function bind_internal_links(container) {
+      var details = container.querySelectorAll("details.internal-link");
 
-    for (var e of details) {
-      e.addEventListener("toggle", function() {
-          this.getElementsByTagName('div')[0].innerHTML = document.querySelector(this.getAttribute('data-target')).innerHTML;
-      });
+      for (var e of details) {
+        e.addEventListener("toggle", function() {
+            var container = this.getElementsByTagName('div')[0];
+            container.innerHTML = document.querySelector(this.getAttribute('data-target')).innerHTML;
+            bind_internal_links(container);
+        });
+      }
     }
+
+    expand_internal_links(document);
+    bind_internal_links(document);
   });
   </script>
 </head>
