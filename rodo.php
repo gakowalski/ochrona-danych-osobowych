@@ -2499,8 +2499,7 @@ if (isset($_GET['article'])) {
           if (e.tagName == 'ARTICLE') add = e.id.replace('article-', 'art. ');
           address = add + ' ' + address;
         }
-        address += ' RODO';
-        par.innerHTML = '<details class="par"><summary></summary><span class="tooltip">' + address + '</span></details>' + par.innerHTML;
+        par.innerHTML = '<details class="par"><summary></summary><span class="tooltip"><input type="text" value="' + address.trim() + '"/></span></details>' + par.innerHTML;
       }
     }
 
@@ -2516,8 +2515,7 @@ if (isset($_GET['article'])) {
         if (e.tagName == 'ARTICLE') add = e.id.replace('article-', 'art. ');
         address = add + ' ' + address;
       }
-      address += ' RODO';
-      sub.innerHTML = '<details class="sub"><summary>' + sub.innerText + '</summary><span class="tooltip">' + address + '</span></details>';
+      sub.innerHTML = '<details class="sub"><summary>' + sub.innerText + '</summary><span class="tooltip"><input type="text" value="' + address.trim() + '"/></span></details>';
     }
 
     function parse_article_references(container) {
