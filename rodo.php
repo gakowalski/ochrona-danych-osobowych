@@ -2,7 +2,9 @@
   $this_document = 'RODO';  // for future use
   $short_text = isset($_GET['short']);
 
-  function art($address, $external_doc_name = null) {
+  $references = array();
+
+  function art($text, $address, $external_doc_name = null) {
     if ($external_doc_name === null) {
         return "";
     }
@@ -444,17 +446,17 @@ function echo_article($number) {
     <?php break; case 2: ?>
     <p>1. Niniejsze rozporządzenie ma zastosowanie do przetwarzania danych osobowych w sposób całkowicie lub częściowo zautomatyzowany oraz do przetwarzania w sposób inny niż zautomatyzowany danych osobowych stanowiących część zbioru danych lub mających stanowić część zbioru danych.</p>
     <p>2. Niniejsze rozporządzenie nie ma zastosowania do przetwarzania danych osobowych:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>w ramach działalności nieobjętej zakresem prawa Unii;
+    <span class="next-level">
+    <span class="pos">a)</span>w ramach działalności nieobjętej zakresem prawa Unii;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>przez państwa członkowskie w ramach wykonywania działań wchodzących w zakres tytułu V rozdział 2 <?php echo a_href('TUE', 'TUE'); ?>;
+    <span class="next-level">
+    <span class="pos">b)</span>przez państwa członkowskie w ramach wykonywania działań wchodzących w zakres tytułu V rozdział 2 <?php echo a_href('TUE', 'TUE'); ?>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>przez osobę fizyczną w ramach czynności o czysto osobistym lub domowym charakterze;
+    <span class="next-level">
+    <span class="pos">c)</span>przez osobę fizyczną w ramach czynności o czysto osobistym lub domowym charakterze;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>przez właściwe organy do celów zapobiegania przestępczości, prowadzenia postępowań przygotowawczych, wykrywania i ścigania czynów zabronionych lub wykonywania kar, w tym ochrony przed zagrożeniami dla bezpieczeństwa publicznego i zapobiegania takim zagrożeniom.
+    <span class="next-level">
+    <span class="pos">d)</span>przez właściwe organy do celów zapobiegania przestępczości, prowadzenia postępowań przygotowawczych, wykrywania i ścigania czynów zabronionych lub wykonywania kar, w tym ochrony przed zagrożeniami dla bezpieczeństwa publicznego i zapobiegania takim zagrożeniom.
     </span>
     </p>
     <p>3. Do przetwarzania danych osobowych przez instytucje, organy i jednostki organizacyjne Unii zastosowanie ma <?php echo a_href('45/2001', 'rozporządzenie (WE) nr 45/2001'); ?>. <?php echo a_href('45/2001', 'Rozporządzenie (WE) nr 45/2001'); ?> oraz inne unijne akty prawne mające zastosowanie do takiego przetwarzania danych osobowych zostają dostosowane do zasad i przepisów niniejszego rozporządzenia zgodnie z <u>art. 98</u>.</p>
@@ -462,184 +464,184 @@ function echo_article($number) {
     <?php break; case 3: ?>
     <p>1. Niniejsze rozporządzenie ma zastosowanie do przetwarzania danych osobowych w związku z działalnością prowadzoną przez jednostkę organizacyjną administratora lub podmiotu przetwarzającego w Unii, niezależnie od tego, czy przetwarzanie odbywa się w Unii.</p>
     <p>2. Niniejsze rozporządzenie ma zastosowanie do przetwarzania danych osobowych osób, których dane dotyczą, przebywających w Unii przez administratora lub podmiot przetwarzający niemających jednostek organizacyjnych w Unii, jeżeli czynności przetwarzania wiążą się z:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>oferowaniem towarów lub usług takim osobom, których dane dotyczą, w Unii – niezależnie od tego, czy wymaga się od tych osób zapłaty; lub
+    <span class="next-level">
+    <span class="pos">a)</span>oferowaniem towarów lub usług takim osobom, których dane dotyczą, w Unii – niezależnie od tego, czy wymaga się od tych osób zapłaty; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>monitorowaniem ich zachowania, o ile do zachowania tego dochodzi w Unii.
+    <span class="next-level">
+    <span class="pos">b)</span>monitorowaniem ich zachowania, o ile do zachowania tego dochodzi w Unii.
     </span>
     </p>
     <p>3. Niniejsze rozporządzenie ma zastosowanie do przetwarzania danych osobowych przez administratora niemającego jednostki organizacyjnej w Unii, ale posiadającego jednostkę organizacyjną w miejscu, w którym na mocy prawa międzynarodowego publicznego ma zastosowanie prawo państwa członkowskiego.</p>
     <?php break; case 4: ?>
     <p>Na użytek niniejszego rozporządzenia:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">1)</span>„dane osobowe” oznaczają informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej („osobie, której dane dotyczą”); możliwa do zidentyfikowania osoba fizyczna to osoba, którą można bezpośrednio lub pośrednio zidentyfikować, w szczególności na podstawie identyfikatora takiego jak imię i nazwisko, numer identyfikacyjny, dane o lokalizacji, identyfikator internetowy lub jeden bądź kilka szczególnych czynników określających fizyczną, fizjologiczną, genetyczną, psychiczną, ekonomiczną, kulturową lub społeczną tożsamość osoby fizycznej;
+    <span class="next-level">
+    <span class="pos">1)</span>„dane osobowe” oznaczają informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej („osobie, której dane dotyczą”); możliwa do zidentyfikowania osoba fizyczna to osoba, którą można bezpośrednio lub pośrednio zidentyfikować, w szczególności na podstawie identyfikatora takiego jak imię i nazwisko, numer identyfikacyjny, dane o lokalizacji, identyfikator internetowy lub jeden bądź kilka szczególnych czynników określających fizyczną, fizjologiczną, genetyczną, psychiczną, ekonomiczną, kulturową lub społeczną tożsamość osoby fizycznej;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">2)</span>„przetwarzanie” oznacza operację lub zestaw operacji wykonywanych na danych osobowych lub zestawach danych osobowych w sposób zautomatyzowany lub niezautomatyzowany, taką jak zbieranie, utrwalanie, organizowanie, porządkowanie, przechowywanie, adaptowanie lub modyfikowanie, pobieranie, przeglądanie, wykorzystywanie, ujawnianie poprzez przesłanie, rozpowszechnianie lub innego rodzaju udostępnianie, dopasowywanie lub łączenie, ograniczanie, usuwanie lub niszczenie;
+    <span class="next-level">
+    <span class="pos">2)</span>„przetwarzanie” oznacza operację lub zestaw operacji wykonywanych na danych osobowych lub zestawach danych osobowych w sposób zautomatyzowany lub niezautomatyzowany, taką jak zbieranie, utrwalanie, organizowanie, porządkowanie, przechowywanie, adaptowanie lub modyfikowanie, pobieranie, przeglądanie, wykorzystywanie, ujawnianie poprzez przesłanie, rozpowszechnianie lub innego rodzaju udostępnianie, dopasowywanie lub łączenie, ograniczanie, usuwanie lub niszczenie;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">3)</span>„ograniczenie przetwarzania” oznacza oznaczenie przechowywanych danych osobowych w celu ograniczenia ich przyszłego przetwarzania;
+    <span class="next-level">
+    <span class="pos">3)</span>„ograniczenie przetwarzania” oznacza oznaczenie przechowywanych danych osobowych w celu ograniczenia ich przyszłego przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">4)</span>„profilowanie” oznacza dowolną formę zautomatyzowanego przetwarzania danych osobowych, które polega na wykorzystaniu danych osobowych do oceny niektórych czynników osobowych osoby fizycznej, w szczególności do analizy lub prognozy aspektów dotyczących efektów pracy tej osoby fizycznej, jej sytuacji ekonomicznej, zdrowia, osobistych preferencji, zainteresowań, wiarygodności, zachowania, lokalizacji lub przemieszczania się;
+    <span class="next-level">
+    <span class="pos">4)</span>„profilowanie” oznacza dowolną formę zautomatyzowanego przetwarzania danych osobowych, które polega na wykorzystaniu danych osobowych do oceny niektórych czynników osobowych osoby fizycznej, w szczególności do analizy lub prognozy aspektów dotyczących efektów pracy tej osoby fizycznej, jej sytuacji ekonomicznej, zdrowia, osobistych preferencji, zainteresowań, wiarygodności, zachowania, lokalizacji lub przemieszczania się;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">5)</span>„pseudonimizacja” oznacza przetworzenie danych osobowych w taki sposób, by nie można ich było już przypisać konkretnej osobie, której dane dotyczą, bez użycia dodatkowych informacji, pod warunkiem że takie dodatkowe informacje są przechowywane osobno i są objęte środkami technicznymi i organizacyjnymi uniemożliwiającymi ich przypisanie zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej;
+    <span class="next-level">
+    <span class="pos">5)</span>„pseudonimizacja” oznacza przetworzenie danych osobowych w taki sposób, by nie można ich było już przypisać konkretnej osobie, której dane dotyczą, bez użycia dodatkowych informacji, pod warunkiem że takie dodatkowe informacje są przechowywane osobno i są objęte środkami technicznymi i organizacyjnymi uniemożliwiającymi ich przypisanie zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">6)</span>„zbiór danych” oznacza uporządkowany zestaw danych osobowych dostępnych według określonych kryteriów, niezależnie od tego, czy zestaw ten jest scentralizowany, zdecentralizowany czy rozproszony funkcjonalnie lub geograficznie;
+    <span class="next-level">
+    <span class="pos">6)</span>„zbiór danych” oznacza uporządkowany zestaw danych osobowych dostępnych według określonych kryteriów, niezależnie od tego, czy zestaw ten jest scentralizowany, zdecentralizowany czy rozproszony funkcjonalnie lub geograficznie;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">7)</span>„administrator” oznacza osobę fizyczną lub prawną, organ publiczny, jednostkę lub inny podmiot, który samodzielnie lub wspólnie z innymi ustala cele i sposoby przetwarzania danych osobowych; jeżeli cele i sposoby takiego przetwarzania są określone w prawie Unii lub w prawie państwa członkowskiego, to również w prawie Unii lub w prawie państwa członkowskiego może zostać wyznaczony administrator lub mogą zostać określone konkretne kryteria jego wyznaczania;
+    <span class="next-level">
+    <span class="pos">7)</span>„administrator” oznacza osobę fizyczną lub prawną, organ publiczny, jednostkę lub inny podmiot, który samodzielnie lub wspólnie z innymi ustala cele i sposoby przetwarzania danych osobowych; jeżeli cele i sposoby takiego przetwarzania są określone w prawie Unii lub w prawie państwa członkowskiego, to również w prawie Unii lub w prawie państwa członkowskiego może zostać wyznaczony administrator lub mogą zostać określone konkretne kryteria jego wyznaczania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">8)</span>„podmiot przetwarzający” oznacza osobę fizyczną lub prawną, organ publiczny, jednostkę lub inny podmiot, który przetwarza dane osobowe w imieniu administratora;
+    <span class="next-level">
+    <span class="pos">8)</span>„podmiot przetwarzający” oznacza osobę fizyczną lub prawną, organ publiczny, jednostkę lub inny podmiot, który przetwarza dane osobowe w imieniu administratora;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">9)</span>„odbiorca” oznacza osobę fizyczną lub prawną, organ publiczny, jednostkę lub inny podmiot, któremu ujawnia się dane osobowe, niezależnie od tego, czy jest stroną trzecią. Organy publiczne, które mogą otrzymywać dane osobowe w ramach konkretnego postępowania zgodnie z prawem Unii lub prawem państwa członkowskiego, nie są jednak uznawane za odbiorców; przetwarzanie tych danych przez te organy publiczne musi być zgodne z przepisami o ochronie danych mającymi zastosowanie stosownie do celów przetwarzania;
+    <span class="next-level">
+    <span class="pos">9)</span>„odbiorca” oznacza osobę fizyczną lub prawną, organ publiczny, jednostkę lub inny podmiot, któremu ujawnia się dane osobowe, niezależnie od tego, czy jest stroną trzecią. Organy publiczne, które mogą otrzymywać dane osobowe w ramach konkretnego postępowania zgodnie z prawem Unii lub prawem państwa członkowskiego, nie są jednak uznawane za odbiorców; przetwarzanie tych danych przez te organy publiczne musi być zgodne z przepisami o ochronie danych mającymi zastosowanie stosownie do celów przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">10)</span>„strona trzecia” oznacza osobę fizyczną lub prawną, organ publiczny, jednostkę lub podmiot inny niż osoba, której dane dotyczą, administrator, podmiot przetwarzający czy osoby, które – z upoważnienia administratora lub podmiotu przetwarzającego – mogą przetwarzać dane osobowe;
+    <span class="next-level">
+    <span class="pos">10)</span>„strona trzecia” oznacza osobę fizyczną lub prawną, organ publiczny, jednostkę lub podmiot inny niż osoba, której dane dotyczą, administrator, podmiot przetwarzający czy osoby, które – z upoważnienia administratora lub podmiotu przetwarzającego – mogą przetwarzać dane osobowe;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">11)</span>„zgoda” osoby, której dane dotyczą oznacza dobrowolne, konkretne, świadome i jednoznaczne okazanie woli, którym osoba, której dane dotyczą, w formie oświadczenia lub wyraźnego działania potwierdzającego, przyzwala na przetwarzanie dotyczących jej danych osobowych;
+    <span class="next-level">
+    <span class="pos">11)</span>„zgoda” osoby, której dane dotyczą oznacza dobrowolne, konkretne, świadome i jednoznaczne okazanie woli, którym osoba, której dane dotyczą, w formie oświadczenia lub wyraźnego działania potwierdzającego, przyzwala na przetwarzanie dotyczących jej danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">12)</span>„naruszenie ochrony danych osobowych” oznacza naruszenie bezpieczeństwa prowadzące do przypadkowego lub niezgodnego z prawem zniszczenia, utracenia, zmodyfikowania, nieuprawnionego ujawnienia lub nieuprawnionego dostępu do danych osobowych przesyłanych, przechowywanych lub w inny sposób przetwarzanych;
+    <span class="next-level">
+    <span class="pos">12)</span>„naruszenie ochrony danych osobowych” oznacza naruszenie bezpieczeństwa prowadzące do przypadkowego lub niezgodnego z prawem zniszczenia, utracenia, zmodyfikowania, nieuprawnionego ujawnienia lub nieuprawnionego dostępu do danych osobowych przesyłanych, przechowywanych lub w inny sposób przetwarzanych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">13)</span>„dane genetyczne” oznaczają dane osobowe dotyczące odziedziczonych lub nabytych cech genetycznych osoby fizycznej, które ujawniają niepowtarzalne informacje o fizjologii lub zdrowiu tej osoby i które wynikają w szczególności z analizy próbki biologicznej pochodzącej od tej osoby fizycznej;
+    <span class="next-level">
+    <span class="pos">13)</span>„dane genetyczne” oznaczają dane osobowe dotyczące odziedziczonych lub nabytych cech genetycznych osoby fizycznej, które ujawniają niepowtarzalne informacje o fizjologii lub zdrowiu tej osoby i które wynikają w szczególności z analizy próbki biologicznej pochodzącej od tej osoby fizycznej;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">14)</span>„dane biometryczne” oznaczają dane osobowe, które wynikają ze specjalnego przetwarzania technicznego, dotyczą cech fizycznych, fizjologicznych lub behawioralnych osoby fizycznej oraz umożliwiają lub potwierdzają jednoznaczną identyfikację tej osoby, takie jak wizerunek twarzy lub dane daktyloskopijne;
+    <span class="next-level">
+    <span class="pos">14)</span>„dane biometryczne” oznaczają dane osobowe, które wynikają ze specjalnego przetwarzania technicznego, dotyczą cech fizycznych, fizjologicznych lub behawioralnych osoby fizycznej oraz umożliwiają lub potwierdzają jednoznaczną identyfikację tej osoby, takie jak wizerunek twarzy lub dane daktyloskopijne;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">15)</span>„dane dotyczące zdrowia” oznaczają dane osobowe o zdrowiu fizycznym lub psychicznym osoby fizycznej – w tym o korzystaniu z usług opieki zdrowotnej – ujawniające informacje o stanie jej zdrowia;
+    <span class="next-level">
+    <span class="pos">15)</span>„dane dotyczące zdrowia” oznaczają dane osobowe o zdrowiu fizycznym lub psychicznym osoby fizycznej – w tym o korzystaniu z usług opieki zdrowotnej – ujawniające informacje o stanie jej zdrowia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">16)</span>„główna jednostka organizacyjna” oznacza:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>jeżeli chodzi o administratora posiadającego jednostki organizacyjne w więcej niż jednym państwie członkowskim – miejsce, w którym znajduje się jego centralna administracja w Unii, a jeżeli decyzje co do celów i sposobów przetwarzania danych osobowych zapadają w innej jednostce organizacyjnej tego administratora w Unii i ta jednostka organizacyjna ma prawo nakazać wykonanie takich decyzji, to za główną jednostkę organizacyjną uznaje się jednostkę organizacyjną, w której zapadają takie decyzje;
+    <span class="next-level">
+    <span class="pos">16)</span>„główna jednostka organizacyjna” oznacza:
+    <span class="next-level">
+    <span class="pos">a)</span>jeżeli chodzi o administratora posiadającego jednostki organizacyjne w więcej niż jednym państwie członkowskim – miejsce, w którym znajduje się jego centralna administracja w Unii, a jeżeli decyzje co do celów i sposobów przetwarzania danych osobowych zapadają w innej jednostce organizacyjnej tego administratora w Unii i ta jednostka organizacyjna ma prawo nakazać wykonanie takich decyzji, to za główną jednostkę organizacyjną uznaje się jednostkę organizacyjną, w której zapadają takie decyzje;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>jeżeli chodzi o podmiot przetwarzający posiadający jednostki organizacyjne w więcej niż jednym państwie członkowskim – miejsce, w którym znajduje się jego centralna administracja w Unii lub, w przypadku gdy podmiot przetwarzający nie ma centralnej administracji w Unii – jednostkę organizacyjną podmiotu przetwarzającego w Unii, w której odbywają się główne czynności przetwarzania w ramach działalności jednostki organizacyjnej podmiotu przetwarzającego, w zakresie w jakim podmiot przetwarzający podlega szczególnym obowiązkom na mocy niniejszego rozporządzenia;
-    </span>
-    </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">17)</span>„przedstawiciel” oznacza osobę fizyczną lub prawną mającą miejsce zamieszkania lub siedzibę w Unii, która została wyznaczona na piśmie przez administratora lub podmiot przetwarzający na mocy <u>art. 27</u> do reprezentowania administratora lub podmiotu przetwarzającego w zakresie ich obowiązków wynikających z niniejszego rozporządzenia;
-    </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">18)</span>„przedsiębiorca” oznacza osobę fizyczną lub prawną prowadzącą działalność gospodarczą, niezależnie od formy prawnej, w tym spółki osobowe lub zrzeszenia prowadzące regularną działalność gospodarczą;
-    </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">19)</span>„grupa przedsiębiorstw” oznacza przedsiębiorstwo sprawujące kontrolę oraz przedsiębiorstwa przez nie kontrolowane;
-    </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">20)</span>„wiążące reguły korporacyjne” oznaczają polityki ochrony danych osobowych stosowane przez administratora lub podmiot przetwarzający, którzy posiadają jednostkę organizacyjną na terytorium państwa członkowskiego, przy jednorazowym lub wielokrotnym przekazaniu danych osobowych administratorowi lub podmiotowi przetwarzającemu w co najmniej jednym państwie trzecim w ramach grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą;
-    </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">21)</span>„organ nadzorczy” oznacza niezależny organ publiczny ustanowiony przez państwo członkowskie zgodnie z <u>art. 51</u>;
-    </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">22)</span>„organ nadzorczy, którego sprawa dotyczy” oznacza organ nadzorczy, którego dotyczy przetwarzanie danych osobowych, ponieważ:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>administrator lub podmiot przetwarzający posiadają jednostkę organizacyjną na terytorium państwa członkowskiego tego organu nadzorczego;
-    </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>przetwarzanie znacznie wpływa lub może znacznie wpłynąć na osoby, których dane dotyczą, mające miejsce zamieszkania w państwie członkowskim tego organu nadzorczego; lub
-    </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>wniesiono do niego skargę;
+    <span class="next-level">
+    <span class="pos">b)</span>jeżeli chodzi o podmiot przetwarzający posiadający jednostki organizacyjne w więcej niż jednym państwie członkowskim – miejsce, w którym znajduje się jego centralna administracja w Unii lub, w przypadku gdy podmiot przetwarzający nie ma centralnej administracji w Unii – jednostkę organizacyjną podmiotu przetwarzającego w Unii, w której odbywają się główne czynności przetwarzania w ramach działalności jednostki organizacyjnej podmiotu przetwarzającego, w zakresie w jakim podmiot przetwarzający podlega szczególnym obowiązkom na mocy niniejszego rozporządzenia;
     </span>
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">23)</span>„transgraniczne przetwarzanie” oznacza:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>przetwarzanie danych osobowych, które odbywa się w Unii w ramach działalności jednostek organizacyjnych w więcej, niż jednym państwie członkowskim administratora lub podmiotu przetwarzającego w Unii posiadającego jednostki organizacyjne w więcej niż jednym państwie członkowskim; albo
+    <span class="next-level">
+    <span class="pos">17)</span>„przedstawiciel” oznacza osobę fizyczną lub prawną mającą miejsce zamieszkania lub siedzibę w Unii, która została wyznaczona na piśmie przez administratora lub podmiot przetwarzający na mocy <u>art. 27</u> do reprezentowania administratora lub podmiotu przetwarzającego w zakresie ich obowiązków wynikających z niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>przetwarzanie danych osobowych, które odbywa się w Unii w ramach działalności pojedynczej jednostki organizacyjnej administratora lub podmiotu przetwarzającego w Unii, ale które znacznie wpływa lub może znacznie wpłynąć na osoby, których dane dotyczą, w więcej niż jednym państwie członkowskim;
+    <span class="next-level">
+    <span class="pos">18)</span>„przedsiębiorca” oznacza osobę fizyczną lub prawną prowadzącą działalność gospodarczą, niezależnie od formy prawnej, w tym spółki osobowe lub zrzeszenia prowadzące regularną działalność gospodarczą;
+    </span>
+    <span class="next-level">
+    <span class="pos">19)</span>„grupa przedsiębiorstw” oznacza przedsiębiorstwo sprawujące kontrolę oraz przedsiębiorstwa przez nie kontrolowane;
+    </span>
+    <span class="next-level">
+    <span class="pos">20)</span>„wiążące reguły korporacyjne” oznaczają polityki ochrony danych osobowych stosowane przez administratora lub podmiot przetwarzający, którzy posiadają jednostkę organizacyjną na terytorium państwa członkowskiego, przy jednorazowym lub wielokrotnym przekazaniu danych osobowych administratorowi lub podmiotowi przetwarzającemu w co najmniej jednym państwie trzecim w ramach grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą;
+    </span>
+    <span class="next-level">
+    <span class="pos">21)</span>„organ nadzorczy” oznacza niezależny organ publiczny ustanowiony przez państwo członkowskie zgodnie z <u>art. 51</u>;
+    </span>
+    <span class="next-level">
+    <span class="pos">22)</span>„organ nadzorczy, którego sprawa dotyczy” oznacza organ nadzorczy, którego dotyczy przetwarzanie danych osobowych, ponieważ:
+    <span class="next-level">
+    <span class="pos">a)</span>administrator lub podmiot przetwarzający posiadają jednostkę organizacyjną na terytorium państwa członkowskiego tego organu nadzorczego;
+    </span>
+    <span class="next-level">
+    <span class="pos">b)</span>przetwarzanie znacznie wpływa lub może znacznie wpłynąć na osoby, których dane dotyczą, mające miejsce zamieszkania w państwie członkowskim tego organu nadzorczego; lub
+    </span>
+    <span class="next-level">
+    <span class="pos">c)</span>wniesiono do niego skargę;
     </span>
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">24)</span>„mający znaczenie dla sprawy i uzasadniony sprzeciw” oznacza sprzeciw wobec projektu decyzji dotyczącej tego, czy doszło do naruszenia niniejszego rozporządzenia lub czy planowane działanie wobec administratora lub podmiotu przetwarzającego jest zgodne z niniejszym rozporządzeniem, który to sprzeciw musi jasno wskazywać wagę wynikającego z projektu decyzji ryzyka naruszenia podstawowych praw lub wolności osób, których dane dotyczą, oraz gdy ma to zastosowanie – wagę ryzyka zakłócenia swobodnego przepływu danych osobowych w Unii;
+    <span class="next-level">
+    <span class="pos">23)</span>„transgraniczne przetwarzanie” oznacza:
+    <span class="next-level">
+    <span class="pos">a)</span>przetwarzanie danych osobowych, które odbywa się w Unii w ramach działalności jednostek organizacyjnych w więcej, niż jednym państwie członkowskim administratora lub podmiotu przetwarzającego w Unii posiadającego jednostki organizacyjne w więcej niż jednym państwie członkowskim; albo
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">25)</span>„usługa społeczeństwa informacyjnego” oznacza usługę w rozumieniu art. 1 ust. 1 lit. b) dyrektywy Parlamentu Europejskiego i Rady (UE) 2015/1535<a id="ntc19-L_2016119PL.01000101-E0019" href="#ntr19-L_2016119PL.01000101-E0019"> (<span class="super">19</span>)</a>;
+    <span class="next-level">
+    <span class="pos">b)</span>przetwarzanie danych osobowych, które odbywa się w Unii w ramach działalności pojedynczej jednostki organizacyjnej administratora lub podmiotu przetwarzającego w Unii, ale które znacznie wpływa lub może znacznie wpłynąć na osoby, których dane dotyczą, w więcej niż jednym państwie członkowskim;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">26)</span>„organizacja międzynarodowa” oznacza organizację i organy jej podlegające działające na podstawie prawa międzynarodowego publicznego lub inny organ powołany w drodze umowy między co najmniej dwoma państwami lub na podstawie takiej umowy.
+    </span>
+    <span class="next-level">
+    <span class="pos">24)</span>„mający znaczenie dla sprawy i uzasadniony sprzeciw” oznacza sprzeciw wobec projektu decyzji dotyczącej tego, czy doszło do naruszenia niniejszego rozporządzenia lub czy planowane działanie wobec administratora lub podmiotu przetwarzającego jest zgodne z niniejszym rozporządzeniem, który to sprzeciw musi jasno wskazywać wagę wynikającego z projektu decyzji ryzyka naruszenia podstawowych praw lub wolności osób, których dane dotyczą, oraz gdy ma to zastosowanie – wagę ryzyka zakłócenia swobodnego przepływu danych osobowych w Unii;
+    </span>
+    <span class="next-level">
+    <span class="pos">25)</span>„usługa społeczeństwa informacyjnego” oznacza usługę w rozumieniu art. 1 ust. 1 lit. b) dyrektywy Parlamentu Europejskiego i Rady (UE) 2015/1535<a id="ntc19-L_2016119PL.01000101-E0019" href="#ntr19-L_2016119PL.01000101-E0019"> (<span class="super">19</span>)</a>;
+    </span>
+    <span class="next-level">
+    <span class="pos">26)</span>„organizacja międzynarodowa” oznacza organizację i organy jej podlegające działające na podstawie prawa międzynarodowego publicznego lub inny organ powołany w drodze umowy między co najmniej dwoma państwami lub na podstawie takiej umowy.
     </span>
     <?php break; case 5: ?>
     <p>1. Dane osobowe muszą być:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>przetwarzane zgodnie z prawem, rzetelnie i w sposób przejrzysty dla osoby, której dane dotyczą („zgodność z prawem, rzetelność i przejrzystość”);
+    <span class="next-level">
+    <span class="pos">a)</span>przetwarzane zgodnie z prawem, rzetelnie i w sposób przejrzysty dla osoby, której dane dotyczą („zgodność z prawem, rzetelność i przejrzystość”);
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>zbierane w konkretnych, wyraźnych i prawnie uzasadnionych celach i nieprzetwarzane dalej w sposób niezgodny z tymi celami; dalsze przetwarzanie do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych nie jest uznawane w myśl <u>art. 89 ust. 1</u> za niezgodne z pierwotnymi celami („ograniczenie celu”);
+    <span class="next-level">
+    <span class="pos">b)</span>zbierane w konkretnych, wyraźnych i prawnie uzasadnionych celach i nieprzetwarzane dalej w sposób niezgodny z tymi celami; dalsze przetwarzanie do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych nie jest uznawane w myśl <u>art. 89 ust. 1</u> za niezgodne z pierwotnymi celami („ograniczenie celu”);
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>adekwatne, stosowne oraz ograniczone do tego, co niezbędne do celów, w których są przetwarzane („minimalizacja danych”);
+    <span class="next-level">
+    <span class="pos">c)</span>adekwatne, stosowne oraz ograniczone do tego, co niezbędne do celów, w których są przetwarzane („minimalizacja danych”);
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>prawidłowe i w razie potrzeby uaktualniane; należy podjąć wszelkie rozsądne działania, aby dane osobowe, które są nieprawidłowe w świetle celów ich przetwarzania, zostały niezwłocznie usunięte lub sprostowane („prawidłowość”);
+    <span class="next-level">
+    <span class="pos">d)</span>prawidłowe i w razie potrzeby uaktualniane; należy podjąć wszelkie rozsądne działania, aby dane osobowe, które są nieprawidłowe w świetle celów ich przetwarzania, zostały niezwłocznie usunięte lub sprostowane („prawidłowość”);
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>przechowywane w formie umożliwiającej identyfikację osoby, której dane dotyczą, przez okres nie dłuższy, niż jest to niezbędne do celów, w których dane te są przetwarzane; dane osobowe można przechowywać przez okres dłuższy, o ile będą one przetwarzane wyłącznie do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych na mocy <u>art. 89 ust. 1</u>, z zastrzeżeniem że wdrożone zostaną odpowiednie środki techniczne i organizacyjne wymagane na mocy niniejszego rozporządzenia w celu ochrony praw i wolności osób, których dane dotyczą („ograniczenie przechowywania”);
+    <span class="next-level">
+    <span class="pos">e)</span>przechowywane w formie umożliwiającej identyfikację osoby, której dane dotyczą, przez okres nie dłuższy, niż jest to niezbędne do celów, w których dane te są przetwarzane; dane osobowe można przechowywać przez okres dłuższy, o ile będą one przetwarzane wyłącznie do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych na mocy <u>art. 89 ust. 1</u>, z zastrzeżeniem że wdrożone zostaną odpowiednie środki techniczne i organizacyjne wymagane na mocy niniejszego rozporządzenia w celu ochrony praw i wolności osób, których dane dotyczą („ograniczenie przechowywania”);
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>przetwarzane w sposób zapewniający odpowiednie bezpieczeństwo danych osobowych, w tym ochronę przed niedozwolonym lub niezgodnym z prawem przetwarzaniem oraz przypadkową utratą, zniszczeniem lub uszkodzeniem, za pomocą odpowiednich środków technicznych lub organizacyjnych („integralność i poufność”).
+    <span class="next-level">
+    <span class="pos">f)</span>przetwarzane w sposób zapewniający odpowiednie bezpieczeństwo danych osobowych, w tym ochronę przed niedozwolonym lub niezgodnym z prawem przetwarzaniem oraz przypadkową utratą, zniszczeniem lub uszkodzeniem, za pomocą odpowiednich środków technicznych lub organizacyjnych („integralność i poufność”).
     </span>
     </p>
     <p>2. Administrator jest odpowiedzialny za przestrzeganie przepisów ust. 1 i musi być w stanie wykazać ich przestrzeganie („rozliczalność”).</p>
     <?php break; case 6: ?>
     <p>1. Przetwarzanie jest zgodne z prawem wyłącznie w przypadkach, gdy – i w takim zakresie, w jakim – spełniony jest co najmniej jeden z poniższych warunków:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>osoba, której dane dotyczą wyraziła zgodę na przetwarzanie swoich danych osobowych w jednym lub większej liczbie określonych celów;
+    <span class="next-level">
+    <span class="pos">a)</span>osoba, której dane dotyczą wyraziła zgodę na przetwarzanie swoich danych osobowych w jednym lub większej liczbie określonych celów;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>przetwarzanie jest niezbędne do wykonania umowy, której stroną jest osoba, której dane dotyczą, lub do podjęcia działań na żądanie osoby, której dane dotyczą, przed zawarciem umowy;
+    <span class="next-level">
+    <span class="pos">b)</span>przetwarzanie jest niezbędne do wykonania umowy, której stroną jest osoba, której dane dotyczą, lub do podjęcia działań na żądanie osoby, której dane dotyczą, przed zawarciem umowy;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>przetwarzanie jest niezbędne do wypełnienia obowiązku prawnego ciążącego na administratorze;
+    <span class="next-level">
+    <span class="pos">c)</span>przetwarzanie jest niezbędne do wypełnienia obowiązku prawnego ciążącego na administratorze;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>przetwarzanie jest niezbędne do ochrony żywotnych interesów osoby, której dane dotyczą, lub innej osoby fizycznej;
+    <span class="next-level">
+    <span class="pos">d)</span>przetwarzanie jest niezbędne do ochrony żywotnych interesów osoby, której dane dotyczą, lub innej osoby fizycznej;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>przetwarzanie jest niezbędne do wykonania zadania realizowanego w interesie publicznym lub w ramach sprawowania władzy publicznej powierzonej administratorowi;
+    <span class="next-level">
+    <span class="pos">e)</span>przetwarzanie jest niezbędne do wykonania zadania realizowanego w interesie publicznym lub w ramach sprawowania władzy publicznej powierzonej administratorowi;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>przetwarzanie jest niezbędne do celów wynikających z prawnie uzasadnionych interesów realizowanych przez administratora lub przez stronę trzecią, z wyjątkiem sytuacji, w których nadrzędny charakter wobec tych interesów mają interesy lub podstawowe prawa i wolności osoby, której dane dotyczą, wymagające ochrony danych osobowych, w szczególności gdy osoba, której dane dotyczą, jest dzieckiem.
+    <span class="next-level">
+    <span class="pos">f)</span>przetwarzanie jest niezbędne do celów wynikających z prawnie uzasadnionych interesów realizowanych przez administratora lub przez stronę trzecią, z wyjątkiem sytuacji, w których nadrzędny charakter wobec tych interesów mają interesy lub podstawowe prawa i wolności osoby, której dane dotyczą, wymagające ochrony danych osobowych, w szczególności gdy osoba, której dane dotyczą, jest dzieckiem.
     </span>
     </p>
     <p>Akapit pierwszy lit. f) nie ma zastosowania do przetwarzania, którego dokonują organy publiczne w ramach realizacji swoich zadań.</p>
     <p>2. Państwa członkowskie mogą zachować lub wprowadzić bardziej szczegółowe przepisy, aby dostosować stosowanie przepisów niniejszego rozporządzenia w odniesieniu do przetwarzania służącego wypełnieniu warunków określonych w ust. 1 lit. c) i e); w tym celu mogą dokładniej określić szczegółowe wymogi przetwarzania i inne środki w celu zapewnienia zgodności przetwarzania z prawem i jego rzetelności, także w innych szczególnych sytuacjach związanych z przetwarzaniem przewidzianych w rozdziale IX.</p>
     <p>3. Podstawa przetwarzania, o którym mowa w ust. 1 lit. c) i e), musi być określona:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>w prawie Unii; lub
+    <span class="next-level">
+    <span class="pos">a)</span>w prawie Unii; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>w prawie państwa członkowskiego, któremu podlega administrator.
+    <span class="next-level">
+    <span class="pos">b)</span>w prawie państwa członkowskiego, któremu podlega administrator.
     </span>
     </p>
     <p>Cel przetwarzania musi być określony w tej podstawie prawnej lub, w przypadku przetwarzania, o którym mowa w ust. 1 lit. e) – musi być ono niezbędne do wykonania zadania realizowanego w interesie publicznym lub w ramach sprawowania władzy publicznej powierzonej administratorowi. Podstawa prawna może zawierać przepisy szczegółowe dostosowujące stosowanie przepisów niniejszego rozporządzenia, w tym: ogólne warunki zgodności z prawem przetwarzania przez administratora; rodzaj danych podlegających przetwarzaniu; osoby, których dane dotyczą; podmioty, którym można ujawnić dane osobowe; cele, w których można je ujawnić; ograniczenia celu; okresy przechowywania; oraz operacje i procedury przetwarzania, w tym środki zapewniające zgodność z prawem i rzetelność przetwarzania, w tym w innych szczególnych sytuacjach związanych z przetwarzaniem, o których mowa w rozdziale IX. Prawo Unii lub prawo państwa członkowskiego muszą służyć realizacji celu leżącego w interesie publicznym, oraz być proporcjonalne do wyznaczonego, prawnie uzasadnionego celu.</p>
     <p>4. Jeżeli przetwarzanie w celu innym niż cel, w którym dane osobowe zostały zebrane, nie odbywa się na podstawie zgody osoby, której dane dotyczą, ani prawa Unii lub prawa państwa członkowskiego stanowiących w demokratycznym społeczeństwie niezbędny i proporcjonalny środek służący zagwarantowaniu celów, o których mowa w <u>art. 23 ust. 1</u>, administrator – aby ustalić, czy przetwarzanie w innym celu jest zgodne z celem, w którym dane osobowe zostały pierwotnie zebrane – bierze pod uwagę między innymi:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>wszelkie związki między celami, w których zebrano dane osobowe, a celami zamierzonego dalszego przetwarzania;
+    <span class="next-level">
+    <span class="pos">a)</span>wszelkie związki między celami, w których zebrano dane osobowe, a celami zamierzonego dalszego przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>kontekst, w którym zebrano dane osobowe, w szczególności relację między osobami, których dane dotyczą, a administratorem;
+    <span class="next-level">
+    <span class="pos">b)</span>kontekst, w którym zebrano dane osobowe, w szczególności relację między osobami, których dane dotyczą, a administratorem;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>charakter danych osobowych, w szczególności czy przetwarzane są szczególne kategorie danych osobowych zgodnie z <u>art. 9</u> lub dane osobowe dotyczące wyroków skazujących i naruszeń prawa zgodnie z <u>art. 10</u>;
+    <span class="next-level">
+    <span class="pos">c)</span>charakter danych osobowych, w szczególności czy przetwarzane są szczególne kategorie danych osobowych zgodnie z <u>art. 9</u> lub dane osobowe dotyczące wyroków skazujących i naruszeń prawa zgodnie z <u>art. 10</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>ewentualne konsekwencje zamierzonego dalszego przetwarzania dla osób, których dane dotyczą;
+    <span class="next-level">
+    <span class="pos">d)</span>ewentualne konsekwencje zamierzonego dalszego przetwarzania dla osób, których dane dotyczą;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>istnienie odpowiednich zabezpieczeń, w tym ewentualnie szyfrowania lub pseudonimizacji.
+    <span class="next-level">
+    <span class="pos">e)</span>istnienie odpowiednich zabezpieczeń, w tym ewentualnie szyfrowania lub pseudonimizacji.
     </span>
     <?php break; case 7: ?>
     <p>1. Jeżeli przetwarzanie odbywa się na podstawie zgody, administrator musi być w stanie wykazać, że osoba, której dane dotyczą, wyraziła zgodę na przetwarzanie swoich danych osobowych.</p>
@@ -654,35 +656,35 @@ function echo_article($number) {
     <?php break; case 9: ?>
     <p>1. Zabrania się przetwarzania danych osobowych ujawniających pochodzenie rasowe lub etniczne, poglądy polityczne, przekonania religijne lub światopoglądowe, przynależność do związków zawodowych oraz przetwarzania danych genetycznych, danych biometrycznych w celu jednoznacznego zidentyfikowania osoby fizycznej lub danych dotyczących zdrowia, seksualności lub orientacji seksualnej tej osoby.</p>
     <p>2. Ust. 1 nie ma zastosowania, jeżeli spełniony jest jeden z poniższych warunków:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>osoba, której dane dotyczą, wyraziła wyraźną zgodę na przetwarzanie tych danych osobowych w jednym lub kilku konkretnych celach, chyba że prawo Unii lub prawo państwa członkowskiego przewidują, iż osoba, której dane dotyczą, nie może uchylić zakazu, o którym mowa w ust. 1;
+    <span class="next-level">
+    <span class="pos">a)</span>osoba, której dane dotyczą, wyraziła wyraźną zgodę na przetwarzanie tych danych osobowych w jednym lub kilku konkretnych celach, chyba że prawo Unii lub prawo państwa członkowskiego przewidują, iż osoba, której dane dotyczą, nie może uchylić zakazu, o którym mowa w ust. 1;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>przetwarzanie jest niezbędne do wypełnienia obowiązków i wykonywania szczególnych praw przez administratora lub osobę, której dane dotyczą, w dziedzinie prawa pracy, zabezpieczenia społecznego i ochrony socjalnej, o ile jest to dozwolone prawem Unii lub prawem państwa członkowskiego, lub porozumieniem zbiorowym na mocy prawa państwa członkowskiego przewidującymi odpowiednie zabezpieczenia praw podstawowych i interesów osoby, której dane dotyczą;
+    <span class="next-level">
+    <span class="pos">b)</span>przetwarzanie jest niezbędne do wypełnienia obowiązków i wykonywania szczególnych praw przez administratora lub osobę, której dane dotyczą, w dziedzinie prawa pracy, zabezpieczenia społecznego i ochrony socjalnej, o ile jest to dozwolone prawem Unii lub prawem państwa członkowskiego, lub porozumieniem zbiorowym na mocy prawa państwa członkowskiego przewidującymi odpowiednie zabezpieczenia praw podstawowych i interesów osoby, której dane dotyczą;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>przetwarzanie jest niezbędne do ochrony żywotnych interesów osoby, której dane dotyczą, lub innej osoby fizycznej, a osoba, której dane dotyczą, jest fizycznie lub prawnie niezdolna do wyrażenia zgody;
+    <span class="next-level">
+    <span class="pos">c)</span>przetwarzanie jest niezbędne do ochrony żywotnych interesów osoby, której dane dotyczą, lub innej osoby fizycznej, a osoba, której dane dotyczą, jest fizycznie lub prawnie niezdolna do wyrażenia zgody;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>przetwarzania dokonuje się w ramach uprawnionej działalności prowadzonej z zachowaniem odpowiednich zabezpieczeń przez fundację, stowarzyszenie lub inny niezarobkowy podmiot o celach politycznych, światopoglądowych, religijnych lub związkowych, pod warunkiem że przetwarzanie dotyczy wyłącznie członków lub byłych członków tego podmiotu lub osób utrzymujących z nim stałe kontakty w związku z jego celami oraz że dane osobowe nie są ujawniane poza tym podmiotem bez zgody osób, których dane dotyczą;
+    <span class="next-level">
+    <span class="pos">d)</span>przetwarzania dokonuje się w ramach uprawnionej działalności prowadzonej z zachowaniem odpowiednich zabezpieczeń przez fundację, stowarzyszenie lub inny niezarobkowy podmiot o celach politycznych, światopoglądowych, religijnych lub związkowych, pod warunkiem że przetwarzanie dotyczy wyłącznie członków lub byłych członków tego podmiotu lub osób utrzymujących z nim stałe kontakty w związku z jego celami oraz że dane osobowe nie są ujawniane poza tym podmiotem bez zgody osób, których dane dotyczą;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>przetwarzanie dotyczy danych osobowych w sposób oczywisty upublicznionych przez osobę, której dane dotyczą;
+    <span class="next-level">
+    <span class="pos">e)</span>przetwarzanie dotyczy danych osobowych w sposób oczywisty upublicznionych przez osobę, której dane dotyczą;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>przetwarzanie jest niezbędne do ustalenia, dochodzenia lub obrony roszczeń lub w ramach sprawowania wymiaru sprawiedliwości przez sądy;
+    <span class="next-level">
+    <span class="pos">f)</span>przetwarzanie jest niezbędne do ustalenia, dochodzenia lub obrony roszczeń lub w ramach sprawowania wymiaru sprawiedliwości przez sądy;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>przetwarzanie jest niezbędne ze względów związanych z ważnym interesem publicznym, na podstawie prawa Unii lub prawa państwa członkowskiego, które są proporcjonalne do wyznaczonego celu, nie naruszają istoty prawa do ochrony danych i przewidują odpowiednie i konkretne środki ochrony praw podstawowych i interesów osoby, której dane dotyczą;
+    <span class="next-level">
+    <span class="pos">g)</span>przetwarzanie jest niezbędne ze względów związanych z ważnym interesem publicznym, na podstawie prawa Unii lub prawa państwa członkowskiego, które są proporcjonalne do wyznaczonego celu, nie naruszają istoty prawa do ochrony danych i przewidują odpowiednie i konkretne środki ochrony praw podstawowych i interesów osoby, której dane dotyczą;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>przetwarzanie jest niezbędne do celów profilaktyki zdrowotnej lub medycyny pracy, do oceny zdolności pracownika do pracy, diagnozy medycznej, zapewnienia opieki zdrowotnej lub zabezpieczenia społecznego, leczenia lub zarządzania systemami i usługami opieki zdrowotnej lub zabezpieczenia społecznego na podstawie prawa Unii lub prawa państwa członkowskiego lub zgodnie z umową z pracownikiem służby zdrowia i z zastrzeżeniem warunków i zabezpieczeń, o których mowa w ust. 3;
+    <span class="next-level">
+    <span class="pos">h)</span>przetwarzanie jest niezbędne do celów profilaktyki zdrowotnej lub medycyny pracy, do oceny zdolności pracownika do pracy, diagnozy medycznej, zapewnienia opieki zdrowotnej lub zabezpieczenia społecznego, leczenia lub zarządzania systemami i usługami opieki zdrowotnej lub zabezpieczenia społecznego na podstawie prawa Unii lub prawa państwa członkowskiego lub zgodnie z umową z pracownikiem służby zdrowia i z zastrzeżeniem warunków i zabezpieczeń, o których mowa w ust. 3;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>przetwarzanie jest niezbędne ze względów związanych z interesem publicznym w dziedzinie zdrowia publicznego, takich jak ochrona przed poważnymi transgranicznymi zagrożeniami zdrowotnymi lub zapewnienie wysokich standardów jakości i bezpieczeństwa opieki zdrowotnej oraz produktów leczniczych lub wyrobów medycznych, na podstawie prawa Unii lub prawa państwa członkowskiego, które przewidują odpowiednie, konkretne środki ochrony praw i wolności osoób, których dane dotyczą, w szczególności tajemnicę zawodową;
+    <span class="next-level">
+    <span class="pos">i)</span>przetwarzanie jest niezbędne ze względów związanych z interesem publicznym w dziedzinie zdrowia publicznego, takich jak ochrona przed poważnymi transgranicznymi zagrożeniami zdrowotnymi lub zapewnienie wysokich standardów jakości i bezpieczeństwa opieki zdrowotnej oraz produktów leczniczych lub wyrobów medycznych, na podstawie prawa Unii lub prawa państwa członkowskiego, które przewidują odpowiednie, konkretne środki ochrony praw i wolności osoób, których dane dotyczą, w szczególności tajemnicę zawodową;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>przetwarzanie jest niezbędne do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych zgodnie z <u>art. 89 ust. 1</u>, na podstawie prawa Unii lub prawa państwa członkowskiego, które są proporcjonalne do wyznaczonego celu, nie naruszają istoty prawa do ochrony danych i przewidują odpowiednie, konkretne środki ochrony praw podstawowych i interesów osoby, której dane dotyczą.
+    <span class="next-level">
+    <span class="pos">j)</span>przetwarzanie jest niezbędne do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych zgodnie z <u>art. 89 ust. 1</u>, na podstawie prawa Unii lub prawa państwa członkowskiego, które są proporcjonalne do wyznaczonego celu, nie naruszają istoty prawa do ochrony danych i przewidują odpowiednie, konkretne środki ochrony praw podstawowych i interesów osoby, której dane dotyczą.
     </span>
     </p>
     <p>3. Dane osobowe, o których mowa w ust. 1, mogą być przetwarzane do celów, o których mowa w ust. 2 lit. h), jeżeli są przetwarzane przez – lub na odpowiedzialność – pracownika podlegającego obowiązkowi zachowania tajemnicy zawodowej na mocy prawa Unii lub prawa państwa członkowskiego, lub przepisów ustanowionych przez właściwe organy krajowe lub przez inną osobę również podlegającą obowiązkowi zachowania tajemnicy zawodowej na mocy prawa Unii lub prawa państwa członkowskiego, lub przepisów ustanowionych przez właściwe organy krajowe.</p>
@@ -698,11 +700,11 @@ function echo_article($number) {
     <p>3. Administrator bez zbędnej zwłoki – a w każdym razie w terminie miesiąca od otrzymania żądania – udziela osobie, której dane dotyczą, informacji o działaniach podjętych w związku z żądaniem na podstawie <u>art. 15–22</u>. W razie potrzeby termin ten można przedłużyć o kolejne dwa miesiące z uwagi na skomplikowany charakter żądania lub liczbę żądań. W terminie miesiąca od otrzymania żądania administrator informuje osobę, której dane dotyczą o takim przedłużeniu terminu, z podaniem przyczyn opóźnienia. Jeśli osoba, której dane dotyczą, przekazała swoje żądanie elektronicznie, w miarę możliwości informacje także są przekazywane elektronicznie, chyba że osoba, której dane dotyczą, zażąda innej formy.</p>
     <p>4. Jeżeli administrator nie podejmuje działań w związku z żądaniem osoby, której dane dotyczą, to niezwłocznie – najpóźniej w terminie miesiąca od otrzymania żądania – informuje osobę, której dane dotyczą, o powodach niepodjęcia działań oraz o możliwości wniesienia skargi do organu nadzorczego oraz skorzystania ze środków ochrony prawnej przed sądem.</p>
     <p>5. Informacje podawane na mocy <u>art. 13 i 14</u> oraz komunikacja i działania podejmowane na mocy <u>art. 15–22 i 34</u> są wolne od opłat. Jeżeli żądania osoby, której dane dotyczą, są ewidentnie nieuzasadnione lub nadmierne, w szczególności ze względu na swój ustawiczny charakter, administrator może:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>pobrać rozsądną opłatę, uwzględniając administracyjne koszty udzielenia informacji, prowadzenia komunikacji lub podjęcia żądanych działań; albo
+    <span class="next-level">
+    <span class="pos">a)</span>pobrać rozsądną opłatę, uwzględniając administracyjne koszty udzielenia informacji, prowadzenia komunikacji lub podjęcia żądanych działań; albo
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>odmówić podjęcia działań w związku z żądaniem.
+    <span class="next-level">
+    <span class="pos">b)</span>odmówić podjęcia działań w związku z żądaniem.
     </span>
     </p>
     <p>Obowiązek wykazania, że żądanie ma ewidentnie nieuzasadniony lub nadmierny charakter, spoczywa na administratorze.</p>
@@ -711,141 +713,141 @@ function echo_article($number) {
     <p>8. Komisji przysługuje prawo przyjmowania aktów delegowanych zgodnie z <u>art. 92</u> w celu określenia informacji przedstawianych za pomocą znaków graficznych i procedur ustanowienia standardowych znaków graficznych.</p>
     <?php break; case 13: ?>
     <p>1. Jeżeli dane osobowe osoby, której dane dotyczą, zbierane są od tej osoby, administrator podczas pozyskiwania danych osobowych podaje jej wszystkie następujące informacje:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>swoją tożsamość i dane kontaktowe oraz, gdy ma to zastosowanie, tożsamość i dane kontaktowe swojego przedstawiciela;
+    <span class="next-level">
+    <span class="pos">a)</span>swoją tożsamość i dane kontaktowe oraz, gdy ma to zastosowanie, tożsamość i dane kontaktowe swojego przedstawiciela;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>gdy ma to zastosowanie – dane kontaktowe inspektora ochrony danych;
+    <span class="next-level">
+    <span class="pos">b)</span>gdy ma to zastosowanie – dane kontaktowe inspektora ochrony danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>cele przetwarzania danych osobowych, oraz podstawę prawną przetwarzania;
+    <span class="next-level">
+    <span class="pos">c)</span>cele przetwarzania danych osobowych, oraz podstawę prawną przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>jeżeli przetwarzanie odbywa się na podstawie <u>art. 6 ust. 1 lit. f)</u> – prawnie uzasadnione interesy realizowane przez administratora lub przez stronę trzecią;
+    <span class="next-level">
+    <span class="pos">d)</span>jeżeli przetwarzanie odbywa się na podstawie <u>art. 6 ust. 1 lit. f)</u> – prawnie uzasadnione interesy realizowane przez administratora lub przez stronę trzecią;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>informacje o odbiorcach danych osobowych lub o kategoriach odbiorców, jeżeli istnieją;
+    <span class="next-level">
+    <span class="pos">e)</span>informacje o odbiorcach danych osobowych lub o kategoriach odbiorców, jeżeli istnieją;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>gdy ma to zastosowanie – informacje o zamiarze przekazania danych osobowych do państwa trzeciego lub organizacji międzynarodowej oraz o stwierdzeniu lub braku stwierdzenia przez Komisję odpowiedniego stopnia ochrony lub w przypadku przekazania, o którym mowa w <u>art. 46</u>, <u>art. 47</u> lub <u>art. 49 ust. 1 akapit drugi</u>, wzmiankę o odpowiednich lub właściwych zabezpieczeniach oraz o możliwościach uzyskania kopii danych lub o miejscu udostępnienia danych.
+    <span class="next-level">
+    <span class="pos">f)</span>gdy ma to zastosowanie – informacje o zamiarze przekazania danych osobowych do państwa trzeciego lub organizacji międzynarodowej oraz o stwierdzeniu lub braku stwierdzenia przez Komisję odpowiedniego stopnia ochrony lub w przypadku przekazania, o którym mowa w <u>art. 46</u>, <u>art. 47</u> lub <u>art. 49 ust. 1 akapit drugi</u>, wzmiankę o odpowiednich lub właściwych zabezpieczeniach oraz o możliwościach uzyskania kopii danych lub o miejscu udostępnienia danych.
     </span>
     </p>
     <p>2. Poza informacjami, o których mowa w ust. 1, podczas pozyskiwania danych osobowych administrator podaje osobie, której dane dotyczą, następujące inne informacje niezbędne do zapewnienia rzetelności i przejrzystości przetwarzania:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>okres, przez który dane osobowe będą przechowywane, a gdy nie jest to możliwe, kryteria ustalania tego okresu;
+    <span class="next-level">
+    <span class="pos">a)</span>okres, przez który dane osobowe będą przechowywane, a gdy nie jest to możliwe, kryteria ustalania tego okresu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>informacje o prawie do żądania od administratora dostępu do danych osobowych dotyczących osoby, której dane dotyczą, ich sprostowania, usunięcia lub ograniczenia przetwarzania lub o prawie do wniesienia sprzeciwu wobec przetwarzania, a także o prawie do przenoszenia danych;
+    <span class="next-level">
+    <span class="pos">b)</span>informacje o prawie do żądania od administratora dostępu do danych osobowych dotyczących osoby, której dane dotyczą, ich sprostowania, usunięcia lub ograniczenia przetwarzania lub o prawie do wniesienia sprzeciwu wobec przetwarzania, a także o prawie do przenoszenia danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>jeżeli przetwarzanie odbywa się na podstawie <u>art. 6 ust. 1 lit. a)</u> lub <u>art. 9 ust. 2 lit. a)</u> – informacje o prawie do cofnięcia zgody w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej cofnięciem;
+    <span class="next-level">
+    <span class="pos">c)</span>jeżeli przetwarzanie odbywa się na podstawie <u>art. 6 ust. 1 lit. a)</u> lub <u>art. 9 ust. 2 lit. a)</u> – informacje o prawie do cofnięcia zgody w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej cofnięciem;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>informacje o prawie wniesienia skargi do organu nadzorczego;
+    <span class="next-level">
+    <span class="pos">d)</span>informacje o prawie wniesienia skargi do organu nadzorczego;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>informację, czy podanie danych osobowych jest wymogiem ustawowym lub umownym lub warunkiem zawarcia umowy oraz czy osoba, której dane dotyczą, jest zobowiązana do ich podania i jakie są ewentualne konsekwencje niepodania danych;
+    <span class="next-level">
+    <span class="pos">e)</span>informację, czy podanie danych osobowych jest wymogiem ustawowym lub umownym lub warunkiem zawarcia umowy oraz czy osoba, której dane dotyczą, jest zobowiązana do ich podania i jakie są ewentualne konsekwencje niepodania danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>informacje o zautomatyzowanym podejmowaniu decyzji, w tym o profilowaniu, o którym mowa w <u>art. 22 ust. 1 i 4</u>, oraz – przynajmniej w tych przypadkach – istotne informacje o zasadach ich podejmowania, a także o znaczeniu i przewidywanych konsekwencjach takiego przetwarzania dla osoby, której dane dotyczą.
+    <span class="next-level">
+    <span class="pos">f)</span>informacje o zautomatyzowanym podejmowaniu decyzji, w tym o profilowaniu, o którym mowa w <u>art. 22 ust. 1 i 4</u>, oraz – przynajmniej w tych przypadkach – istotne informacje o zasadach ich podejmowania, a także o znaczeniu i przewidywanych konsekwencjach takiego przetwarzania dla osoby, której dane dotyczą.
     </span>
     </p>
     <p>3. Jeżeli administrator planuje dalej przetwarzać dane osobowe w celu innym niż cel, w którym dane osobowe zostały zebrane, przed takim dalszym przetwarzaniem informuje on osobę, której dane dotyczą, o tym innym celu oraz udziela jej wszelkich innych stosownych informacji, o których mowa w ust. 2.</p>
     <p>4. Ust. 1, 2 i 3 nie mają zastosowania, gdy – i w zakresie, w jakim – osoba, której dane dotyczą, dysponuje już tymi informacjami.</p>
     <?php break; case 14: ?>
     <p>1. Jeżeli danych osobowych nie pozyskano od osoby, której dane dotyczą, administrator podaje osobie, której dane dotyczą, następujące informacje:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>swoją tożsamość i dane kontaktowe oraz, gdy ma to zastosowanie, tożsamość i dane kontaktowe swojego przedstawiciela;
+    <span class="next-level">
+    <span class="pos">a)</span>swoją tożsamość i dane kontaktowe oraz, gdy ma to zastosowanie, tożsamość i dane kontaktowe swojego przedstawiciela;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>gdy ma to zastosowanie – dane kontaktowe inspektora ochrony danych;
+    <span class="next-level">
+    <span class="pos">b)</span>gdy ma to zastosowanie – dane kontaktowe inspektora ochrony danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>cele przetwarzania, do których mają posłużyć dane osobowe, oraz podstawę prawną przetwarzania;
+    <span class="next-level">
+    <span class="pos">c)</span>cele przetwarzania, do których mają posłużyć dane osobowe, oraz podstawę prawną przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>kategorie odnośnych danych osobowych;
+    <span class="next-level">
+    <span class="pos">d)</span>kategorie odnośnych danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>informacje o odbiorcach danych osobowych lub o kategoriach odbiorców, jeżeli istnieją;
+    <span class="next-level">
+    <span class="pos">e)</span>informacje o odbiorcach danych osobowych lub o kategoriach odbiorców, jeżeli istnieją;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>gdy ma to zastosowanie – informacje o zamiarze przekazania danych osobowych odbiorcy w państwie trzecim lub organizacji międzynarodowej oraz o stwierdzeniu lub braku stwierdzenia przez Komisję odpowiedniego stopnia ochrony lub w przypadku przekazania, o którym mowa w <u>art. 46</u>, <u>art. 47</u> lub <u>art. 49 ust. 1 akapit drugi</u>, wzmiankę o odpowiednich lub właściwych zabezpieczeniach oraz o możliwościach uzyskania kopii danych lub o miejscu udostępnienia danych.
+    <span class="next-level">
+    <span class="pos">f)</span>gdy ma to zastosowanie – informacje o zamiarze przekazania danych osobowych odbiorcy w państwie trzecim lub organizacji międzynarodowej oraz o stwierdzeniu lub braku stwierdzenia przez Komisję odpowiedniego stopnia ochrony lub w przypadku przekazania, o którym mowa w <u>art. 46</u>, <u>art. 47</u> lub <u>art. 49 ust. 1 akapit drugi</u>, wzmiankę o odpowiednich lub właściwych zabezpieczeniach oraz o możliwościach uzyskania kopii danych lub o miejscu udostępnienia danych.
     </span>
     </p>
     <p>2. Poza informacjami, o których mowa w ust. 1, administrator podaje osobie, której dane dotyczą, następujące informacje niezbędne do zapewnienia rzetelności i przejrzystości przetwarzania wobec osoby, której dane dotyczą:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>okres, przez który dane osobowe będą przechowywane, a gdy nie jest to możliwe, kryteria ustalania tego okresu;
+    <span class="next-level">
+    <span class="pos">a)</span>okres, przez który dane osobowe będą przechowywane, a gdy nie jest to możliwe, kryteria ustalania tego okresu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>jeżeli przetwarzanie odbywa się na podstawie <u>art. 6 ust. 1 lit. f)</u> – prawnie uzasadnione interesy realizowane przez administratora lub przez stronę trzecią;
+    <span class="next-level">
+    <span class="pos">b)</span>jeżeli przetwarzanie odbywa się na podstawie <u>art. 6 ust. 1 lit. f)</u> – prawnie uzasadnione interesy realizowane przez administratora lub przez stronę trzecią;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>informacje o prawie do żądania od administratora dostępu do danych osobowych dotyczących osoby, której dane dotyczą, ich sprostowania, usunięcia lub ograniczenia przetwarzania oraz o prawie do wniesienia sprzeciwu wobec przetwarzania, a także o prawie do przenoszenia danych;
+    <span class="next-level">
+    <span class="pos">c)</span>informacje o prawie do żądania od administratora dostępu do danych osobowych dotyczących osoby, której dane dotyczą, ich sprostowania, usunięcia lub ograniczenia przetwarzania oraz o prawie do wniesienia sprzeciwu wobec przetwarzania, a także o prawie do przenoszenia danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>jeżeli przetwarzanie odbywa się na podstawie <u>art. 6 ust. 1 lit. a)</u> lub <u>art. 9 ust. 2 lit. a)</u> – informacje o prawie do cofnięcia zgody w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej cofnięciem;
+    <span class="next-level">
+    <span class="pos">d)</span>jeżeli przetwarzanie odbywa się na podstawie <u>art. 6 ust. 1 lit. a)</u> lub <u>art. 9 ust. 2 lit. a)</u> – informacje o prawie do cofnięcia zgody w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej cofnięciem;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>informacje o prawie wniesienia skargi do organu nadzorczego;
+    <span class="next-level">
+    <span class="pos">e)</span>informacje o prawie wniesienia skargi do organu nadzorczego;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>źródło pochodzenia danych osobowych, a gdy ma to zastosowanie – czy pochodzą one ze źródeł publicznie dostępnych;
+    <span class="next-level">
+    <span class="pos">f)</span>źródło pochodzenia danych osobowych, a gdy ma to zastosowanie – czy pochodzą one ze źródeł publicznie dostępnych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>informacje o zautomatyzowanym podejmowaniu decyzji, w tym o profilowaniu, o którym mowa w <u>art. 22 ust. 1 i 4</u>, oraz – przynajmniej w tych przypadkach – istotne informacje o zasadach ich podejmowania, a także o znaczeniu i przewidywanych konsekwencjach takiego przetwarzania dla osoby, której dane dotyczą.
+    <span class="next-level">
+    <span class="pos">g)</span>informacje o zautomatyzowanym podejmowaniu decyzji, w tym o profilowaniu, o którym mowa w <u>art. 22 ust. 1 i 4</u>, oraz – przynajmniej w tych przypadkach – istotne informacje o zasadach ich podejmowania, a także o znaczeniu i przewidywanych konsekwencjach takiego przetwarzania dla osoby, której dane dotyczą.
     </span>
     </p>
     <p>3. Informacje, o których mowa w ust. 1 i 2, administrator podaje:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>w rozsądnym terminie po pozyskaniu danych osobowych – najpóźniej w ciągu miesiąca – mając na uwadze konkretne okoliczności przetwarzania danych osobowych;
+    <span class="next-level">
+    <span class="pos">a)</span>w rozsądnym terminie po pozyskaniu danych osobowych – najpóźniej w ciągu miesiąca – mając na uwadze konkretne okoliczności przetwarzania danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>jeżeli dane osobowe mają być stosowane do komunikacji z osobą, której dane dotyczą – najpóźniej przy pierwszej takiej komunikacji z osobą, której dane dotyczą; lub
+    <span class="next-level">
+    <span class="pos">b)</span>jeżeli dane osobowe mają być stosowane do komunikacji z osobą, której dane dotyczą – najpóźniej przy pierwszej takiej komunikacji z osobą, której dane dotyczą; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>jeżeli planuje się ujawnić dane osobowe innemu odbiorcy – najpóźniej przy ich pierwszym ujawnieniu.
+    <span class="next-level">
+    <span class="pos">c)</span>jeżeli planuje się ujawnić dane osobowe innemu odbiorcy – najpóźniej przy ich pierwszym ujawnieniu.
     </span>
     </p>
     <p>4. Jeżeli administrator planuje dalej przetwarzać dane osobowe w celu innym niż cel, w którym te dane zostały pozyskane, przed takim dalszym przetwarzaniem informuje on osobę, której dane dotyczą, o tym innym celu oraz udziela jej wszelkich innych stosownych informacji, o których mowa w ust. 2.</p>
     <p>5. Ust. 1– 4 nie mają zastosowania, gdy – i w zakresie, w jakim:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>osoba, której dane dotyczą, dysponuje już tymi informacjami;
+    <span class="next-level">
+    <span class="pos">a)</span>osoba, której dane dotyczą, dysponuje już tymi informacjami;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>udzielenie takich informacji okazuje się niemożliwe lub wymagałoby niewspółmiernie dużego wysiłku; w szczególności w przypadku przetwarzania do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych, z zastrzeżeniem warunków i zabezpieczeń, o których mowa w <u>art. 89 ust. 1</u>, lub o ile obowiązek, o którym mowa w ust. 1 niniejszego artykułu, może uniemożliwić lub poważnie utrudnić realizację celów takiego przetwarzania. W takich przypadkach administrator podejmuje odpowiednie środki, by chronić prawa i wolności oraz prawnie uzasadnione interesy osoby, której dane dotyczą, w tym udostępnia informacje publicznie;
+    <span class="next-level">
+    <span class="pos">b)</span>udzielenie takich informacji okazuje się niemożliwe lub wymagałoby niewspółmiernie dużego wysiłku; w szczególności w przypadku przetwarzania do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych, z zastrzeżeniem warunków i zabezpieczeń, o których mowa w <u>art. 89 ust. 1</u>, lub o ile obowiązek, o którym mowa w ust. 1 niniejszego artykułu, może uniemożliwić lub poważnie utrudnić realizację celów takiego przetwarzania. W takich przypadkach administrator podejmuje odpowiednie środki, by chronić prawa i wolności oraz prawnie uzasadnione interesy osoby, której dane dotyczą, w tym udostępnia informacje publicznie;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>pozyskiwanie lub ujawnianie jest wyraźnie uregulowane prawem Unii lub prawem państwa członkowskiego, któremu podlega administrator, przewidującym odpowiednie środki chroniące prawnie uzasadnione interesy osoby, której dane dotyczą; lub
+    <span class="next-level">
+    <span class="pos">c)</span>pozyskiwanie lub ujawnianie jest wyraźnie uregulowane prawem Unii lub prawem państwa członkowskiego, któremu podlega administrator, przewidującym odpowiednie środki chroniące prawnie uzasadnione interesy osoby, której dane dotyczą; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>dane osobowe muszą pozostać poufne zgodnie z obowiązkiem zachowania tajemnicy zawodowej przewidzianym w prawie Unii lub w prawie państwa członkowskiego, w tym ustawowym obowiązkiem zachowania tajemnicy.
+    <span class="next-level">
+    <span class="pos">d)</span>dane osobowe muszą pozostać poufne zgodnie z obowiązkiem zachowania tajemnicy zawodowej przewidzianym w prawie Unii lub w prawie państwa członkowskiego, w tym ustawowym obowiązkiem zachowania tajemnicy.
     </span>
     <?php break; case 15: ?>
     <p>1. Osoba, której dane dotyczą, jest uprawniona do uzyskania od administratora potwierdzenia, czy przetwarzane są dane osobowe jej dotyczące, a jeżeli ma to miejsce, jest uprawniona do uzyskania dostępu do nich oraz następujących informacji:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>cele przetwarzania;
+    <span class="next-level">
+    <span class="pos">a)</span>cele przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>kategorie odnośnych danych osobowych;
+    <span class="next-level">
+    <span class="pos">b)</span>kategorie odnośnych danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>informacje o odbiorcach lub kategoriach odbiorców, którym dane osobowe zostały lub zostaną ujawnione, w szczególności o odbiorcach w państwach trzecich lub organizacjach międzynarodowych;
+    <span class="next-level">
+    <span class="pos">c)</span>informacje o odbiorcach lub kategoriach odbiorców, którym dane osobowe zostały lub zostaną ujawnione, w szczególności o odbiorcach w państwach trzecich lub organizacjach międzynarodowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>w miarę możliwości planowany okres przechowywania danych osobowych, a gdy nie jest to możliwe, kryteria ustalania tego okresu;
+    <span class="next-level">
+    <span class="pos">d)</span>w miarę możliwości planowany okres przechowywania danych osobowych, a gdy nie jest to możliwe, kryteria ustalania tego okresu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>informacje o prawie do żądania od administratora sprostowania, usunięcia lub ograniczenia przetwarzania danych osobowych dotyczącego osoby, której dane dotyczą, oraz do wniesienia sprzeciwu wobec takiego przetwarzania;
+    <span class="next-level">
+    <span class="pos">e)</span>informacje o prawie do żądania od administratora sprostowania, usunięcia lub ograniczenia przetwarzania danych osobowych dotyczącego osoby, której dane dotyczą, oraz do wniesienia sprzeciwu wobec takiego przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>informacje o prawie wniesienia skargi do organu nadzorczego;
+    <span class="next-level">
+    <span class="pos">f)</span>informacje o prawie wniesienia skargi do organu nadzorczego;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>jeżeli dane osobowe nie zostały zebrane od osoby, której dane dotyczą – wszelkie dostępne informacje o ich źródle;
+    <span class="next-level">
+    <span class="pos">g)</span>jeżeli dane osobowe nie zostały zebrane od osoby, której dane dotyczą – wszelkie dostępne informacje o ich źródle;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>informacje o zautomatyzowanym podejmowaniu decyzji, w tym o profilowaniu, o którym mowa w <u>art. 22 ust. 1 i 4</u>, oraz – przynajmniej w tych przypadkach – istotne informacje o zasadach ich podejmowania, a także o znaczeniu i przewidywanych konsekwencjach takiego przetwarzania dla osoby, której dane dotyczą.
+    <span class="next-level">
+    <span class="pos">h)</span>informacje o zautomatyzowanym podejmowaniu decyzji, w tym o profilowaniu, o którym mowa w <u>art. 22 ust. 1 i 4</u>, oraz – przynajmniej w tych przypadkach – istotne informacje o zasadach ich podejmowania, a także o znaczeniu i przewidywanych konsekwencjach takiego przetwarzania dla osoby, której dane dotyczą.
     </span>
     </p>
     <p>2. Jeżeli dane osobowe są przekazywane do państwa trzeciego lub organizacji międzynarodowej, osoba, której dane dotyczą, ma prawo zostać poinformowana o odpowiednich zabezpieczeniach, o których mowa w <u>art. 46</u>, związanych z przekazaniem.</p>
@@ -855,55 +857,55 @@ function echo_article($number) {
     <p>Osoba, której dane dotyczą, ma prawo żądania od administratora niezwłocznego sprostowania dotyczących jej danych osobowych, które są nieprawidłowe. Z uwzględnieniem celów przetwarzania, osoba, której dane dotyczą, ma prawo żądania uzupełnienia niekompletnych danych osobowych, w tym poprzez przedstawienie dodatkowego oświadczenia.</p>
     <?php break; case 17: ?>
     <p>1. Osoba, której dane dotyczą, ma prawo żądania od administratora niezwłocznego usunięcia dotyczących jej danych osobowych, a administrator ma obowiązek bez zbędnej zwłoki usunąć dane osobowe, jeżeli zachodzi jedna z następujących okoliczności:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>dane osobowe nie są już niezbędne do celów, w których zostały zebrane lub w inny sposób przetwarzane;
+    <span class="next-level">
+    <span class="pos">a)</span>dane osobowe nie są już niezbędne do celów, w których zostały zebrane lub w inny sposób przetwarzane;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>osoba, której dane dotyczą, cofnęła zgodę, na której opiera się przetwarzanie zgodnie z <u>art. 6 ust. 1 lit. a)</u> lub <u>art. 9 ust. 2 lit. a)</u>, i nie ma innej podstawy prawnej przetwarzania;
+    <span class="next-level">
+    <span class="pos">b)</span>osoba, której dane dotyczą, cofnęła zgodę, na której opiera się przetwarzanie zgodnie z <u>art. 6 ust. 1 lit. a)</u> lub <u>art. 9 ust. 2 lit. a)</u>, i nie ma innej podstawy prawnej przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>osoba, której dane dotyczą, wnosi sprzeciw na mocy <u>art. 21 ust. 1</u> wobec przetwarzania i nie występują nadrzędne prawnie uzasadnione podstawy przetwarzania lub osoba, której dane dotyczą, wnosi sprzeciw na mocy <u>art. 21 ust. 2</u> wobec przetwarzania;
+    <span class="next-level">
+    <span class="pos">c)</span>osoba, której dane dotyczą, wnosi sprzeciw na mocy <u>art. 21 ust. 1</u> wobec przetwarzania i nie występują nadrzędne prawnie uzasadnione podstawy przetwarzania lub osoba, której dane dotyczą, wnosi sprzeciw na mocy <u>art. 21 ust. 2</u> wobec przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>dane osobowe były przetwarzane niezgodnie z prawem;
+    <span class="next-level">
+    <span class="pos">d)</span>dane osobowe były przetwarzane niezgodnie z prawem;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>dane osobowe muszą zostać usunięte w celu wywiązania się z obowiązku prawnego przewidzianego w prawie Unii lub prawie państwa członkowskiego, któremu podlega administrator;
+    <span class="next-level">
+    <span class="pos">e)</span>dane osobowe muszą zostać usunięte w celu wywiązania się z obowiązku prawnego przewidzianego w prawie Unii lub prawie państwa członkowskiego, któremu podlega administrator;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>dane osobowe zostały zebrane w związku z oferowaniem usług społeczeństwa informacyjnego, o których mowa w <u>art. 8 ust. 1</u>.
+    <span class="next-level">
+    <span class="pos">f)</span>dane osobowe zostały zebrane w związku z oferowaniem usług społeczeństwa informacyjnego, o których mowa w <u>art. 8 ust. 1</u>.
     </span>
     </p>
     <p>2. Jeżeli administrator upublicznił dane osobowe, a na mocy ust. 1 ma obowiązek usunąć te dane osobowe, to – biorąc pod uwagę dostępną technologię i koszt realizacji – podejmuje rozsądne działania, w tym środki techniczne, by poinformować administratorów przetwarzających te dane osobowe, że osoba, której dane dotyczą, żąda, by administratorzy ci usunęli wszelkie łącza do tych danych, kopie tych danych osobowych lub ich replikacje.</p>
     <p>3. Ust. 1 i 2 nie mają zastosowania, w zakresie w jakim przetwarzanie jest niezbędne:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>do korzystania z prawa do wolności wypowiedzi i informacji;
+    <span class="next-level">
+    <span class="pos">a)</span>do korzystania z prawa do wolności wypowiedzi i informacji;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>do wywiązania się z prawnego obowiązku wymagającego przetwarzania na mocy prawa Unii lub prawa państwa członkowskiego, któremu podlega administrator, lub do wykonania zadania realizowanego w interesie publicznym lub w ramach sprawowania władzy publicznej powierzonej administratorowi;
+    <span class="next-level">
+    <span class="pos">b)</span>do wywiązania się z prawnego obowiązku wymagającego przetwarzania na mocy prawa Unii lub prawa państwa członkowskiego, któremu podlega administrator, lub do wykonania zadania realizowanego w interesie publicznym lub w ramach sprawowania władzy publicznej powierzonej administratorowi;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>z uwagi na względy interesu publicznego w dziedzinie zdrowia publicznego zgodnie z <u>art. 9 ust. 2 lit. h) oraz i)</u> i <u>art. 9 ust. 3</u>;
+    <span class="next-level">
+    <span class="pos">c)</span>z uwagi na względy interesu publicznego w dziedzinie zdrowia publicznego zgodnie z <u>art. 9 ust. 2 lit. h) oraz i)</u> i <u>art. 9 ust. 3</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych zgodnie z <u>art. 89 ust. 1</u>, o ile prawdopodobne jest, że prawo, o którym mowa w ust. 1, uniemożliwi lub poważnie utrudni realizację celów takiego przetwarzania; lub
+    <span class="next-level">
+    <span class="pos">d)</span>do celów archiwalnych w interesie publicznym, do celów badań naukowych lub historycznych lub do celów statystycznych zgodnie z <u>art. 89 ust. 1</u>, o ile prawdopodobne jest, że prawo, o którym mowa w ust. 1, uniemożliwi lub poważnie utrudni realizację celów takiego przetwarzania; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>do ustalenia, dochodzenia lub obrony roszczeń.
+    <span class="next-level">
+    <span class="pos">e)</span>do ustalenia, dochodzenia lub obrony roszczeń.
     </span>
     <?php break; case 18: ?>
     <p>1. Osoba, której dane dotyczą, ma prawo żądania od administratora ograniczenia przetwarzania w następujących przypadkach:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>osoba, której dane dotyczą, kwestionuje prawidłowość danych osobowych – na okres pozwalający administratorowi sprawdzić prawidłowość tych danych;
+    <span class="next-level">
+    <span class="pos">a)</span>osoba, której dane dotyczą, kwestionuje prawidłowość danych osobowych – na okres pozwalający administratorowi sprawdzić prawidłowość tych danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>przetwarzanie jest niezgodne z prawem, a osoba, której dane dotyczą, sprzeciwia się usunięciu danych osobowych, żądając w zamian ograniczenia ich wykorzystywania;
+    <span class="next-level">
+    <span class="pos">b)</span>przetwarzanie jest niezgodne z prawem, a osoba, której dane dotyczą, sprzeciwia się usunięciu danych osobowych, żądając w zamian ograniczenia ich wykorzystywania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>administrator nie potrzebuje już danych osobowych do celów przetwarzania, ale są one potrzebne osobie, której dane dotyczą, do ustalenia, dochodzenia lub obrony roszczeń;
+    <span class="next-level">
+    <span class="pos">c)</span>administrator nie potrzebuje już danych osobowych do celów przetwarzania, ale są one potrzebne osobie, której dane dotyczą, do ustalenia, dochodzenia lub obrony roszczeń;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>osoba, której dane dotyczą, wniosła sprzeciw na mocy <u>art. 21 ust. 1</u> wobec przetwarzania – do czasu stwierdzenia, czy prawnie uzasadnione podstawy po stronie administratora są nadrzędne wobec podstaw sprzeciwu osoby, której dane dotyczą.
+    <span class="next-level">
+    <span class="pos">d)</span>osoba, której dane dotyczą, wniosła sprzeciw na mocy <u>art. 21 ust. 1</u> wobec przetwarzania – do czasu stwierdzenia, czy prawnie uzasadnione podstawy po stronie administratora są nadrzędne wobec podstaw sprzeciwu osoby, której dane dotyczą.
     </span>
     </p>
     <p>2. Jeżeli na mocy ust. 1 przetwarzanie zostało ograniczone, takie dane osobowe można przetwarzać, z wyjątkiem przechowywania, wyłącznie za zgodą osoby, której dane dotyczą, lub w celu ustalenia, dochodzenia lub obrony roszczeń, lub w celu ochrony praw innej osoby fizycznej lub prawnej, lub z uwagi na ważne względy interesu publicznego Unii lub państwa członkowskiego.</p>
@@ -912,11 +914,11 @@ function echo_article($number) {
     <p>Administrator informuje o sprostowaniu lub usunięciu danych osobowych lub ograniczeniu przetwarzania, których dokonał zgodnie z <u>art. 16</u>, <u>art. 17 ust. 1</u> i <u>art. 18</u>, każdego odbiorcę, któremu ujawniono dane osobowe, chyba że okaże się to niemożliwe lub będzie wymagać niewspółmiernie dużego wysiłku. Administrator informuje osobę, której dane dotyczą, o tych odbiorcach, jeżeli osoba, której dane dotyczą, tego zażąda.</p>
     <?php break; case 20: ?>
     <p>1. Osoba, której dane dotyczą, ma prawo otrzymać w ustrukturyzowanym, powszechnie używanym formacie nadającym się do odczytu maszynowego dane osobowe jej dotyczące, które dostarczyła administratorowi, oraz ma prawo przesłać te dane osobowe innemu administratorowi bez przeszkód ze strony administratora, któremu dostarczono te dane osobowe, jeżeli:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>przetwarzanie odbywa się na podstawie zgody w myśl <u>art. 6 ust. 1 lit. a)</u> lub <u>art. 9 ust. 2 lit. a)</u> lub na podstawie umowy w myśl <u>art. 6 ust. 1 lit. b)</u>; oraz
+    <span class="next-level">
+    <span class="pos">a)</span>przetwarzanie odbywa się na podstawie zgody w myśl <u>art. 6 ust. 1 lit. a)</u> lub <u>art. 9 ust. 2 lit. a)</u> lub na podstawie umowy w myśl <u>art. 6 ust. 1 lit. b)</u>; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>przetwarzanie odbywa się w sposób zautomatyzowany.
+    <span class="next-level">
+    <span class="pos">b)</span>przetwarzanie odbywa się w sposób zautomatyzowany.
     </span>
     </p>
     <p>2. Wykonując prawo do przenoszenia danych na mocy ust. 1, osoba, której dane dotyczą, ma prawo żądania, by dane osobowe zostały przesłane przez administratora bezpośrednio innemu administratorowi, o ile jest to technicznie możliwe.</p>
@@ -932,75 +934,75 @@ function echo_article($number) {
     <?php break; case 22: ?>
     <p>1. Osoba, której dane dotyczą, ma prawo do tego, by nie podlegać decyzji, która opiera się wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, i wywołuje wobec tej osoby skutki prawne lub w podobny sposób istotnie na nią wpływa.</p>
     <p>2. Ust. 1 nie ma zastosowania, jeżeli ta decyzja:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>jest niezbędna do zawarcia lub wykonania umowy między osobą, której dane dotyczą, a administratorem;
+    <span class="next-level">
+    <span class="pos">a)</span>jest niezbędna do zawarcia lub wykonania umowy między osobą, której dane dotyczą, a administratorem;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>jest dozwolona prawem Unii lub prawem państwa członkowskiego, któremu podlega administrator i które przewiduje właściwe środki ochrony praw, wolności i prawnie uzasadnionych interesów osoby, której dane dotyczą; lub
+    <span class="next-level">
+    <span class="pos">b)</span>jest dozwolona prawem Unii lub prawem państwa członkowskiego, któremu podlega administrator i które przewiduje właściwe środki ochrony praw, wolności i prawnie uzasadnionych interesów osoby, której dane dotyczą; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>opiera się na wyraźnej zgodzie osoby, której dane dotyczą.
+    <span class="next-level">
+    <span class="pos">c)</span>opiera się na wyraźnej zgodzie osoby, której dane dotyczą.
     </span>
     </p>
     <p>3. W przypadkach, o których mowa w ust. 2 lit. a) i c), administrator wdraża właściwe środki ochrony praw, wolności i prawnie uzasadnionych interesów osoby, której dane dotyczą, a co najmniej prawa do uzyskania interwencji ludzkiej ze strony administratora, do wyrażenia własnego stanowiska i do zakwestionowania tej decyzji.</p>
     <p>4. Decyzje, o których mowa w ust. 2, nie mogą opierać się na szczególnych kategoriach danych osobowych, o których mowa w <u>art. 9 ust. 1</u>, chyba że zastosowanie ma <u>art. 9 ust. 2 lit. a) lub g)</u> i istnieją właściwe środki ochrony praw, wolności i prawnie uzasadnionych interesów osoby, której dane dotyczą.</p>
     <?php break; case 23: ?>
     <p>1. Prawo Unii lub prawo państwa członkowskiego, któremu podlegają administrator danych lub podmiot przetwarzający, może aktem prawnym ograniczyć zakres obowiązków i praw przewidzianych w <u>art. 12–22</u> i w <u>art. 34</u>, a także w <u>art. 5</u> – o ile jego przepisy odpowiadają prawom i obowiązkom przewidzianym w <u>art. 12–22</u> – jeżeli ograniczenie takie nie narusza istoty podstawowych praw i wolności oraz jest w demokratycznym społeczeństwie środkiem niezbędnym i proporcjonalnym, służącym:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>bezpieczeństwu narodowemu;
+    <span class="next-level">
+    <span class="pos">a)</span>bezpieczeństwu narodowemu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>obronie;
+    <span class="next-level">
+    <span class="pos">b)</span>obronie;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>bezpieczeństwu publicznemu;
+    <span class="next-level">
+    <span class="pos">c)</span>bezpieczeństwu publicznemu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>zapobieganiu przestępczości, prowadzeniu postępowań przygotowawczych, wykrywaniu lub ściganiu czynów zabronionych lub wykonywaniu kar, w tym ochronie przed zagrożeniami dla bezpieczeństwa publicznego i zapobieganiu takim zagrożeniom;
+    <span class="next-level">
+    <span class="pos">d)</span>zapobieganiu przestępczości, prowadzeniu postępowań przygotowawczych, wykrywaniu lub ściganiu czynów zabronionych lub wykonywaniu kar, w tym ochronie przed zagrożeniami dla bezpieczeństwa publicznego i zapobieganiu takim zagrożeniom;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>innym ważnym celom leżącym w ogólnym interesie publicznym Unii lub państwa członkowskiego, w szczególności ważnemu interesowi gospodarczemu lub finansowemu Unii lub państwa członkowskiego, w tym kwestiom pieniężnym, budżetowym i podatkowym, zdrowiu publicznemu i zabezpieczeniu społecznemu;
+    <span class="next-level">
+    <span class="pos">e)</span>innym ważnym celom leżącym w ogólnym interesie publicznym Unii lub państwa członkowskiego, w szczególności ważnemu interesowi gospodarczemu lub finansowemu Unii lub państwa członkowskiego, w tym kwestiom pieniężnym, budżetowym i podatkowym, zdrowiu publicznemu i zabezpieczeniu społecznemu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>ochronie niezależności sądów i postępowania sądowego;
+    <span class="next-level">
+    <span class="pos">f)</span>ochronie niezależności sądów i postępowania sądowego;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>zapobieganiu naruszeniom zasad etyki w zawodach regulowanych, prowadzeniu postępowań w takich sprawach, ich wykrywaniu oraz ściganiu;
+    <span class="next-level">
+    <span class="pos">g)</span>zapobieganiu naruszeniom zasad etyki w zawodach regulowanych, prowadzeniu postępowań w takich sprawach, ich wykrywaniu oraz ściganiu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>funkcjom kontrolnym, inspekcyjnym lub regulacyjnym związanym, nawet sporadycznie, ze sprawowaniem władzy publicznej w przypadkach, o których mowa w lit. a) – e) oraz g);
+    <span class="next-level">
+    <span class="pos">h)</span>funkcjom kontrolnym, inspekcyjnym lub regulacyjnym związanym, nawet sporadycznie, ze sprawowaniem władzy publicznej w przypadkach, o których mowa w lit. a) – e) oraz g);
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>ochronie osoby, której dane dotyczą, lub praw i wolności innych osób;
+    <span class="next-level">
+    <span class="pos">i)</span>ochronie osoby, której dane dotyczą, lub praw i wolności innych osób;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>egzekucji roszczeń cywilnoprawnych.
+    <span class="next-level">
+    <span class="pos">j)</span>egzekucji roszczeń cywilnoprawnych.
     </span>
     </p>
     <p>2. W szczególności akt prawny, o którym mowa w ust. 1, musi zawierać szczegółowe przepisy przynajmniej – w stosownym przypadku – o:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>celach przetwarzania lub kategorii przetwarzania;
+    <span class="next-level">
+    <span class="pos">a)</span>celach przetwarzania lub kategorii przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>kategoriach danych osobowych;
+    <span class="next-level">
+    <span class="pos">b)</span>kategoriach danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>zakresie wprowadzonych ograniczeń;
+    <span class="next-level">
+    <span class="pos">c)</span>zakresie wprowadzonych ograniczeń;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>zabezpieczeniach zapobiegających nadużyciom lub niezgodnemu z prawem dostępowi lub przekazywaniu;
+    <span class="next-level">
+    <span class="pos">d)</span>zabezpieczeniach zapobiegających nadużyciom lub niezgodnemu z prawem dostępowi lub przekazywaniu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>określeniu administratora lub kategorii administratorów;
+    <span class="next-level">
+    <span class="pos">e)</span>określeniu administratora lub kategorii administratorów;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>okresach przechowywania oraz mających zastosowanie zabezpieczeniach z uwzględnieniem charakteru, zakresu i celów przetwarzania lub kategorii przetwarzania;
+    <span class="next-level">
+    <span class="pos">f)</span>okresach przechowywania oraz mających zastosowanie zabezpieczeniach z uwzględnieniem charakteru, zakresu i celów przetwarzania lub kategorii przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>ryzyka naruszenia praw lub wolności osoby, której dane dotyczą; oraz
+    <span class="next-level">
+    <span class="pos">g)</span>ryzyka naruszenia praw lub wolności osoby, której dane dotyczą; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>prawie osób, której dane dotyczą, do uzyskania informacji o ograniczeniach, o ile nie narusza to celu ograniczenia.
+    <span class="next-level">
+    <span class="pos">h)</span>prawie osób, której dane dotyczą, do uzyskania informacji o ograniczeniach, o ile nie narusza to celu ograniczenia.
     </span>
     <?php break; case 24: ?>
     <p>1. Uwzględniając charakter, zakres, kontekst i cele przetwarzania oraz ryzyko naruszenia praw lub wolności osób fizycznych o różnym prawdopodobieństwie i wadze zagrożenia, administrator wdraża odpowiednie środki techniczne i organizacyjne, aby przetwarzanie odbywało się zgodnie z niniejszym rozporządzeniem i aby móc to wykazać. Środki te są w razie potrzeby poddawane przeglądom i uaktualniane.</p>
@@ -1017,11 +1019,11 @@ function echo_article($number) {
     <?php break; case 27: ?>
     <p>1. Jeżeli zastosowanie ma <u>art. 3 ust. 2</u>, administrator lub podmiot przetwarzający na piśmie wyznacza swojego przedstawiciela w Unii.</p>
     <p>2. Obowiązek ustanowiony w ust. 1 niniejszego artykułu nie ma zastosowania w przypadku:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>przetwarzania, które ma charakter sporadyczny, nie obejmuje – na dużą skalę – przetwarzania szczególnych kategorii danych osobowych, o których mowa w <u>art. 9 ust. 1</u>, ani przetwarzania danych osobowych dotyczących wyroków skazujących i naruszeń prawa, o czym mowa w <u>art. 10</u>, i jest mało prawdopodobne, by ze względu na swój charakter, kontekst, zakres i cele powodowało ryzyko naruszenia praw lub wolności osób fizycznych; lub
+    <span class="next-level">
+    <span class="pos">a)</span>przetwarzania, które ma charakter sporadyczny, nie obejmuje – na dużą skalę – przetwarzania szczególnych kategorii danych osobowych, o których mowa w <u>art. 9 ust. 1</u>, ani przetwarzania danych osobowych dotyczących wyroków skazujących i naruszeń prawa, o czym mowa w <u>art. 10</u>, i jest mało prawdopodobne, by ze względu na swój charakter, kontekst, zakres i cele powodowało ryzyko naruszenia praw lub wolności osób fizycznych; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>organu lub podmiotu publicznego.
+    <span class="next-level">
+    <span class="pos">b)</span>organu lub podmiotu publicznego.
     </span>
     </p>
     <p>3. Przedstawiciel musi mieć siedzibę w państwie członkowskim, w którym przebywają osoby, których dane dotyczą, których dane osobowe są przetwarzane w związku z oferowaniem im towarów lub usług lub których zachowanie jest monitorowane.</p>
@@ -1031,29 +1033,29 @@ function echo_article($number) {
     <p>1. Jeżeli przetwarzanie ma być dokonywane w imieniu administratora, korzysta on wyłącznie z usług takich podmiotów przetwarzających, które zapewniają wystarczające gwarancje wdrożenia odpowiednich środków technicznych i organizacyjnych, by przetwarzanie spełniało wymogi niniejszego rozporządzenia i chroniło prawa osób, których dane dotyczą.</p>
     <p>2. Podmiot przetwarzający nie korzysta z usług innego podmiotu przetwarzającego bez uprzedniej szczegółowej lub ogólnej pisemnej zgody administratora. W przypadku ogólnej pisemnej zgody podmiot przetwarzający informuje administratora o wszelkich zamierzonych zmianach dotyczących dodania lub zastąpienia innych podmiotów przetwarzających, dając tym samym administratorowi możliwość wyrażenia sprzeciwu wobec takich zmian.</p>
     <p>3. Przetwarzanie przez podmiot przetwarzający odbywa się na podstawie umowy lub innego instrumentu prawnego, które podlegają prawu Unii lub prawu państwa członkowskiego i wiążą podmiot przetwarzający i administratora, określają przedmiot i czas trwania przetwarzania, charakter i cel przetwarzania, rodzaj danych osobowych oraz kategorie osób, których dane dotyczą, obowiązki i prawa administratora. Ta umowa lub inny instrument prawny stanowią w szczególności, że podmiot przetwarzający:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>przetwarza dane osobowe wyłącznie na udokumentowane polecenie administratora – co dotyczy też przekazywania danych osobowych do państwa trzeciego lub organizacji międzynarodowej – chyba że obowiązek taki nakłada na niego prawo Unii lub prawo państwa członkowskiego, któremu podlega podmiot przetwarzający; w takim przypadku przed rozpoczęciem przetwarzania podmiot przetwarzający informuje administratora o tym obowiązku prawnym, o ile prawo to nie zabrania udzielania takiej informacji z uwagi na ważny interes publiczny;
+    <span class="next-level">
+    <span class="pos">a)</span>przetwarza dane osobowe wyłącznie na udokumentowane polecenie administratora – co dotyczy też przekazywania danych osobowych do państwa trzeciego lub organizacji międzynarodowej – chyba że obowiązek taki nakłada na niego prawo Unii lub prawo państwa członkowskiego, któremu podlega podmiot przetwarzający; w takim przypadku przed rozpoczęciem przetwarzania podmiot przetwarzający informuje administratora o tym obowiązku prawnym, o ile prawo to nie zabrania udzielania takiej informacji z uwagi na ważny interes publiczny;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>zapewnia, by osoby upoważnione do przetwarzania danych osobowych zobowiązały się do zachowania tajemnicy lub by podlegały odpowiedniemu ustawowemu obowiązkowi zachowania tajemnicy;
+    <span class="next-level">
+    <span class="pos">b)</span>zapewnia, by osoby upoważnione do przetwarzania danych osobowych zobowiązały się do zachowania tajemnicy lub by podlegały odpowiedniemu ustawowemu obowiązkowi zachowania tajemnicy;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>podejmuje wszelkie środki wymagane na mocy <u>art. 32</u>;
+    <span class="next-level">
+    <span class="pos">c)</span>podejmuje wszelkie środki wymagane na mocy <u>art. 32</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>przestrzega warunków korzystania z usług innego podmiotu przetwarzającego, o których mowa w ust. 2 i 4;
+    <span class="next-level">
+    <span class="pos">d)</span>przestrzega warunków korzystania z usług innego podmiotu przetwarzającego, o których mowa w ust. 2 i 4;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>biorąc pod uwagę charakter przetwarzania, w miarę możliwości pomaga administratorowi poprzez odpowiednie środki techniczne i organizacyjne wywiązać się z obowiązku odpowiadania na żądania osoby, której dane dotyczą, w zakresie wykonywania jej praw określonych w rozdziale III;
+    <span class="next-level">
+    <span class="pos">e)</span>biorąc pod uwagę charakter przetwarzania, w miarę możliwości pomaga administratorowi poprzez odpowiednie środki techniczne i organizacyjne wywiązać się z obowiązku odpowiadania na żądania osoby, której dane dotyczą, w zakresie wykonywania jej praw określonych w rozdziale III;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>uwzględniając charakter przetwarzania oraz dostępne mu informacje, pomaga administratorowi wywiązać się z obowiązków określonych w <u>art. 32–36</u>;
+    <span class="next-level">
+    <span class="pos">f)</span>uwzględniając charakter przetwarzania oraz dostępne mu informacje, pomaga administratorowi wywiązać się z obowiązków określonych w <u>art. 32–36</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>po zakończeniu świadczenia usług związanych z przetwarzaniem zależnie od decyzji administratora usuwa lub zwraca mu wszelkie dane osobowe oraz usuwa wszelkie ich istniejące kopie, chyba że prawo Unii lub prawo państwa członkowskiego nakazują przechowywanie danych osobowych;
+    <span class="next-level">
+    <span class="pos">g)</span>po zakończeniu świadczenia usług związanych z przetwarzaniem zależnie od decyzji administratora usuwa lub zwraca mu wszelkie dane osobowe oraz usuwa wszelkie ich istniejące kopie, chyba że prawo Unii lub prawo państwa członkowskiego nakazują przechowywanie danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>udostępnia administratorowi wszelkie informacje niezbędne do wykazania spełnienia obowiązków określonych w niniejszym artykule oraz umożliwia administratorowi lub audytorowi upoważnionemu przez administratora przeprowadzanie audytów, w tym inspekcji, i przyczynia się do nich.
+    <span class="next-level">
+    <span class="pos">h)</span>udostępnia administratorowi wszelkie informacje niezbędne do wykazania spełnienia obowiązków określonych w niniejszym artykule oraz umożliwia administratorowi lub audytorowi upoważnionemu przez administratora przeprowadzanie audytów, w tym inspekcji, i przyczynia się do nich.
     </span>
     </p>
     <p>W związku z obowiązkiem określonym w akapicie pierwszym lit. h) podmiot przetwarzający niezwłocznie informuje administratora, jeżeli jego zdaniem wydane mu polecenie stanowi naruszenie niniejszego rozporządzenia lub innych przepisów Unii lub państwa członkowskiego o ochronie danych.</p>
@@ -1068,40 +1070,40 @@ function echo_article($number) {
     <p>Podmiot przetwarzający oraz każda osoba działająca z upoważnienia administratora lub podmiotu przetwarzającego i mająca dostęp do danych osobowych przetwarzają je wyłącznie na polecenie administratora, chyba że wymaga tego prawo Unii lub prawo państwa członkowskiego.</p>
     <?php break; case 30: ?>
     <p>1. Każdy administrator oraz – gdy ma to zastosowanie – przedstawiciel administratora prowadzą rejestr czynności przetwarzania danych osobowych, za które odpowiadają. W rejestrze tym zamieszcza się wszystkie następujące informacje:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>imię i nazwisko lub nazwę oraz dane kontaktowe administratora oraz wszelkich współadministratorów, a także gdy ma to zastosowanie – przedstawiciela administratora oraz inspektora ochrony danych;
+    <span class="next-level">
+    <span class="pos">a)</span>imię i nazwisko lub nazwę oraz dane kontaktowe administratora oraz wszelkich współadministratorów, a także gdy ma to zastosowanie – przedstawiciela administratora oraz inspektora ochrony danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>cele przetwarzania;
+    <span class="next-level">
+    <span class="pos">b)</span>cele przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>opis kategorii osób, których dane dotyczą, oraz kategorii danych osobowych;
+    <span class="next-level">
+    <span class="pos">c)</span>opis kategorii osób, których dane dotyczą, oraz kategorii danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>kategorie odbiorców, którym dane osobowe zostały lub zostaną ujawnione, w tym odbiorców w państwach trzecich lub w organizacjach międzynarodowych;
+    <span class="next-level">
+    <span class="pos">d)</span>kategorie odbiorców, którym dane osobowe zostały lub zostaną ujawnione, w tym odbiorców w państwach trzecich lub w organizacjach międzynarodowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>gdy ma to zastosowanie, przekazania danych osobowych do państwa trzeciego lub organizacji międzynarodowej, w tym nazwa tego państwa trzeciego lub organizacji międzynarodowej, a w przypadku przekazań, o których mowa w <u>art. 49 ust. 1 akapit drugi</u>, dokumentacja odpowiednich zabezpieczeń;
+    <span class="next-level">
+    <span class="pos">e)</span>gdy ma to zastosowanie, przekazania danych osobowych do państwa trzeciego lub organizacji międzynarodowej, w tym nazwa tego państwa trzeciego lub organizacji międzynarodowej, a w przypadku przekazań, o których mowa w <u>art. 49 ust. 1 akapit drugi</u>, dokumentacja odpowiednich zabezpieczeń;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>jeżeli jest to możliwe, planowane terminy usunięcia poszczególnych kategorii danych;
+    <span class="next-level">
+    <span class="pos">f)</span>jeżeli jest to możliwe, planowane terminy usunięcia poszczególnych kategorii danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>jeżeli jest to możliwe, ogólny opis technicznych i organizacyjnych środków bezpieczeństwa, o których mowa w <u>art. 32 ust. 1</u>.
+    <span class="next-level">
+    <span class="pos">g)</span>jeżeli jest to możliwe, ogólny opis technicznych i organizacyjnych środków bezpieczeństwa, o których mowa w <u>art. 32 ust. 1</u>.
     </span>
     </p>
     <p>2. Każdy podmiot przetwarzający oraz – gdy ma to zastosowanie – przedstawiciel podmiotu przetwarzającego prowadzą rejestr wszystkich kategorii czynności przetwarzania dokonywanych w imieniu administratora, zawierający następujące informacje:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>imię i nazwisko lub nazwa oraz dane kontaktowe podmiotu przetwarzającego lub podmiotów przetwarzających oraz każdego administratora, w imieniu którego działa podmiot przetwarzający, a gdy ma to zastosowanie – przedstawiciela administratora lub podmiotu przetwarzającego oraz inspektora ochrony danych;
+    <span class="next-level">
+    <span class="pos">a)</span>imię i nazwisko lub nazwa oraz dane kontaktowe podmiotu przetwarzającego lub podmiotów przetwarzających oraz każdego administratora, w imieniu którego działa podmiot przetwarzający, a gdy ma to zastosowanie – przedstawiciela administratora lub podmiotu przetwarzającego oraz inspektora ochrony danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>kategorie przetwarzań dokonywanych w imieniu każdego z administratorów;
+    <span class="next-level">
+    <span class="pos">b)</span>kategorie przetwarzań dokonywanych w imieniu każdego z administratorów;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>gdy ma to zastosowanie –przekazania danych osobowych do państwa trzeciego lub organizacji międzynarodowej, w tym nazwa tego państwa trzeciego lub organizacji międzynarodowej, a w przypadku przekazań, o których mowa w <u>art. 49 ust. 1 akapit drugi</u>, dokumentacja odpowiednich zabezpieczeń;
+    <span class="next-level">
+    <span class="pos">c)</span>gdy ma to zastosowanie –przekazania danych osobowych do państwa trzeciego lub organizacji międzynarodowej, w tym nazwa tego państwa trzeciego lub organizacji międzynarodowej, a w przypadku przekazań, o których mowa w <u>art. 49 ust. 1 akapit drugi</u>, dokumentacja odpowiednich zabezpieczeń;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>jeżeli jest to możliwe, ogólny opis technicznych i organizacyjnych środków bezpieczeństwa, o których mowa w <u>art. 32 ust. 1</u>.
+    <span class="next-level">
+    <span class="pos">d)</span>jeżeli jest to możliwe, ogólny opis technicznych i organizacyjnych środków bezpieczeństwa, o których mowa w <u>art. 32 ust. 1</u>.
     </span>
     </p>
     <p>3. Rejestry, o których mowa w ust. 1 i 2, mają formę pisemną, w tym formę elektroniczną.</p>
@@ -1111,17 +1113,17 @@ function echo_article($number) {
     <p>Administrator i podmiot przetwarzający oraz – gdy ma to zastosowanie – ich przedstawiciele na żądanie współpracują z organem nadzorczym w ramach wykonywania przez niego swoich zadań.</p>
     <?php break; case 32: ?>
     <p>1. Uwzględniając stan wiedzy technicznej, koszt wdrażania oraz charakter, zakres, kontekst i cele przetwarzania oraz ryzyko naruszenia praw lub wolności osób fizycznych o różnym prawdopodobieństwie wystąpienia i wadze zagrożenia, administrator i podmiot przetwarzający wdrażają odpowiednie środki techniczne i organizacyjne, aby zapewnić stopień bezpieczeństwa odpowiadający temu ryzyku, w tym między innymi w stosownym przypadku:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>pseudonimizację i szyfrowanie danych osobowych;
+    <span class="next-level">
+    <span class="pos">a)</span>pseudonimizację i szyfrowanie danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>zdolność do ciągłego zapewnienia poufności, integralności, dostępności i odporności systemów i usług przetwarzania;
+    <span class="next-level">
+    <span class="pos">b)</span>zdolność do ciągłego zapewnienia poufności, integralności, dostępności i odporności systemów i usług przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>zdolność do szybkiego przywrócenia dostępności danych osobowych i dostępu do nich w razie incydentu fizycznego lub technicznego;
+    <span class="next-level">
+    <span class="pos">c)</span>zdolność do szybkiego przywrócenia dostępności danych osobowych i dostępu do nich w razie incydentu fizycznego lub technicznego;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>regularne testowanie, mierzenie i ocenianie skuteczności środków technicznych i organizacyjnych mających zapewnić bezpieczeństwo przetwarzania.
+    <span class="next-level">
+    <span class="pos">d)</span>regularne testowanie, mierzenie i ocenianie skuteczności środków technicznych i organizacyjnych mających zapewnić bezpieczeństwo przetwarzania.
     </span>
     </p>
     <p>2. Oceniając, czy stopień bezpieczeństwa jest odpowiedni, uwzględnia się w szczególności ryzyko wiążące się z przetwarzaniem, w szczególności wynikające z przypadkowego lub niezgodnego z prawem zniszczenia, utraty, modyfikacji, nieuprawnionego ujawnienia lub nieuprawnionego dostępu do danych osobowych przesyłanych, przechowywanych lub w inny sposób przetwarzanych.</p>
@@ -1131,17 +1133,17 @@ function echo_article($number) {
     <p>1. W przypadku naruszenia ochrony danych osobowych, administrator bez zbędnej zwłoki – w miarę możliwości, nie później niż w terminie 72 godzin po stwierdzeniu naruszenia – zgłasza je organowi nadzorczemu właściwemu zgodnie z <u>art. 55</u>, chyba że jest mało prawdopodobne, by naruszenie to skutkowało ryzykiem naruszenia praw lub wolności osób fizycznych. Do zgłoszenia przekazanego organowi nadzorczemu po upływie 72 godzin dołącza się wyjaśnienie przyczyn opóźnienia.</p>
     <p>2. Podmiot przetwarzający po stwierdzeniu naruszenia ochrony danych osobowych bez zbędnej zwłoki zgłasza je administratorowi.</p>
     <p>3. Zgłoszenie, o którym mowa w ust. 1, musi co najmniej:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>opisywać charakter naruszenia ochrony danych osobowych, w tym w miarę możliwości wskazywać kategorie i przybliżoną liczbę osób, których dane dotyczą, oraz kategorie i przybliżoną liczbę wpisów danych osobowych, których dotyczy naruszenie;
+    <span class="next-level">
+    <span class="pos">a)</span>opisywać charakter naruszenia ochrony danych osobowych, w tym w miarę możliwości wskazywać kategorie i przybliżoną liczbę osób, których dane dotyczą, oraz kategorie i przybliżoną liczbę wpisów danych osobowych, których dotyczy naruszenie;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>zawierać imię i nazwisko oraz dane kontaktowe inspektora ochrony danych lub oznaczenie innego punktu kontaktowego, od którego można uzyskać więcej informacji;
+    <span class="next-level">
+    <span class="pos">b)</span>zawierać imię i nazwisko oraz dane kontaktowe inspektora ochrony danych lub oznaczenie innego punktu kontaktowego, od którego można uzyskać więcej informacji;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>opisywać możliwe konsekwencje naruszenia ochrony danych osobowych;
+    <span class="next-level">
+    <span class="pos">c)</span>opisywać możliwe konsekwencje naruszenia ochrony danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>opisywać środki zastosowane lub proponowane przez administratora w celu zaradzenia naruszeniu ochrony danych osobowych, w tym w stosownych przypadkach środki w celu zminimalizowania jego ewentualnych negatywnych skutków.
+    <span class="next-level">
+    <span class="pos">d)</span>opisywać środki zastosowane lub proponowane przez administratora w celu zaradzenia naruszeniu ochrony danych osobowych, w tym w stosownych przypadkach środki w celu zminimalizowania jego ewentualnych negatywnych skutków.
     </span>
     </p>
     <p>4. Jeżeli – i w zakresie, w jakim – informacji nie da się udzielić w tym samym czasie, można je udzielać sukcesywnie bez zbędnej zwłoki</p>
@@ -1150,14 +1152,14 @@ function echo_article($number) {
     <p>1. Jeżeli naruszenie ochrony danych osobowych może powodować wysokie ryzyko naruszenia praw lub wolności osób fizycznych, administrator bez zbędnej zwłoki zawiadamia osobę, której dane dotyczą, o takim naruszeniu.</p>
     <p>2. Zawiadomienie, o którym mowa w ust. 1 niniejszego artykułu, jasnym i prostym językiem opisuje charakter naruszenia ochrony danych osobowych oraz zawiera przynajmniej informacje i środki, o których mowa w <u>art. 33 ust. 3 lit. b), c) i d)</u>.</p>
     <p>3. Zawiadomienie, o którym mowa w ust. 1, nie jest wymagane, w następujących przypadkach:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>administrator wdrożył odpowiednie techniczne i organizacyjne środki ochrony i środki te zostały zastosowane do danych osobowych, których dotyczy naruszenie, w szczególności środki takie jak szyfrowanie, uniemożliwiające odczyt osobom nieuprawnionym do dostępu do tych danych osobowych;
+    <span class="next-level">
+    <span class="pos">a)</span>administrator wdrożył odpowiednie techniczne i organizacyjne środki ochrony i środki te zostały zastosowane do danych osobowych, których dotyczy naruszenie, w szczególności środki takie jak szyfrowanie, uniemożliwiające odczyt osobom nieuprawnionym do dostępu do tych danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>administrator zastosował następnie środki eliminujące prawdopodobieństwo wysokiego ryzyka naruszenia praw lub wolności osoby, której dane dotyczą, o którym mowa w ust. 1;
+    <span class="next-level">
+    <span class="pos">b)</span>administrator zastosował następnie środki eliminujące prawdopodobieństwo wysokiego ryzyka naruszenia praw lub wolności osoby, której dane dotyczą, o którym mowa w ust. 1;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>wymagałoby ono niewspółmiernie dużego wysiłku. W takim przypadku wydany zostaje publiczny komunikat lub zastosowany zostaje podobny środek, za pomocą którego osoby, których dane dotyczą, zostają poinformowane w równie skuteczny sposób.
+    <span class="next-level">
+    <span class="pos">c)</span>wymagałoby ono niewspółmiernie dużego wysiłku. W takim przypadku wydany zostaje publiczny komunikat lub zastosowany zostaje podobny środek, za pomocą którego osoby, których dane dotyczą, zostają poinformowane w równie skuteczny sposób.
     </span>
     </p>
     <p>4. Jeżeli administrator nie zawiadomił jeszcze osoby, której dane dotyczą, o naruszeniu ochrony danych osobowych, organ nadzorczy – biorąc pod uwagę prawdopodobieństwo, że to naruszenie ochrony danych osobowych spowoduje wysokie ryzyko – może od niego tego zażądać lub może stwierdzić, że spełniony został jeden z warunków, o których mowa w ust. 3.</p>
@@ -1165,31 +1167,31 @@ function echo_article($number) {
     <p>1. Jeżeli dany rodzaj przetwarzania – w szczególności z użyciem nowych technologii – ze względu na swój charakter, zakres, kontekst i cele z dużym prawdopodobieństwem może powodować wysokie ryzyko naruszenia praw lub wolności osób fizycznych, administrator przed rozpoczęciem przetwarzania dokonuje oceny skutków planowanych operacji przetwarzania dla ochrony danych osobowych. Dla podobnych operacji przetwarzania danych wiążących się z podobnym wysokim ryzykiem można przeprowadzić pojedynczą ocenę.</p>
     <p>2. Dokonując oceny skutków dla ochrony danych, administrator konsultuje się z inspektorem ochrony danych, jeżeli został on wyznaczony.</p>
     <p>3. Ocena skutków dla ochrony danych, o której mowa w ust. 1, jest wymagana w szczególności w przypadku:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>systematycznej, kompleksowej oceny czynników osobowych odnoszących się do osób fizycznych, która opiera się na zautomatyzowanym przetwarzaniu, w tym profilowaniu, i jest podstawą decyzji wywołujących skutki prawne wobec osoby fizycznej lub w podobny sposób znacząco wpływających na osobę fizyczną;
+    <span class="next-level">
+    <span class="pos">a)</span>systematycznej, kompleksowej oceny czynników osobowych odnoszących się do osób fizycznych, która opiera się na zautomatyzowanym przetwarzaniu, w tym profilowaniu, i jest podstawą decyzji wywołujących skutki prawne wobec osoby fizycznej lub w podobny sposób znacząco wpływających na osobę fizyczną;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>przetwarzania na dużą skalę szczególnych kategorii danych osobowych, o których mowa w <u>art. 9 ust. 1</u>, lub danych osobowych dotyczących wyroków skazujących i naruszeń prawa, o czym mowa w <u>art. 10</u>; lub
+    <span class="next-level">
+    <span class="pos">b)</span>przetwarzania na dużą skalę szczególnych kategorii danych osobowych, o których mowa w <u>art. 9 ust. 1</u>, lub danych osobowych dotyczących wyroków skazujących i naruszeń prawa, o czym mowa w <u>art. 10</u>; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>systematycznego monitorowania na dużą skalę miejsc dostępnych publicznie.
+    <span class="next-level">
+    <span class="pos">c)</span>systematycznego monitorowania na dużą skalę miejsc dostępnych publicznie.
     </span>
     </p>
     <p>4. Organ nadzorczy ustanawia i podaje do publicznej wiadomości wykaz rodzajów operacji przetwarzania podlegających wymogowi dokonania oceny skutków dla ochrony danych na mocy ust. 1. Organ nadzorczy przekazuje te wykazy Europejskiej Radzie Ochrony Danych, o której mowa w <u>art. 68</u>.</p>
     <p>5. Organ nadzorczy może także ustanowić i podać do wiadomości publicznej wykaz rodzajów operacji przetwarzania niepodlegających wymogowi dokonania oceny skutków dla ochrony danych. Organ nadzorczy przekazuje te wykazy Europejskiej Radzie Ochrony Danych.</p>
     <p>6. Jeżeli wykazy, o których mowa w ust. 4 i 5, obejmują czynności przetwarzania związane z oferowaniem towarów lub usług osobom, których dane dotyczą, lub z monitorowaniem ich zachowania w kilku państwach członkowskich lub mogące znacznie wpłynąć na swobodny przepływ danych osobowych w Unii, przed przyjęciem takich wykazów właściwy organ nadzorczy stosuje mechanizm spójności, o którym mowa w <u>art. 63</u>.</p>
     <p>7. Ocena zawiera co najmniej:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>systematyczny opis planowanych operacji przetwarzania i celów przetwarzania, w tym, gdy ma to zastosowanie – prawnie uzasadnionych interesów realizowanych przez administratora;
+    <span class="next-level">
+    <span class="pos">a)</span>systematyczny opis planowanych operacji przetwarzania i celów przetwarzania, w tym, gdy ma to zastosowanie – prawnie uzasadnionych interesów realizowanych przez administratora;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>ocenę, czy operacje przetwarzania są niezbędne oraz proporcjonalne w stosunku do celów;
+    <span class="next-level">
+    <span class="pos">b)</span>ocenę, czy operacje przetwarzania są niezbędne oraz proporcjonalne w stosunku do celów;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>ocenę ryzyka naruszenia praw lub wolności osób, których dane dotyczą, o którym mowa w ust. 1; oraz
+    <span class="next-level">
+    <span class="pos">c)</span>ocenę ryzyka naruszenia praw lub wolności osób, których dane dotyczą, o którym mowa w ust. 1; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>środki planowane w celu zaradzenia ryzyku, w tym zabezpieczenia oraz środki i mechanizmy bezpieczeństwa mające zapewnić ochronę danych osobowych i wykazać przestrzeganie niniejszego rozporządzenia, z uwzględnieniem praw i prawnie uzasadnionych interesów osób, których dane dotyczą, i innych osób, których sprawa dotyczy.
+    <span class="next-level">
+    <span class="pos">d)</span>środki planowane w celu zaradzenia ryzyku, w tym zabezpieczenia oraz środki i mechanizmy bezpieczeństwa mające zapewnić ochronę danych osobowych i wykazać przestrzeganie niniejszego rozporządzenia, z uwzględnieniem praw i prawnie uzasadnionych interesów osób, których dane dotyczą, i innych osób, których sprawa dotyczy.
     </span>
     </p>
     <p>8. Oceniając – w szczególności do celów oceny skutków dla ochrony danych – skutki operacji przetwarzania wykonywanych przez administratora lub podmiot przetwarzający, uwzględnia się przestrzeganie przez takiego administratora lub taki podmiot przetwarzający zatwierdzonych kodeksów postępowania, o których mowa w <u>art. 40</u>.</p>
@@ -1200,37 +1202,37 @@ function echo_article($number) {
     <p>1. Jeżeli ocena skutków dla ochrony danych, o której mowa w <u>art. 35</u>, wskaże, że przetwarzanie powodowałoby wysokie ryzyko, gdyby administrator nie zastosował środków w celu zminimalizowania tego ryzyka, to przed rozpoczęciem przetwarzania administrator konsultuje się z organem nadzorczym.</p>
     <p>2. Jeżeli organ nadzorczy jest zdania, że zamierzone przetwarzanie, o którym mowa w ust. 1, stanowiłoby naruszenie niniejszego rozporządzenia – w szczególności gdy administrator niedostatecznie zidentyfikował lub zminimalizował ryzyko – organ nadzorczy w terminie do ośmiu tygodni od wpłynięcia wniosku o konsultacje udziela administratorowi, a gdy ma to zastosowanie także podmiotowi przetwarzającemu pisemnego zalecenia i może skorzystać z dowolnego ze swoich uprawnień, o których mowa w <u>art. 58</u>. Okres ten można przedłużyć o sześć tygodni ze względu na złożony charakter zamierzonego przetwarzania. Organ nadzorczy informuje administratora, a gdy ma to zastosowanie także podmiot przetwarzający, o takim przedłużeniu w terminie miesiąca od wpłynięcia wniosku o konsultacje, z podaniem przyczyn tego opóźnienia. Bieg tych terminów można zawiesić, do czasu aż organ nadzorczy uzyska wszelkie informacje, których zażądał do celów konsultacji.</p>
     <p>3. Konsultując się z organem nadzorczym zgodnie z ust. 1, administrator przedstawia mu:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>gdy ma to zastosowanie – odpowiednie obowiązki administratora, współadministratorów oraz podmiotów przetwarzających uczestniczących w przetwarzaniu, w szczególności w przypadku przetwarzania w ramach grupy przedsiębiorstw;
+    <span class="next-level">
+    <span class="pos">a)</span>gdy ma to zastosowanie – odpowiednie obowiązki administratora, współadministratorów oraz podmiotów przetwarzających uczestniczących w przetwarzaniu, w szczególności w przypadku przetwarzania w ramach grupy przedsiębiorstw;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>cele i sposoby zamierzonego przetwarzania;
+    <span class="next-level">
+    <span class="pos">b)</span>cele i sposoby zamierzonego przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>środki i zabezpieczenia mające chronić prawa i wolności osób, których dane dotyczą, zgodnie z niniejszym rozporządzeniem;
+    <span class="next-level">
+    <span class="pos">c)</span>środki i zabezpieczenia mające chronić prawa i wolności osób, których dane dotyczą, zgodnie z niniejszym rozporządzeniem;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>gdy ma to zastosowanie – dane kontaktowe inspektora ochrony danych;
+    <span class="next-level">
+    <span class="pos">d)</span>gdy ma to zastosowanie – dane kontaktowe inspektora ochrony danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>ocenę skutków dla ochrony danych, o której mowa w <u>art. 35</u>; oraz
+    <span class="next-level">
+    <span class="pos">e)</span>ocenę skutków dla ochrony danych, o której mowa w <u>art. 35</u>; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>wszelkie inne informacje, których żąda organ nadzorczy.
+    <span class="next-level">
+    <span class="pos">f)</span>wszelkie inne informacje, których żąda organ nadzorczy.
     </span>
     </p>
     <p>4. Państwa członkowskie konsultują się z organem nadzorczym, przygotowując projekt aktu prawnego przyjmowanego przez parlament narodowy lub aktu wykonawczego opartego na takim akcie prawnym, jeżeli projekt dotyczy przetwarzania.</p>
     <p>5. Niezależnie od ust. 1 prawo państwa członkowskiego może wymagać, by administratorzy konsultowali się z organem nadzorczym i uzyskiwali jego uprzednią zgodę na przetwarzanie danych osobowych przez administratora do celów wykonania zadania realizowanego przez administratora w interesie publicznym, w tym przetwarzania w związku z ochroną socjalną i zdrowiem publicznym.</p>
     <?php break; case 37: ?>
     <p>1. Administrator i podmiot przetwarzający wyznaczają inspektora ochrony danych, zawsze gdy:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>przetwarzania dokonują organ lub podmiot publiczny, z wyjątkiem sądów w zakresie sprawowania przez nie wymiaru sprawiedliwości;
+    <span class="next-level">
+    <span class="pos">a)</span>przetwarzania dokonują organ lub podmiot publiczny, z wyjątkiem sądów w zakresie sprawowania przez nie wymiaru sprawiedliwości;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>główna działalność administratora lub podmiotu przetwarzającego polega na operacjach przetwarzania, które ze względu na swój charakter, zakres lub cele wymagają regularnego i systematycznego monitorowania osób, których dane dotyczą, na dużą skalę; lub
+    <span class="next-level">
+    <span class="pos">b)</span>główna działalność administratora lub podmiotu przetwarzającego polega na operacjach przetwarzania, które ze względu na swój charakter, zakres lub cele wymagają regularnego i systematycznego monitorowania osób, których dane dotyczą, na dużą skalę; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>główna działalność administratora lub podmiotu przetwarzającego polega na przetwarzaniu na dużą skalę szczególnych kategorii danych osobowych, o których mowa w <u>art. 9 ust. 1</u>, oraz danych osobowych dotyczących wyroków skazujących i naruszeń prawa, o czym mowa w <u>art. 10</u>.
+    <span class="next-level">
+    <span class="pos">c)</span>główna działalność administratora lub podmiotu przetwarzającego polega na przetwarzaniu na dużą skalę szczególnych kategorii danych osobowych, o których mowa w <u>art. 9 ust. 1</u>, oraz danych osobowych dotyczących wyroków skazujących i naruszeń prawa, o czym mowa w <u>art. 10</u>.
     </span>
     </p>
     <p>2. Grupa przedsiębiorstw może wyznaczyć jednego inspektora ochrony danych, o ile można będzie łatwo nawiązać z nim kontakt z każdej jednostki organizacyjnej.</p>
@@ -1248,58 +1250,58 @@ function echo_article($number) {
     <p>6. Inspektor ochrony danych może wykonywać inne zadania i obowiązki. Administrator lub podmiot przetwarzający zapewniają, by takie zadania i obowiązki nie powodowały konfliktu interesów.</p>
     <?php break; case 39: ?>
     <p>1. Inspektor ochrony danych ma następujące zadania:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>informowanie administratora, podmiotu przetwarzającego oraz pracowników, którzy przetwarzają dane osobowe, o obowiązkach spoczywających na nich na mocy niniejszego rozporządzenia oraz innych przepisów Unii lub państw członkowskich o ochronie danych i doradzanie im w tej sprawie;
+    <span class="next-level">
+    <span class="pos">a)</span>informowanie administratora, podmiotu przetwarzającego oraz pracowników, którzy przetwarzają dane osobowe, o obowiązkach spoczywających na nich na mocy niniejszego rozporządzenia oraz innych przepisów Unii lub państw członkowskich o ochronie danych i doradzanie im w tej sprawie;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>monitorowanie przestrzegania niniejszego rozporządzenia, innych przepisów Unii lub państw członkowskich o ochronie danych oraz polityk administratora lub podmiotu przetwarzającego w dziedzinie ochrony danych osobowych, w tym podział obowiązków, działania zwiększające świadomość, szkolenia personelu uczestniczącego w operacjach przetwarzania oraz powiązane z tym audyty;
+    <span class="next-level">
+    <span class="pos">b)</span>monitorowanie przestrzegania niniejszego rozporządzenia, innych przepisów Unii lub państw członkowskich o ochronie danych oraz polityk administratora lub podmiotu przetwarzającego w dziedzinie ochrony danych osobowych, w tym podział obowiązków, działania zwiększające świadomość, szkolenia personelu uczestniczącego w operacjach przetwarzania oraz powiązane z tym audyty;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>udzielanie na żądanie zaleceń co do oceny skutków dla ochrony danych oraz monitorowanie jej wykonania zgodnie z <u>art. 35</u>;
+    <span class="next-level">
+    <span class="pos">c)</span>udzielanie na żądanie zaleceń co do oceny skutków dla ochrony danych oraz monitorowanie jej wykonania zgodnie z <u>art. 35</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>współpraca z organem nadzorczym;
+    <span class="next-level">
+    <span class="pos">d)</span>współpraca z organem nadzorczym;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>pełnienie funkcji punktu kontaktowego dla organu nadzorczego w kwestiach związanych z przetwarzaniem, w tym z uprzednimi konsultacjami, o których mowa w <u>art. 36</u>, oraz w stosownych przypadkach prowadzenie konsultacji we wszelkich innych sprawach.
+    <span class="next-level">
+    <span class="pos">e)</span>pełnienie funkcji punktu kontaktowego dla organu nadzorczego w kwestiach związanych z przetwarzaniem, w tym z uprzednimi konsultacjami, o których mowa w <u>art. 36</u>, oraz w stosownych przypadkach prowadzenie konsultacji we wszelkich innych sprawach.
     </span>
     </p>
     <p>2. Inspektor ochrony danych wypełnia swoje zadania z należytym uwzględnieniem ryzyka związanego z operacjami przetwarzania, mając na uwadze charakter, zakres, kontekst i cele przetwarzania.</p>
     <?php break; case 40: ?>
     <p>1. Państwa członkowskie, organy nadzorcze, Europejska Rada Ochrony Danych oraz Komisja zachęcają do sporządzania kodeksów postępowania mających pomóc we właściwym stosowaniu niniejszego rozporządzenia – z uwzględnieniem specyfiki różnych sektorów dokonujących przetwarzania oraz szczególnych potrzeb mikroprzedsiębiorstw oraz małych i średnich przedsiębiorstw.</p>
     <p>2. Zrzeszenia i inne podmioty reprezentujące określone kategorie administratorów lub podmioty przetwarzające mogą opracowywać lub zmieniać kodeksy postępowania lub rozszerzać ich zakres, aby doprecyzować zastosowanie niniejszego rozporządzenia, między innymi w odniesieniu do:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>rzetelnego i przejrzystego przetwarzania;
+    <span class="next-level">
+    <span class="pos">a)</span>rzetelnego i przejrzystego przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>prawnie uzasadnionych interesów realizowanych przez administratorów w określonych kontekstach;
+    <span class="next-level">
+    <span class="pos">b)</span>prawnie uzasadnionych interesów realizowanych przez administratorów w określonych kontekstach;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>zbierania danych osobowych;
+    <span class="next-level">
+    <span class="pos">c)</span>zbierania danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>pseudonimizacji danych osobowych;
+    <span class="next-level">
+    <span class="pos">d)</span>pseudonimizacji danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>informowania opinii publicznej i osób, których dane dotyczą;
+    <span class="next-level">
+    <span class="pos">e)</span>informowania opinii publicznej i osób, których dane dotyczą;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>wykonywania przez osoby, których dane dotyczą, przysługujących im praw;
+    <span class="next-level">
+    <span class="pos">f)</span>wykonywania przez osoby, których dane dotyczą, przysługujących im praw;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>informowania i ochrony dzieci oraz sposobu pozyskiwania zgody osoby sprawującej władzę rodzicielską lub opiekę nad dzieckiem;
+    <span class="next-level">
+    <span class="pos">g)</span>informowania i ochrony dzieci oraz sposobu pozyskiwania zgody osoby sprawującej władzę rodzicielską lub opiekę nad dzieckiem;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>środków i procedur, o których mowa w art. 24 i 25, oraz środków zapewniających bezpieczeństwo przetwarzania, o których mowa w <u>art. 32</u>;
+    <span class="next-level">
+    <span class="pos">h)</span>środków i procedur, o których mowa w art. 24 i 25, oraz środków zapewniających bezpieczeństwo przetwarzania, o których mowa w <u>art. 32</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>zgłaszania organowi nadzorczemu naruszeń ochrony danych osobowych oraz zawiadamiania o takich naruszeniach osób, których dane dotyczą;
+    <span class="next-level">
+    <span class="pos">i)</span>zgłaszania organowi nadzorczemu naruszeń ochrony danych osobowych oraz zawiadamiania o takich naruszeniach osób, których dane dotyczą;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>przekazywania danych osobowych do państw trzecich lub organizacji międzynarodowych; lub
+    <span class="next-level">
+    <span class="pos">j)</span>przekazywania danych osobowych do państw trzecich lub organizacji międzynarodowych; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">k)</span>postępowań pozasądowych oraz innych trybów rozstrzygania sporów w celu rozstrzygania sporów między administratorami a osobami, których dane dotyczą, w zakresie przetwarzania, bez uszczerbku dla praw osób, których dane dotyczą, na mocy <u>art. 77 i 79</u>.
+    <span class="next-level">
+    <span class="pos">k)</span>postępowań pozasądowych oraz innych trybów rozstrzygania sporów w celu rozstrzygania sporów między administratorami a osobami, których dane dotyczą, w zakresie przetwarzania, bez uszczerbku dla praw osób, których dane dotyczą, na mocy <u>art. 77 i 79</u>.
     </span>
     </p>
     <p>3. Poza administratorami lub podmiotami przetwarzającymi, którzy podlegają niniejszemu rozporządzeniu, kodeksów postępowania zatwierdzonych na mocy ust. 5 niniejszego artykułu i powszechnie obowiązujących zgodnie z ust. 9 niniejszego artykułu, mogą przestrzegać także administratorzy lub podmioty przetwarzające, którzy zgodnie z <u>art. 3</u> nie podlegają niniejszemu rozporządzeniu, w celu zapewnienia odpowiednich zabezpieczeń w ramach przekazywania danych osobowych do państw trzecich lub organizacji międzynarodowych na warunkach określonych w <u>art. 46 ust. 2 lit. e)</u>. Tacy administratorzy lub takie podmioty przetwarzające podejmują wiążące i egzekwowalne zobowiązanie – w drodze umowy lub poprzez inne prawnie wiążące instrumenty – do stosowania tych odpowiednich zabezpieczeń, w tym w odniesieniu do praw osób, których dane dotyczą.</p>
@@ -1314,17 +1316,17 @@ function echo_article($number) {
     <?php break; case 41: ?>
     <p>1. Bez uszczerbku dla zadań i uprawnień właściwego organu nadzorczego wynikających z <u>art. 57 i 58</u> monitorowaniem przestrzegania kodeksu postępowania na mocy <u>art. 40</u> może się zajmować podmiot, który dysponuje odpowiednim poziomem wiedzy fachowej w dziedzinie będącej przedmiotem kodeksu i został akredytowany w tym celu przez właściwy organ nadzorczy.</p>
     <p>2. Podmiot, o którym mowa w ust. 1, może zostać akredytowany w celu monitorowania przestrzegania kodeksu postępowania, jeżeli:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>w sposób satysfakcjonujący wykazał on właściwemu organowi nadzorczemu swoją niezależność i wiedzę fachową w dziedzinie będącej przedmiotem kodeksu;
+    <span class="next-level">
+    <span class="pos">a)</span>w sposób satysfakcjonujący wykazał on właściwemu organowi nadzorczemu swoją niezależność i wiedzę fachową w dziedzinie będącej przedmiotem kodeksu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>dysponuje procedurami, które pozwalają mu ocenić zdolność konkretnych administratorów i podmiotów przetwarzających do stosowania kodeksu, monitorować przestrzeganie przez nich jego przepisów oraz okresowo dokonywać przeglądu jego funkcjonowania;
+    <span class="next-level">
+    <span class="pos">b)</span>dysponuje procedurami, które pozwalają mu ocenić zdolność konkretnych administratorów i podmiotów przetwarzających do stosowania kodeksu, monitorować przestrzeganie przez nich jego przepisów oraz okresowo dokonywać przeglądu jego funkcjonowania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>dysponuje procedurami i strukturami, które pozwalają rozpatrywać skargi na naruszenie kodeksu przez administratora lub podmiot przetwarzający lub na sposób wdrożenia lub wdrażania kodeksu przez administratora lub podmiot przetwarzający oraz które pozwalają zapewnić przejrzystość tych procedur i struktur dla osób, których dane dotyczą, i opinii publicznej; oraz
+    <span class="next-level">
+    <span class="pos">c)</span>dysponuje procedurami i strukturami, które pozwalają rozpatrywać skargi na naruszenie kodeksu przez administratora lub podmiot przetwarzający lub na sposób wdrożenia lub wdrażania kodeksu przez administratora lub podmiot przetwarzający oraz które pozwalają zapewnić przejrzystość tych procedur i struktur dla osób, których dane dotyczą, i opinii publicznej; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>w sposób satysfakcjonujący wykazał właściwemu organowi nadzorczemu, że jego zadania i obowiązki nie powodują konfliktu interesów.
+    <span class="next-level">
+    <span class="pos">d)</span>w sposób satysfakcjonujący wykazał właściwemu organowi nadzorczemu, że jego zadania i obowiązki nie powodują konfliktu interesów.
     </span>
     </p>
     <p>3. Właściwy organ nadzorczy przedkłada proponowane kryteria akredytacji podmiotu, o którym mowa w ust. 1 niniejszego artykułu, Europejskiej Radzie Ochrony Danych zgodnie z mechanizmem spójności, o którym mowa w <u>art. 63</u>.</p>
@@ -1342,28 +1344,28 @@ function echo_article($number) {
     <p>8. Europejska Rada Ochrony Danych gromadzi w rejestrze wszystkie mechanizmy certyfikacji oraz znaki jakości i oznaczenia w dziedzinie ochrony danych i udostępnia je opinii publicznej za pomocą odpowiednich środków.</p>
     <?php break; case 43: ?>
     <p>1. Bez uszczerbku dla zadań i uprawnień właściwego organu nadzorczego wynikających z <u>art. 57 i 58</u> podmiot certyfikujący, który dysponuje odpowiednim poziomem wiedzy fachowej w dziedzinie ochrony danych dokonuje certyfikacji i jej przedłużenia po poinformowaniu organu nadzorczego w celu umożliwienia mu w razie potrzeby wykonywania uprawnień na mocy <u>art. 58 ust. 2 lit. h)</u> –. Państwa członkowskie zapewniają akredytację tych podmiotów certyfikujących przez:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>organ nadzorczy właściwy zgodnie z <u>art. 55 lub 56</u>; lub
+    <span class="next-level">
+    <span class="pos">a)</span>organ nadzorczy właściwy zgodnie z <u>art. 55 lub 56</u>; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>krajową jednostkę akredytującą określoną zgodnie z rozporządzeniem Parlamentu Europejskiego i Rady (WE) nr 765/2008<a id="ntc20-L_2016119PL.01000101-E0020" href="#ntr20-L_2016119PL.01000101-E0020"> (<span class="super">20</span>)</a> – zgodnie z EN-ISO/IEC 17065/2012 – oraz zgodnie z dodatkowymi wymogami określonymi przez organ nadzorczy właściwy zgodnie z. 55 lub 56.
+    <span class="next-level">
+    <span class="pos">b)</span>krajową jednostkę akredytującą określoną zgodnie z rozporządzeniem Parlamentu Europejskiego i Rady (WE) nr 765/2008<a id="ntc20-L_2016119PL.01000101-E0020" href="#ntr20-L_2016119PL.01000101-E0020"> (<span class="super">20</span>)</a> – zgodnie z EN-ISO/IEC 17065/2012 – oraz zgodnie z dodatkowymi wymogami określonymi przez organ nadzorczy właściwy zgodnie z. 55 lub 56.
     </span>
     </p>
     <p>2. Podmioty certyfikujące, o których mowa w ust. 1, zostają akredytowane zgodnie z tym ustępem w przypadku gdy:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>w sposób satysfakcjonujący wykazały właściwemu organowi nadzorczemu swoją niezależność i wiedzę fachową w dziedzinie podlegającej certyfikacji;
+    <span class="next-level">
+    <span class="pos">a)</span>w sposób satysfakcjonujący wykazały właściwemu organowi nadzorczemu swoją niezależność i wiedzę fachową w dziedzinie podlegającej certyfikacji;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>zobowiązały się do przestrzegania kryteriów, o których mowa w <u>art. 42 ust. 5</u> i które zostały zatwierdzone przez organ nadzorczy właściwy zgodnie z <u>art. 55 lub 56</u> lub przez Europejską Radę Ochrony Danych zgodnie z <u>art. 63</u>;
+    <span class="next-level">
+    <span class="pos">b)</span>zobowiązały się do przestrzegania kryteriów, o których mowa w <u>art. 42 ust. 5</u> i które zostały zatwierdzone przez organ nadzorczy właściwy zgodnie z <u>art. 55 lub 56</u> lub przez Europejską Radę Ochrony Danych zgodnie z <u>art. 63</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>dysponują procedurami wydawania, okresowego przeglądu i cofania certyfikacji, znaków jakości i oznaczeń w dziedzinie ochrony danych;
+    <span class="next-level">
+    <span class="pos">c)</span>dysponują procedurami wydawania, okresowego przeglądu i cofania certyfikacji, znaków jakości i oznaczeń w dziedzinie ochrony danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>dysponują procedurami i strukturami, które pozwalają rozpatrywać skargi na naruszenie warunków certyfikacji przez administratora lub podmiot przetwarzający lub na sposób wdrożenia lub wdrażania certyfikacji przez administratora lub podmiot przetwarzający, oraz które zapewniają przejrzystość tych procedur i struktur dla osób, których dane dotyczą, i opinii publicznej; oraz
+    <span class="next-level">
+    <span class="pos">d)</span>dysponują procedurami i strukturami, które pozwalają rozpatrywać skargi na naruszenie warunków certyfikacji przez administratora lub podmiot przetwarzający lub na sposób wdrożenia lub wdrażania certyfikacji przez administratora lub podmiot przetwarzający, oraz które zapewniają przejrzystość tych procedur i struktur dla osób, których dane dotyczą, i opinii publicznej; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>w sposób satysfakcjonujący wykażą właściwemu organowi nadzorczemu, że ich zadania i obowiązki nie powodują konfliktu interesów.
+    <span class="next-level">
+    <span class="pos">e)</span>w sposób satysfakcjonujący wykażą właściwemu organowi nadzorczemu, że ich zadania i obowiązki nie powodują konfliktu interesów.
     </span>
     </p>
     <p>3. Akredytacja podmiotów certyfikujących, o których mowa w ust. 1 i 2 niniejszego artykułu, jest dokonywana na podstawie kryteriów zatwierdzonych przez organ nadzorczy właściwy zgodnie z <u>art. 55 lub 56</u> lub przez Europejską Radę Ochrony Danych zgodnie z <u>art. 63</u>. W przypadku akredytacji na mocy ust. 1 lit. c) niniejszego artykułu wymogi te są uzupełnieniem wymogów przewidzianych w rozporządzeniu (WE) nr 765/2008 oraz przepisów technicznych określających metody i procedury podmiotów certyfikujących.</p>
@@ -1378,14 +1380,14 @@ function echo_article($number) {
     <?php break; case 45: ?>
     <p>1. Przekazanie danych osobowych do państwa trzeciego lub organizacji międzynarodowej może nastąpić, gdy Komisja stwierdzi, że to państwo trzecie, terytorium lub określony sektor lub określone sektory w tym państwie trzecim lub dana organizacja międzynarodowa zapewniają odpowiedni stopień ochrony. Takie przekazanie nie wymaga specjalnego zezwolenia.</p>
     <p>2. Oceniając, czy stopień ochrony jest odpowiedni, Komisja uwzględnia w szczególności następujące elementy:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>praworządność, poszanowanie praw człowieka i podstawowych wolności, odpowiednie ustawodawstwo – zarówno ogólne, jak i sektorowe – w tym w dziedzinie bezpieczeństwa publicznego, obrony, bezpieczeństwa narodowego i prawa karnego oraz dostępu organów publicznych do danych osobowych, a także wdrażanie takiego ustawodawstwa, zasady ochrony danych osobowych, zasady dotyczące wykonywania zawodu, środki bezpieczeństwa, w tym zasady dalszego przekazywania danych osobowych do kolejnego państwa trzeciego lub innej organizacji międzynarodowej, których przestrzega się w tym państwie lub w organizacji międzynarodowej, orzecznictwo, a także istnienie skutecznych i egzekwowalnych praw osób, których dane dotyczą, oraz prawa osób, których dane dotyczą, których dane osobowe są przekazywane, do skutecznych administracyjnych i sądowych środków zaskarżenia;
+    <span class="next-level">
+    <span class="pos">a)</span>praworządność, poszanowanie praw człowieka i podstawowych wolności, odpowiednie ustawodawstwo – zarówno ogólne, jak i sektorowe – w tym w dziedzinie bezpieczeństwa publicznego, obrony, bezpieczeństwa narodowego i prawa karnego oraz dostępu organów publicznych do danych osobowych, a także wdrażanie takiego ustawodawstwa, zasady ochrony danych osobowych, zasady dotyczące wykonywania zawodu, środki bezpieczeństwa, w tym zasady dalszego przekazywania danych osobowych do kolejnego państwa trzeciego lub innej organizacji międzynarodowej, których przestrzega się w tym państwie lub w organizacji międzynarodowej, orzecznictwo, a także istnienie skutecznych i egzekwowalnych praw osób, których dane dotyczą, oraz prawa osób, których dane dotyczą, których dane osobowe są przekazywane, do skutecznych administracyjnych i sądowych środków zaskarżenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>istnienie i skuteczne działanie co najmniej jednego niezależnego organu nadzorczego w państwie trzecim lub w stosunku do organizacji międzynarodowej, mającego obowiązek zapewniać i egzekwować przestrzeganie przepisów o ochronie danych – w tym posiadające odpowiednie uprawnienia do egzekwowania przestrzegania przepisów – pomagać i doradzać osobom, których dane dotyczą, w toku wykonywania przysługujących im praw, a także współpracować z organami nadzorczymi państw członkowskich; oraz
+    <span class="next-level">
+    <span class="pos">b)</span>istnienie i skuteczne działanie co najmniej jednego niezależnego organu nadzorczego w państwie trzecim lub w stosunku do organizacji międzynarodowej, mającego obowiązek zapewniać i egzekwować przestrzeganie przepisów o ochronie danych – w tym posiadające odpowiednie uprawnienia do egzekwowania przestrzegania przepisów – pomagać i doradzać osobom, których dane dotyczą, w toku wykonywania przysługujących im praw, a także współpracować z organami nadzorczymi państw członkowskich; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>międzynarodowe zobowiązania zaciągnięte przez dane państwo trzecie lub daną organizację międzynarodową lub inne obowiązki wynikające z prawnie wiążących konwencji lub instrumentów oraz z udziału w systemach wielostronnych lub regionalnych, w szczególności w dziedzinie ochrony danych osobowych.
+    <span class="next-level">
+    <span class="pos">c)</span>międzynarodowe zobowiązania zaciągnięte przez dane państwo trzecie lub daną organizację międzynarodową lub inne obowiązki wynikające z prawnie wiążących konwencji lub instrumentów oraz z udziału w systemach wielostronnych lub regionalnych, w szczególności w dziedzinie ochrony danych osobowych.
     </span>
     </p>
     <p>3. Po dokonaniu oceny, czy stopień ochrony jest odpowiedni, Komisja może w drodze aktu wykonawczego przyjąć decyzję stwierdzającą, że państwo trzecie, terytorium lub określony sektor lub określone sektory w tym państwie trzecim lub organizacja międzynarodowa zapewniają odpowiedni stopień ochrony w rozumieniu ust. 2 niniejszego artykułu. W akcie wykonawczym przewiduje się mechanizm okresowego przeglądu – przynajmniej raz na cztery lata – podczas którego uwzględnia się wszelkie mające znaczenie zmiany w państwie trzecim lub organizacji międzynarodowej. W akcie wykonawczym zostaje określony terytorialny i sektorowy zakres jego zastosowania, a gdy ma to zastosowanie wskazany zostaje organ nadzorczy lub organy nadzorcze, o których mowa w ust. 2 lit. b) niniejszego artykułu. Akt wykonawczy zostaje przyjęty zgodnie z procedurą sprawdzającą, o której mowa w <u>art. 93 ust. 2</u>.</p>
@@ -1399,89 +1401,89 @@ function echo_article($number) {
     <?php break; case 46: ?>
     <p>1. W razie braku decyzji na mocy <u>art. 45 ust. 3</u> administrator lub podmiot przetwarzający mogą przekazać dane osobowe do państwa trzeciego lub organizacji międzynarodowej wyłącznie, gdy zapewnią odpowiednie zabezpieczenia, i pod warunkiem, że obowiązują egzekwowalne prawa osób, których dane dotyczą, i skuteczne środki ochrony prawnej.</p>
     <p>2. Odpowiednie zabezpieczenia, o których mowa w ust. 1, można zapewnić – bez konieczności uzyskania specjalnego zezwolenia ze strony organu nadzorczego – za pomocą:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>prawnie wiążącego i egzekwowalnego instrumentu między organami lub podmiotami publicznymi;
+    <span class="next-level">
+    <span class="pos">a)</span>prawnie wiążącego i egzekwowalnego instrumentu między organami lub podmiotami publicznymi;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>wiążących reguł korporacyjnych zgodnie z <u>art. 47</u>;
+    <span class="next-level">
+    <span class="pos">b)</span>wiążących reguł korporacyjnych zgodnie z <u>art. 47</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>standardowych klauzul ochrony danych przyjętych przez Komisję zgodnie z procedurą sprawdzającą, o której mowa w <u>art. 93 ust. 2</u>;
+    <span class="next-level">
+    <span class="pos">c)</span>standardowych klauzul ochrony danych przyjętych przez Komisję zgodnie z procedurą sprawdzającą, o której mowa w <u>art. 93 ust. 2</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>standardowych klauzul ochrony danych przyjętych przez organ nadzorczy i zatwierdzonych przez Komisję zgodnie z procedurą sprawdzającą, o której mowa w <u>art. 93 ust. 2</u>;
+    <span class="next-level">
+    <span class="pos">d)</span>standardowych klauzul ochrony danych przyjętych przez organ nadzorczy i zatwierdzonych przez Komisję zgodnie z procedurą sprawdzającą, o której mowa w <u>art. 93 ust. 2</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>zatwierdzonego kodeksu postępowania zgodnie z <u>art. 40</u> wraz z wiążącymi i egzekwowalnymi zobowiązaniami administratora lub podmiotu przetwarzającego w państwie trzecim do stosowania odpowiednich zabezpieczeń, w tym w odniesieniu do praw osób, których dane dotyczą; lub
+    <span class="next-level">
+    <span class="pos">e)</span>zatwierdzonego kodeksu postępowania zgodnie z <u>art. 40</u> wraz z wiążącymi i egzekwowalnymi zobowiązaniami administratora lub podmiotu przetwarzającego w państwie trzecim do stosowania odpowiednich zabezpieczeń, w tym w odniesieniu do praw osób, których dane dotyczą; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>zatwierdzonego mechanizmu certyfikacji zgodnie z <u>art. 42</u> wraz z wiążącymi i egzekwowalnymi zobowiązaniami administratora lub podmiotu przetwarzającego w państwie trzecim do stosowania odpowiednich zabezpieczeń, w tym w odniesieniu do praw osób, których dane dotyczą.
+    <span class="next-level">
+    <span class="pos">f)</span>zatwierdzonego mechanizmu certyfikacji zgodnie z <u>art. 42</u> wraz z wiążącymi i egzekwowalnymi zobowiązaniami administratora lub podmiotu przetwarzającego w państwie trzecim do stosowania odpowiednich zabezpieczeń, w tym w odniesieniu do praw osób, których dane dotyczą.
     </span>
     </p>
     <p>3. Z zastrzeżeniem zezwolenia właściwego organu nadzorczego odpowiednie zabezpieczenia, o których mowa w ust. 1, można także zapewnić w szczególności za pomocą:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>klauzul umownych między administratorem lub podmiotem przetwarzającym a administratorem, podmiotem przetwarzającym lub odbiorcą danych osobowych w państwie trzecim lub organizacji międzynarodowej; lub
+    <span class="next-level">
+    <span class="pos">a)</span>klauzul umownych między administratorem lub podmiotem przetwarzającym a administratorem, podmiotem przetwarzającym lub odbiorcą danych osobowych w państwie trzecim lub organizacji międzynarodowej; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>postanowień uzgodnień administracyjnych między organami lub podmiotami publicznymi, w których przewidziane będą egzekwowalne i skuteczne prawa osób, których dane dotyczą.
+    <span class="next-level">
+    <span class="pos">b)</span>postanowień uzgodnień administracyjnych między organami lub podmiotami publicznymi, w których przewidziane będą egzekwowalne i skuteczne prawa osób, których dane dotyczą.
     </span>
     </p>
     <p>4. W przypadkach, o których mowa w ust. 3 niniejszego artykułu, organ nadzorczy stosuje mechanizm spójności, o którym mowa w <u>art. 63</u>.</p>
     <p>5. Zezwolenia wydane przez państwo członkowskie lub organ nadzorczy na podstawie art. 26 ust. 2 <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?> zachowują ważność do czasu ich zmiany, zastąpienia lub uchylenia w razie potrzeby przez ten organ. Decyzje przyjęte przez Komisję na mocy art. 26 ust. 4 <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?> pozostają w mocy do czasu ich zmiany, zastąpienia lub uchylenia w razie potrzeby decyzją Komisji przyjętą zgodnie z ust. 2 niniejszego artykułu.</p>
     <?php break; case 47: ?>
     <p>1. Właściwy organ nadzorczy zatwierdza wiążące reguły korporacyjne zgodnie z mechanizmem spójności przewidzianym w <u>art. 63</u>, pod warunkiem że:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>są one prawnie wiążące oraz mają zastosowanie do każdego z członków grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą, w tym ich pracowników, i są przez każdego z tych członków egzekwowane;
+    <span class="next-level">
+    <span class="pos">a)</span>są one prawnie wiążące oraz mają zastosowanie do każdego z członków grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą, w tym ich pracowników, i są przez każdego z tych członków egzekwowane;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>wyraźnie przyznają osobom, których dane dotyczą, egzekwowalne prawa w związku z przetwarzaniem ich danych osobowych; oraz
+    <span class="next-level">
+    <span class="pos">b)</span>wyraźnie przyznają osobom, których dane dotyczą, egzekwowalne prawa w związku z przetwarzaniem ich danych osobowych; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>spełniają wymogi określone w ust. 2.
+    <span class="next-level">
+    <span class="pos">c)</span>spełniają wymogi określone w ust. 2.
     </span>
     </p>
     <p>2. W wiążących regułach korporacyjnych, o których mowa w ust. 1, określone zostają co najmniej:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>struktura i dane kontaktowe odnośnej grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą i każdego z jej członków;
+    <span class="next-level">
+    <span class="pos">a)</span>struktura i dane kontaktowe odnośnej grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą i każdego z jej członków;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>jednorazowe lub wielokrotne przekazanie danych, w tym kategorie danych osobowych, rodzaj przetwarzania i jego cele, rodzaje osób, których dane dotyczą, oraz nazwa danego państwa trzeciego lub danych państw trzecich;
+    <span class="next-level">
+    <span class="pos">b)</span>jednorazowe lub wielokrotne przekazanie danych, w tym kategorie danych osobowych, rodzaj przetwarzania i jego cele, rodzaje osób, których dane dotyczą, oraz nazwa danego państwa trzeciego lub danych państw trzecich;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>ich prawnie wiążący charakter, wewnętrzny i zewnętrzny;
+    <span class="next-level">
+    <span class="pos">c)</span>ich prawnie wiążący charakter, wewnętrzny i zewnętrzny;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>zastosowanie ogólnych zasad ochrony danych – w szczególności ograniczenia celu, minimalizacji danych, ograniczonych okresów przechowywania, jakości danych, uwzględnianie ochrony danych w fazie projektowania oraz domyślnej ochrony danych, podstawa prawna przetwarzania, przetwarzanie szczególnych kategorii danych osobowych, środki zapewniające bezpieczeństwo danych, wymogi w zakresie dalszego przekazywania podmiotom niezwiązanym wiążącymi regułami korporacyjnymi;
+    <span class="next-level">
+    <span class="pos">d)</span>zastosowanie ogólnych zasad ochrony danych – w szczególności ograniczenia celu, minimalizacji danych, ograniczonych okresów przechowywania, jakości danych, uwzględnianie ochrony danych w fazie projektowania oraz domyślnej ochrony danych, podstawa prawna przetwarzania, przetwarzanie szczególnych kategorii danych osobowych, środki zapewniające bezpieczeństwo danych, wymogi w zakresie dalszego przekazywania podmiotom niezwiązanym wiążącymi regułami korporacyjnymi;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>prawa osób, których dane dotyczą, w związku z przetwarzaniem oraz sposoby wykonywania tych praw, w tym z prawa do niepodlegania decyzjom opartym wyłącznie na zautomatyzowanym przetwarzaniu – w tym profilowaniu – zgodnie z <u>art. 22</u>, prawa do wnoszenia skarg do właściwego organu nadzorczego i właściwych sądów państw członkowskich zgodnie z <u>art. 79</u> oraz prawa do środka zaskarżenia, a w stosownych przypadkach – odszkodowania za naruszenie wiążących reguł korporacyjnych;
+    <span class="next-level">
+    <span class="pos">e)</span>prawa osób, których dane dotyczą, w związku z przetwarzaniem oraz sposoby wykonywania tych praw, w tym z prawa do niepodlegania decyzjom opartym wyłącznie na zautomatyzowanym przetwarzaniu – w tym profilowaniu – zgodnie z <u>art. 22</u>, prawa do wnoszenia skarg do właściwego organu nadzorczego i właściwych sądów państw członkowskich zgodnie z <u>art. 79</u> oraz prawa do środka zaskarżenia, a w stosownych przypadkach – odszkodowania za naruszenie wiążących reguł korporacyjnych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>przyjęcie przez administratora lub podmiot przetwarzający posiadających jednostki organizacyjnej na terytorium państwa członkowskiego odpowiedzialności prawnej za naruszenie wiążących reguł korporacyjnych przez odnośnego członka niemającego jednostki organizacyjne w Unii; administrator lub podmiot przetwarzający są zwolnieni z tej odpowiedzialności – w całości lub w części – wyłącznie, gdy udowodni, że członek ten nie ponosi odpowiedzialności za wydarzenie, które doprowadziło do powstania szkody;
+    <span class="next-level">
+    <span class="pos">f)</span>przyjęcie przez administratora lub podmiot przetwarzający posiadających jednostki organizacyjnej na terytorium państwa członkowskiego odpowiedzialności prawnej za naruszenie wiążących reguł korporacyjnych przez odnośnego członka niemającego jednostki organizacyjne w Unii; administrator lub podmiot przetwarzający są zwolnieni z tej odpowiedzialności – w całości lub w części – wyłącznie, gdy udowodni, że członek ten nie ponosi odpowiedzialności za wydarzenie, które doprowadziło do powstania szkody;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>sposób, w jaki osobom, których dane dotyczą, podaje się – oprócz informacji, o których mowa w art. 13 i 14 – informacje o wiążących regułach korporacyjnych, w szczególności o postanowieniach, o których mowa w lit. d), e) i f) niniejszego ustępu;
+    <span class="next-level">
+    <span class="pos">g)</span>sposób, w jaki osobom, których dane dotyczą, podaje się – oprócz informacji, o których mowa w art. 13 i 14 – informacje o wiążących regułach korporacyjnych, w szczególności o postanowieniach, o których mowa w lit. d), e) i f) niniejszego ustępu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>zadania inspektora ochrony danych wyznaczonego zgodnie z art. 37 lub innej osoby lub podmiotu odpowiedzialnych za monitorowanie przestrzegania wiążących reguł korporacyjnych w ramach grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą oraz monitorowanie szkoleń i rozpatrywanie skarg;
+    <span class="next-level">
+    <span class="pos">h)</span>zadania inspektora ochrony danych wyznaczonego zgodnie z art. 37 lub innej osoby lub podmiotu odpowiedzialnych za monitorowanie przestrzegania wiążących reguł korporacyjnych w ramach grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą oraz monitorowanie szkoleń i rozpatrywanie skarg;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>procedury dotyczące skarg;
+    <span class="next-level">
+    <span class="pos">i)</span>procedury dotyczące skarg;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>stosowane w grupie przedsiębiorstw lub w grupie przedsiębiorców prowadzących wspólną działalność gospodarczą mechanizmy zapewniające weryfikację przestrzegania wiążących reguł korporacyjnych. Mechanizmy takie obejmują audyty w zakresie ochrony danych oraz metody zapewniania działań naprawczych mających chronić prawa osób, których dane dotyczą. Wyniki takiej weryfikacji powinny być przekazywane osobie lub podmiotowi, o których mowa w lit. h), oraz zarządowi przedsiębiorstwa sprawującego kontrolę w grupie przedsiębiorstw lub organowi kierującemu grupą przedsiębiorców prowadzących wspólną działalność gospodarczą i powinny być dostępne na żądanie właściwego organu nadzorczego;
+    <span class="next-level">
+    <span class="pos">j)</span>stosowane w grupie przedsiębiorstw lub w grupie przedsiębiorców prowadzących wspólną działalność gospodarczą mechanizmy zapewniające weryfikację przestrzegania wiążących reguł korporacyjnych. Mechanizmy takie obejmują audyty w zakresie ochrony danych oraz metody zapewniania działań naprawczych mających chronić prawa osób, których dane dotyczą. Wyniki takiej weryfikacji powinny być przekazywane osobie lub podmiotowi, o których mowa w lit. h), oraz zarządowi przedsiębiorstwa sprawującego kontrolę w grupie przedsiębiorstw lub organowi kierującemu grupą przedsiębiorców prowadzących wspólną działalność gospodarczą i powinny być dostępne na żądanie właściwego organu nadzorczego;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">k)</span>mechanizmy zgłaszania i rejestrowania zmian w zasadach i zgłaszania tych zmian organowi nadzorczemu;
+    <span class="next-level">
+    <span class="pos">k)</span>mechanizmy zgłaszania i rejestrowania zmian w zasadach i zgłaszania tych zmian organowi nadzorczemu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">l)</span>mechanizm współpracy z organem nadzorczym zapewniający przestrzeganie zasad przez wszystkich członków grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą, w szczególności poprzez udostępnianie organowi nadzorczemu wyników weryfikacji środków, o której mowa w lit. j);
+    <span class="next-level">
+    <span class="pos">l)</span>mechanizm współpracy z organem nadzorczym zapewniający przestrzeganie zasad przez wszystkich członków grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą, w szczególności poprzez udostępnianie organowi nadzorczemu wyników weryfikacji środków, o której mowa w lit. j);
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">m)</span>mechanizm zgłaszania właściwemu organowi nadzorczemu wszelkich wymogów prawnych, którym podlega w państwie trzecim członek grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą i które mogą mieć istotny niekorzystny wpływ na gwarancje przewidziane w wiążących regułach korporacyjnych; oraz
+    <span class="next-level">
+    <span class="pos">m)</span>mechanizm zgłaszania właściwemu organowi nadzorczemu wszelkich wymogów prawnych, którym podlega w państwie trzecim członek grupy przedsiębiorstw lub grupy przedsiębiorców prowadzących wspólną działalność gospodarczą i które mogą mieć istotny niekorzystny wpływ na gwarancje przewidziane w wiążących regułach korporacyjnych; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">n)</span>właściwe szkolenia z zakresu ochrony danych dla personelu mającego stały lub regularny dostęp do danych osobowych.
+    <span class="next-level">
+    <span class="pos">n)</span>właściwe szkolenia z zakresu ochrony danych dla personelu mającego stały lub regularny dostęp do danych osobowych.
     </span>
     </p>
     <p>3. Komisja może określić format i procedury wymiany informacji między administratorami, podmiotami przetwarzającymi i organami nadzorczymi dotyczących wiążących reguł korporacyjnych w rozumieniu niniejszego artykułu. Te akty wykonawcze są przyjmowane zgodnie z procedurą sprawdzającą, o której mowa w <u>art. 93 ust. 2</u>.</p>
@@ -1489,26 +1491,26 @@ function echo_article($number) {
     <p>Wyrok sądu lub trybunału oraz decyzja organu administracyjnego państwa trzeciego wymagające od administratora lub podmiotu przetwarzającego przekazania lub ujawnienia danych osobowych mogą zostać uznane lub być egzekwowalne wyłącznie, gdy opierają się na umowie międzynarodowej, takiej jak umowa o wzajemnej pomocy prawnej, obowiązującej między wzywającym państwem trzecim a Unią lub państwem członkowskim, bez uszczerbku dla innych podstaw przekazania na mocy niniejszego rozdziału.</p>
     <?php break; case 49: ?>
     <p>1. W razie braku decyzji stwierdzającej odpowiedni stopień ochrony określonej w <u>art. 45 ust. 3</u> lub braku odpowiednich zabezpieczeń określonych w <u>art. 46</u>, w tym wiążących reguł korporacyjnych, jednorazowe lub wielokrotne przekazanie danych osobowych do państwa trzeciego lub organizacji międzynarodowej mogą nastąpić wyłącznie pod warunkiem, że:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>osoba, której dane dotyczą, poinformowana o ewentualnym ryzyku, z którymi – ze względu na brak decyzji stwierdzającej odpowiedni stopień ochrony oraz na brak odpowiednich zabezpieczeń – może się dla niej wiązać proponowane przekazanie, wyraźnie wyraziła na nie zgodę;
+    <span class="next-level">
+    <span class="pos">a)</span>osoba, której dane dotyczą, poinformowana o ewentualnym ryzyku, z którymi – ze względu na brak decyzji stwierdzającej odpowiedni stopień ochrony oraz na brak odpowiednich zabezpieczeń – może się dla niej wiązać proponowane przekazanie, wyraźnie wyraziła na nie zgodę;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>przekazanie jest niezbędne do wykonania umowy między osobą, której dane dotyczą, a administratorem lub do wprowadzenia w życie środków przedumownych podejmowanych na żądanie osoby, której dane dotyczą;
+    <span class="next-level">
+    <span class="pos">b)</span>przekazanie jest niezbędne do wykonania umowy między osobą, której dane dotyczą, a administratorem lub do wprowadzenia w życie środków przedumownych podejmowanych na żądanie osoby, której dane dotyczą;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>przekazanie jest niezbędne do zawarcia lub wykonania umowy zawartej w interesie osoby, których dane dotyczą, między administratorem a inną osobą fizyczną lub prawną;
+    <span class="next-level">
+    <span class="pos">c)</span>przekazanie jest niezbędne do zawarcia lub wykonania umowy zawartej w interesie osoby, których dane dotyczą, między administratorem a inną osobą fizyczną lub prawną;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>przekazanie jest niezbędne ze względu na ważne względy interesu publicznego;
+    <span class="next-level">
+    <span class="pos">d)</span>przekazanie jest niezbędne ze względu na ważne względy interesu publicznego;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>przekazanie jest niezbędne do ustalenia, dochodzenia lub ochrony roszczeń;
+    <span class="next-level">
+    <span class="pos">e)</span>przekazanie jest niezbędne do ustalenia, dochodzenia lub ochrony roszczeń;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>przekazanie jest niezbędne do ochrony żywotnych interesów osoby, których dane dotyczą, lub innych osób, jeżeli osoba, której dane dotyczą, jest fizycznie lub prawnie niezdolna do wyrażenia zgody; lub
+    <span class="next-level">
+    <span class="pos">f)</span>przekazanie jest niezbędne do ochrony żywotnych interesów osoby, których dane dotyczą, lub innych osób, jeżeli osoba, której dane dotyczą, jest fizycznie lub prawnie niezdolna do wyrażenia zgody; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>przekazanie następuje z rejestru, który zgodnie z prawem Unii lub prawem państwa członkowskiego ma służyć za źródło informacji dla ogółu obywateli i który jest dostępny dla ogółu obywateli lub dla każdej osoby mogącej wykazać prawnie uzasadniony interes – ale wyłącznie w zakresie, w jakim w danym przypadku spełnione zostały warunki takiego dostępu określone w prawie Unii lub w prawie państwa członkowskiego.
+    <span class="next-level">
+    <span class="pos">g)</span>przekazanie następuje z rejestru, który zgodnie z prawem Unii lub prawem państwa członkowskiego ma służyć za źródło informacji dla ogółu obywateli i który jest dostępny dla ogółu obywateli lub dla każdej osoby mogącej wykazać prawnie uzasadniony interes – ale wyłącznie w zakresie, w jakim w danym przypadku spełnione zostały warunki takiego dostępu określone w prawie Unii lub w prawie państwa członkowskiego.
     </span>
     </p>
     <p>Jeżeli przekazanie nie może się opierać na <u>art. 45 ani 46</u>, w tym na przepisach dotyczących wiążących reguł korporacyjnych, i nie ma zastosowania żaden z wyjątków mających zastosowanie w szczególnych sytuacjach zgodnie z akapitem pierwszym niniejszego ustępu, przekazanie do państwa trzeciego lub organizacji międzynarodowej może nastąpić wyłącznie, gdy przekazanie nie jest powtarzalne, dotyczy tylko ograniczonej liczby osób, których dane dotyczą, jest niezbędne ze względu na ważne prawnie uzasadnione interesy realizowane przez administratora, wobec których charakteru nadrzędnego nie mają interesy ani prawa i wolności osoby, której dane dotyczą a administrator ocenił wszystkie okoliczności przekazania danych i na podstawie tej oceny zapewnił odpowiednie zabezpieczenia w zakresie ochrony danych osobowych. Administrator informuje organ nadzorczy o przekazaniu. Poza informacjami, o których mowa w <u>art. 13 i 14</u>, administrator podaje osobie, której dane dotyczą, także informacje o przekazaniu i o ważnych prawnie uzasadnionych interesach realizowanych przez niego.</p>
@@ -1519,17 +1521,17 @@ function echo_article($number) {
     <p>6. Administrator lub podmiot przetwarzający dokumentują ocenę oraz odpowiednie zabezpieczenia, o których mowa w ust. 1 akapit drugi niniejszego artykułu, w rejestrach, o których mowa w <u>art. 30</u>.</p>
     <?php break; case 50: ?>
     <p>Komisja i organy nadzorcze podejmują wobec państw trzecich i organizacji międzynarodowych odpowiednie działania na rzecz:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>wypracowania mechanizmów współpracy międzynarodowej ułatwiających skuteczne egzekwowanie przepisów o ochronie danych osobowych;
+    <span class="next-level">
+    <span class="pos">a)</span>wypracowania mechanizmów współpracy międzynarodowej ułatwiających skuteczne egzekwowanie przepisów o ochronie danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>zapewnienia wzajemnej pomocy międzynarodowej w egzekwowaniu przepisów o ochronie danych osobowych, w tym poprzez powiadomienia, przekazywanie skarg, pomoc w postępowaniu wyjaśniającym oraz wymianę informacji – z zastrzeżeniem odpowiednich zabezpieczeń ochrony danych osobowych i innych podstawowych praw i wolności;
+    <span class="next-level">
+    <span class="pos">b)</span>zapewnienia wzajemnej pomocy międzynarodowej w egzekwowaniu przepisów o ochronie danych osobowych, w tym poprzez powiadomienia, przekazywanie skarg, pomoc w postępowaniu wyjaśniającym oraz wymianę informacji – z zastrzeżeniem odpowiednich zabezpieczeń ochrony danych osobowych i innych podstawowych praw i wolności;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>włączenia stosownych podmiotów, których sprawa dotyczy, w dyskusję i działalność mające na celu upowszechnianie międzynarodowej współpracy w dziedzinie egzekwowania przepisów o ochronie danych osobowych;
+    <span class="next-level">
+    <span class="pos">c)</span>włączenia stosownych podmiotów, których sprawa dotyczy, w dyskusję i działalność mające na celu upowszechnianie międzynarodowej współpracy w dziedzinie egzekwowania przepisów o ochronie danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>upowszechniania wymiany i dokumentowania przepisów i praktyk w dziedzinie ochrony danych osobowych, w tym konfliktów jurysdykcyjnych z państwami trzecimi.
+    <span class="next-level">
+    <span class="pos">d)</span>upowszechniania wymiany i dokumentowania przepisów i praktyk w dziedzinie ochrony danych osobowych, w tym konfliktów jurysdykcyjnych z państwami trzecimi.
     </span>
     <?php break; case 51: ?>
     <p>1. Każde państwo członkowskie zapewnia, by za monitorowanie stosowania niniejszego rozporządzenia odpowiadał co najmniej jeden niezależny organ publiczny w celu ochrony podstawowych praw i wolności osób fizycznych w związku z przetwarzaniem oraz ułatwiania swobodnego przepływu danych osobowych w Unii (zwany dalej „organem nadzorczym”).</p>
@@ -1545,17 +1547,17 @@ function echo_article($number) {
     <p>6. Każde państwo członkowskie zapewnia, by każdy organ nadzorczy podlegał kontroli finansowej w sposób nienaruszający jego niezależności oraz dysponował odrębnym, publicznym budżetem rocznym, który może być częścią ogólnego budżetu państwowego lub krajowego.</p>
     <?php break; case 53: ?>
     <p>1. Państwa członkowskie zapewniają, by każdy członek ich organów nadzorczych był powoływany w drodze przejrzystej procedury przez:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">—</span>ich parlament,
+    <span class="next-level">
+    <span class="pos">—</span>ich parlament,
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">—</span>ich rząd,
+    <span class="next-level">
+    <span class="pos">—</span>ich rząd,
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">—</span>ich głowę państwa, lub
+    <span class="next-level">
+    <span class="pos">—</span>ich głowę państwa, lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">—</span>niezależny organ uprawniony do powoływania członków organu nadzorczego na podstawie prawa państwa członkowskiego.
+    <span class="next-level">
+    <span class="pos">—</span>niezależny organ uprawniony do powoływania członków organu nadzorczego na podstawie prawa państwa członkowskiego.
     </span>
     </p>
     <p>2. Każdy członek musi posiadać kwalifikacje, doświadczenie i umiejętności – w szczególności w dziedzinie ochrony danych osobowych – potrzebne do wypełniania swoich obowiązków i wykonywania swoich uprawnień.</p>
@@ -1563,23 +1565,23 @@ function echo_article($number) {
     <p>4. Członek może zostać odwołany ze stanowiska tylko w przypadku, gdy dopuścił się poważnego uchybienia lub przestał spełniać warunki niezbędne do pełnienia obowiązków.</p>
     <?php break; case 54: ?>
     <p>1. Każde państwo członkowskie określa w swoich przepisach prawnych wszystkie poniższe elementy:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>ustanowienie każdego z organów nadzorczych;
+    <span class="next-level">
+    <span class="pos">a)</span>ustanowienie każdego z organów nadzorczych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>kwalifikacje i warunki wyboru wymagane do powołania na stanowisko członka każdego z organów nadzorczych;
+    <span class="next-level">
+    <span class="pos">b)</span>kwalifikacje i warunki wyboru wymagane do powołania na stanowisko członka każdego z organów nadzorczych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>zasady i procedury powoływania członka lub członków każdego z organów nadzorczych;
+    <span class="next-level">
+    <span class="pos">c)</span>zasady i procedury powoływania członka lub członków każdego z organów nadzorczych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>okres kadencji członka lub członków każdego z organów nadzorczych – nie krótszy niż cztery lata, z wyjątkiem pierwszej kadencji po dniu 24 maja 2016 r., która może częściowo trwać krócej, jeżeli jest to niezbędne, aby chronić niezależność organu nadzorczego w drodze procedury stopniowej wymiany członków;
+    <span class="next-level">
+    <span class="pos">d)</span>okres kadencji członka lub członków każdego z organów nadzorczych – nie krótszy niż cztery lata, z wyjątkiem pierwszej kadencji po dniu 24 maja 2016 r., która może częściowo trwać krócej, jeżeli jest to niezbędne, aby chronić niezależność organu nadzorczego w drodze procedury stopniowej wymiany członków;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>czy członek lub członkowie każdego z organów nadzorczych mogą zostać powołani ponownie, a jeżeli tak – na ile kadencji;
+    <span class="next-level">
+    <span class="pos">e)</span>czy członek lub członkowie każdego z organów nadzorczych mogą zostać powołani ponownie, a jeżeli tak – na ile kadencji;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>zasady regulujące obowiązki członka lub członków oraz personelu każdego z organów nadzorczych, zakaz podejmowania działań, zajęć i czerpania korzyści – w trakcie kadencji oraz po jej zakończeniu – sprzecznych z tymi zobowiązaniami, a także przepisy regulujące ustanie stosunku pracy.
+    <span class="next-level">
+    <span class="pos">f)</span>zasady regulujące obowiązki członka lub członków oraz personelu każdego z organów nadzorczych, zakaz podejmowania działań, zajęć i czerpania korzyści – w trakcie kadencji oraz po jej zakończeniu – sprzecznych z tymi zobowiązaniami, a także przepisy regulujące ustanie stosunku pracy.
     </span>
     </p>
     <p>2. Członek lub członkowie oraz personel każdego z organów nadzorczych podlegają zgodnie z prawem Unii lub prawem państwa członkowskiego obowiązkowi zachowania tajemnicy służbowej – w trakcie kadencji oraz po jej zakończeniu – w odniesieniu do wszelkich poufnych informacji, które uzyskali w toku wypełniania zadań lub wykonywania swoich uprawnień. Obowiązek zachowania tajemnicy służbowej w trakcie ich kadencji dotyczy w szczególności sytuacji, w których osoby fizyczne zgłaszają naruszenia niniejszego rozporządzenia.</p>
@@ -1596,71 +1598,71 @@ function echo_article($number) {
     <p>6. Administrator lub podmiot przetwarzający komunikują się w sprawie dokonywanego przez nich transgranicznego przetwarzania jedynie z wiodącym organem nadzorczym.</p>
     <?php break; case 57: ?>
     <p>1. Bez uszczerbku dla innych zadań określonych na mocy niniejszego rozporządzenia każdy organ nadzorczy na swoim terytorium:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>monitoruje i egzekwuje stosowanie niniejszego rozporządzenia;
+    <span class="next-level">
+    <span class="pos">a)</span>monitoruje i egzekwuje stosowanie niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>upowszechnia w społeczeństwie wiedzę o ryzyku, przepisach, zabezpieczeniach i prawach związanych z przetwarzaniem oraz rozumienie tych zjawisk. Szczególną uwagę poświęca działaniom skierowanym do dzieci;
+    <span class="next-level">
+    <span class="pos">b)</span>upowszechnia w społeczeństwie wiedzę o ryzyku, przepisach, zabezpieczeniach i prawach związanych z przetwarzaniem oraz rozumienie tych zjawisk. Szczególną uwagę poświęca działaniom skierowanym do dzieci;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>doradza, zgodnie z prawem państwa członkowskiego, parlamentowi narodowemu, rządowi oraz innym instytucjom i organom w sprawie aktów prawnych i administracyjnych środków ochrony praw i wolności osób fizycznych w związku z przetwarzaniem;
+    <span class="next-level">
+    <span class="pos">c)</span>doradza, zgodnie z prawem państwa członkowskiego, parlamentowi narodowemu, rządowi oraz innym instytucjom i organom w sprawie aktów prawnych i administracyjnych środków ochrony praw i wolności osób fizycznych w związku z przetwarzaniem;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>upowszechnia wśród administratorów i podmiotów przetwarzających wiedzę o obowiązkach spoczywających na nich na mocy niniejszego rozporządzenia;
+    <span class="next-level">
+    <span class="pos">d)</span>upowszechnia wśród administratorów i podmiotów przetwarzających wiedzę o obowiązkach spoczywających na nich na mocy niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>udziela osobie, której dane dotyczą, na jej żądanie informacji o wykonywaniu praw przysługujących im na mocy niniejszego rozporządzenia, a w stosownym przypadku współpracuje w tym celu z organami nadzorczymi innych państw członkowskich;
+    <span class="next-level">
+    <span class="pos">e)</span>udziela osobie, której dane dotyczą, na jej żądanie informacji o wykonywaniu praw przysługujących im na mocy niniejszego rozporządzenia, a w stosownym przypadku współpracuje w tym celu z organami nadzorczymi innych państw członkowskich;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>rozpatruje skargi wniesione przez osobę, której dane dotyczą, lub przez podmiot, organizację lub zrzeszenie zgodnie z <u>art. 80</u>, w odpowiednim zakresie prowadzi postępowania w przedmiocie tych skarg i w rozsądnym terminie informuje skarżącego o postępach i wynikach tych postępowań, w szczególności jeżeli niezbędne jest dalsze prowadzenie postępowań lub koordynacja działań z innym organem nadzorczym;
+    <span class="next-level">
+    <span class="pos">f)</span>rozpatruje skargi wniesione przez osobę, której dane dotyczą, lub przez podmiot, organizację lub zrzeszenie zgodnie z <u>art. 80</u>, w odpowiednim zakresie prowadzi postępowania w przedmiocie tych skarg i w rozsądnym terminie informuje skarżącego o postępach i wynikach tych postępowań, w szczególności jeżeli niezbędne jest dalsze prowadzenie postępowań lub koordynacja działań z innym organem nadzorczym;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>współpracuje z innymi organami nadzorczymi, w tym dzieli się informacjami oraz świadczy wzajemną pomoc, w celu zapewnienia spójnego stosowania i egzekwowania niniejszego rozporządzenia;
+    <span class="next-level">
+    <span class="pos">g)</span>współpracuje z innymi organami nadzorczymi, w tym dzieli się informacjami oraz świadczy wzajemną pomoc, w celu zapewnienia spójnego stosowania i egzekwowania niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>prowadzi postępowania w sprawie stosowania niniejszego rozporządzenia, w tym na podstawie informacji otrzymanych od innego organu nadzorczego lub innego organu publicznego;
+    <span class="next-level">
+    <span class="pos">h)</span>prowadzi postępowania w sprawie stosowania niniejszego rozporządzenia, w tym na podstawie informacji otrzymanych od innego organu nadzorczego lub innego organu publicznego;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>monitoruje zmiany w stosownych dziedzinach, o ile zmiany te mają wpływ na ochronę danych osobowych, w szczególności monitoruje rozwój technologii informacyjno-komunikacyjnych i praktyk handlowych;
+    <span class="next-level">
+    <span class="pos">i)</span>monitoruje zmiany w stosownych dziedzinach, o ile zmiany te mają wpływ na ochronę danych osobowych, w szczególności monitoruje rozwój technologii informacyjno-komunikacyjnych i praktyk handlowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>przyjmuje standardowe klauzule umowne, o których mowa w <u>art. 28 ust. 8</u> i <u>art. 46 ust. 2 lit. d)</u>;
+    <span class="next-level">
+    <span class="pos">j)</span>przyjmuje standardowe klauzule umowne, o których mowa w <u>art. 28 ust. 8</u> i <u>art. 46 ust. 2 lit. d)</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">k)</span>ustanawia i prowadzi wykaz związany z wymogiem dokonania oceny skutków dla ochrony danych na mocy <u>art. 35 ust. 4</u>;
+    <span class="next-level">
+    <span class="pos">k)</span>ustanawia i prowadzi wykaz związany z wymogiem dokonania oceny skutków dla ochrony danych na mocy <u>art. 35 ust. 4</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">l)</span>udziela zaleceń, o których mowa w <u>art. 36 ust. 2</u>, dotyczących operacji przetwarzania;
+    <span class="next-level">
+    <span class="pos">l)</span>udziela zaleceń, o których mowa w <u>art. 36 ust. 2</u>, dotyczących operacji przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">m)</span>zachęca do sporządzania kodeksów postępowania zgodnie z <u>art. 40 ust. 1</u>, wydaje opinie na ich temat oraz zatwierdza te kodeksy, w których znajdują się odpowiednie zabezpieczenia, na mocy <u>art. 40 ust. 5</u>;
+    <span class="next-level">
+    <span class="pos">m)</span>zachęca do sporządzania kodeksów postępowania zgodnie z <u>art. 40 ust. 1</u>, wydaje opinie na ich temat oraz zatwierdza te kodeksy, w których znajdują się odpowiednie zabezpieczenia, na mocy <u>art. 40 ust. 5</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">n)</span>zachęca do ustanawiania mechanizmów certyfikacji w dziedzinie ochrony danych oraz znaków jakości i oznaczeń z tej dziedziny zgodnie z <u>art. 42 ust. 1</u>, a także zatwierdza kryteria certyfikacji zgodnie z <u>art. 42 ust. 5</u>;
+    <span class="next-level">
+    <span class="pos">n)</span>zachęca do ustanawiania mechanizmów certyfikacji w dziedzinie ochrony danych oraz znaków jakości i oznaczeń z tej dziedziny zgodnie z <u>art. 42 ust. 1</u>, a także zatwierdza kryteria certyfikacji zgodnie z <u>art. 42 ust. 5</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">o)</span>gdy ma to zastosowanie – zgodnie z <u>art. 42 ust. 7</u> dokonuje okresowego przeglądu udzielonych certyfikacji;
+    <span class="next-level">
+    <span class="pos">o)</span>gdy ma to zastosowanie – zgodnie z <u>art. 42 ust. 7</u> dokonuje okresowego przeglądu udzielonych certyfikacji;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">p)</span>opracowuje i publikuje kryteria akredytacji podmiotu monitorującego kodeksy postępowania na mocy <u>art. 41</u> oraz podmiotu certyfikującego na mocy <u>art. 43</u>;
+    <span class="next-level">
+    <span class="pos">p)</span>opracowuje i publikuje kryteria akredytacji podmiotu monitorującego kodeksy postępowania na mocy <u>art. 41</u> oraz podmiotu certyfikującego na mocy <u>art. 43</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">q)</span>akredytuje podmiot monitorujący kodeksy postępowania na mocy <u>art. 41</u> oraz podmiot certyfikujący na mocy <u>art. 43</u>;
+    <span class="next-level">
+    <span class="pos">q)</span>akredytuje podmiot monitorujący kodeksy postępowania na mocy <u>art. 41</u> oraz podmiot certyfikujący na mocy <u>art. 43</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">r)</span>wydaje zezwolenia na klauzule umowne i przepisy, o których mowa w <u>art. 46 ust. 3</u>;
+    <span class="next-level">
+    <span class="pos">r)</span>wydaje zezwolenia na klauzule umowne i przepisy, o których mowa w <u>art. 46 ust. 3</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">s)</span>zatwierdza wiążące reguły korporacyjne na mocy <u>art. 47</u>;
+    <span class="next-level">
+    <span class="pos">s)</span>zatwierdza wiążące reguły korporacyjne na mocy <u>art. 47</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">t)</span>bierze udział w pracach Europejskiej Rady Ochrony Danych;
+    <span class="next-level">
+    <span class="pos">t)</span>bierze udział w pracach Europejskiej Rady Ochrony Danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">u)</span>prowadzi wewnętrzny rejestr naruszeń niniejszego rozporządzenia i działań podjętych zgodnie z <u>art. 58 ust. 2</u>; oraz
+    <span class="next-level">
+    <span class="pos">u)</span>prowadzi wewnętrzny rejestr naruszeń niniejszego rozporządzenia i działań podjętych zgodnie z <u>art. 58 ust. 2</u>; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">v)</span>wypełnia inne zadania związane z ochroną danych osobowych.
+    <span class="next-level">
+    <span class="pos">v)</span>wypełnia inne zadania związane z ochroną danych osobowych.
     </span>
     </p>
     <p>2. Każdy organ nadzorczy ułatwia wnoszenie skarg, o których mowa w ust. 1 lit. f), za pomocą takich środków, jak gotowy formularz skargi, który można również wypełnić elektronicznie, co nie wyklucza innych sposobów komunikacji.</p>
@@ -1668,87 +1670,87 @@ function echo_article($number) {
     <p>4. Jeżeli żądanie jest w sposób oczywisty nieuzasadnione lub nadmierne, w szczególności ze względu na swą powtarzalność, organ nadzorczy może pobrać opłatę w rozsądnej wysokości wynikającej z kosztów administracyjnych lub może odmówić podjęcia żądanych działań. Obowiązek wykazania, że żądanie jest w sposób oczywisty nieuzasadnione lub nadmierne, spoczywa na organie nadzorczym.</p>
     <?php break; case 58: ?>
     <p>1. Każdemu organowi nadzorczemu przysługują wszystkie następujące uprawnienia w zakresie prowadzonych postępowań:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>nakazanie administratorowi i podmiotowi przetwarzającemu, a w stosownym przypadku przedstawicielowi administratora lub podmiotu przetwarzającego, dostarczenia wszelkich informacji potrzebnych organowi nadzorczemu do realizacji swoich zadań;
+    <span class="next-level">
+    <span class="pos">a)</span>nakazanie administratorowi i podmiotowi przetwarzającemu, a w stosownym przypadku przedstawicielowi administratora lub podmiotu przetwarzającego, dostarczenia wszelkich informacji potrzebnych organowi nadzorczemu do realizacji swoich zadań;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>prowadzenie postępowań w formie audytów ochrony danych;
+    <span class="next-level">
+    <span class="pos">b)</span>prowadzenie postępowań w formie audytów ochrony danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>dokonywanie przeglądu udzielonych certyfikacji na mocy <u>art. 42 ust. 7</u>;
+    <span class="next-level">
+    <span class="pos">c)</span>dokonywanie przeglądu udzielonych certyfikacji na mocy <u>art. 42 ust. 7</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>zawiadamianie administratora lub podmiotu przetwarzającego o podejrzeniu naruszenia niniejszego rozporządzenia;
+    <span class="next-level">
+    <span class="pos">d)</span>zawiadamianie administratora lub podmiotu przetwarzającego o podejrzeniu naruszenia niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>uzyskiwanie od administratora i podmiotu przetwarzającego dostępu do wszelkich danych osobowych i wszelkich informacji niezbędnych organowi nadzorczemu do realizacji swoich zadań;
+    <span class="next-level">
+    <span class="pos">e)</span>uzyskiwanie od administratora i podmiotu przetwarzającego dostępu do wszelkich danych osobowych i wszelkich informacji niezbędnych organowi nadzorczemu do realizacji swoich zadań;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>uzyskiwanie dostępu do wszystkich pomieszczeń administratora i podmiotu przetwarzającego, w tym do sprzętu i środków służących do przetwarzania danych, zgodnie z procedurami określonymi w prawie unijnym lub w prawie państwa członkowskiego.
+    <span class="next-level">
+    <span class="pos">f)</span>uzyskiwanie dostępu do wszystkich pomieszczeń administratora i podmiotu przetwarzającego, w tym do sprzętu i środków służących do przetwarzania danych, zgodnie z procedurami określonymi w prawie unijnym lub w prawie państwa członkowskiego.
     </span>
     </p>
     <p>2. Każdemu organowi nadzorczemu przysługują wszystkie następujące uprawnienia naprawcze:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>wydawanie ostrzeżeń administratorowi lub podmiotowi przetwarzającemu dotyczących możliwości naruszenia przepisów niniejszego rozporządzenia poprzez planowane operacje przetwarzania;
+    <span class="next-level">
+    <span class="pos">a)</span>wydawanie ostrzeżeń administratorowi lub podmiotowi przetwarzającemu dotyczących możliwości naruszenia przepisów niniejszego rozporządzenia poprzez planowane operacje przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>udzielanie upomnień administratorowi lub podmiotowi przetwarzającemu w przypadku naruszenia przepisów niniejszego rozporządzenia przez operacje przetwarzania;
+    <span class="next-level">
+    <span class="pos">b)</span>udzielanie upomnień administratorowi lub podmiotowi przetwarzającemu w przypadku naruszenia przepisów niniejszego rozporządzenia przez operacje przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>nakazanie administratorowi lub podmiotowi przetwarzającemu spełnienia żądania osoby, której dane dotyczą, wynikającego z praw przysługujących jej na mocy niniejszego rozporządzenia;
+    <span class="next-level">
+    <span class="pos">c)</span>nakazanie administratorowi lub podmiotowi przetwarzającemu spełnienia żądania osoby, której dane dotyczą, wynikającego z praw przysługujących jej na mocy niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>nakazanie administratorowi lub podmiotowi przetwarzającemu dostosowania operacji przetwarzania do przepisów niniejszego rozporządzenia, a w stosownych przypadkach wskazanie sposobu i terminu;
+    <span class="next-level">
+    <span class="pos">d)</span>nakazanie administratorowi lub podmiotowi przetwarzającemu dostosowania operacji przetwarzania do przepisów niniejszego rozporządzenia, a w stosownych przypadkach wskazanie sposobu i terminu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>nakazanie administratorowi zawiadomienia osoby, której dane dotyczą, o naruszeniu ochrony danych;
+    <span class="next-level">
+    <span class="pos">e)</span>nakazanie administratorowi zawiadomienia osoby, której dane dotyczą, o naruszeniu ochrony danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>wprowadzanie czasowego lub całkowitego ograniczenia przetwarzania, w tym zakazu przetwarzania;
+    <span class="next-level">
+    <span class="pos">f)</span>wprowadzanie czasowego lub całkowitego ograniczenia przetwarzania, w tym zakazu przetwarzania;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>nakazanie na mocy <u>art. 16, 17 i 18</u> sprostowania lub usunięcia danych osobowych lub ograniczenia ich przetwarzania oraz nakazanie na mocy <u>art. 17 ust. 2</u> i <u>art. 19</u> powiadomienia o tych czynnościach odbiorców, którym dane osobowe ujawniono;
+    <span class="next-level">
+    <span class="pos">g)</span>nakazanie na mocy <u>art. 16, 17 i 18</u> sprostowania lub usunięcia danych osobowych lub ograniczenia ich przetwarzania oraz nakazanie na mocy <u>art. 17 ust. 2</u> i <u>art. 19</u> powiadomienia o tych czynnościach odbiorców, którym dane osobowe ujawniono;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>cofnięcie certyfikacji lub nakazanie podmiotowi certyfikującemu cofnięcia certyfikacji udzielonej na mocy <u>art. 42 lub 43</u>, lub nakazanie podmiotowi certyfikującemu nieudzielania certyfikacji, jeżeli jej wymogi nie są spełnione lub przestały być spełniane;
+    <span class="next-level">
+    <span class="pos">h)</span>cofnięcie certyfikacji lub nakazanie podmiotowi certyfikującemu cofnięcia certyfikacji udzielonej na mocy <u>art. 42 lub 43</u>, lub nakazanie podmiotowi certyfikującemu nieudzielania certyfikacji, jeżeli jej wymogi nie są spełnione lub przestały być spełniane;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>zastosowanie, oprócz lub zamiast środków, o których mowa w niniejszym ustępie, administracyjnej kary pieniężnej na mocy <u>art. 83</u>, zależnie od okoliczności konkretnej sprawy;
+    <span class="next-level">
+    <span class="pos">i)</span>zastosowanie, oprócz lub zamiast środków, o których mowa w niniejszym ustępie, administracyjnej kary pieniężnej na mocy <u>art. 83</u>, zależnie od okoliczności konkretnej sprawy;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>nakazanie zawieszenia przepływu danych do odbiorcy w państwie trzecim lub do organizacji międzynarodowej.
+    <span class="next-level">
+    <span class="pos">j)</span>nakazanie zawieszenia przepływu danych do odbiorcy w państwie trzecim lub do organizacji międzynarodowej.
     </span>
     </p>
     <p>3. Każdemu organowi nadzorczemu przysługują wszystkie następujące uprawnienia w zakresie wydawania zezwoleń i uprawnienia doradcze:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>udzielanie porad administratorowi zgodnie z procedurą uprzednich konsultacji, o której mowa w <u>art. 36</u>;
+    <span class="next-level">
+    <span class="pos">a)</span>udzielanie porad administratorowi zgodnie z procedurą uprzednich konsultacji, o której mowa w <u>art. 36</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>wydawanie, z własnej inicjatywy lub na wniosek, opinii przeznaczonych dla parlamentu narodowego, rządu państwa członkowskiego lub – zgodnie z prawem państwa członkowskiego – innych instytucji i organów oraz ogółu społeczeństwa we wszelkich sprawach związanych z ochroną danych osobowych;
+    <span class="next-level">
+    <span class="pos">b)</span>wydawanie, z własnej inicjatywy lub na wniosek, opinii przeznaczonych dla parlamentu narodowego, rządu państwa członkowskiego lub – zgodnie z prawem państwa członkowskiego – innych instytucji i organów oraz ogółu społeczeństwa we wszelkich sprawach związanych z ochroną danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>zezwalanie na przetwarzanie zgodnie z <u>art. 36 ust. 5</u>, jeżeli prawo państwa członkowskiego wymaga takiego uprzedniego zezwolenia;
+    <span class="next-level">
+    <span class="pos">c)</span>zezwalanie na przetwarzanie zgodnie z <u>art. 36 ust. 5</u>, jeżeli prawo państwa członkowskiego wymaga takiego uprzedniego zezwolenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>opiniowanie i zatwierdzanie projektów kodeksów postępowania zgodnie z <u>art. 40 ust. 5</u>;
+    <span class="next-level">
+    <span class="pos">d)</span>opiniowanie i zatwierdzanie projektów kodeksów postępowania zgodnie z <u>art. 40 ust. 5</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>akredytowanie na mocy <u>art. 43</u> podmiotów certyfikujących;
+    <span class="next-level">
+    <span class="pos">e)</span>akredytowanie na mocy <u>art. 43</u> podmiotów certyfikujących;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>udzielanie certyfikacji i zatwierdzanie kryteriów certyfikacji zgodnie z <u>art. 42 ust. 5</u>;
+    <span class="next-level">
+    <span class="pos">f)</span>udzielanie certyfikacji i zatwierdzanie kryteriów certyfikacji zgodnie z <u>art. 42 ust. 5</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>przyjmowanie standardowych klauzul ochrony danych, o których mowa w <u>art. 28 ust. 8</u> i <u>art. 46 ust. 2 lit. d)</u>;
+    <span class="next-level">
+    <span class="pos">g)</span>przyjmowanie standardowych klauzul ochrony danych, o których mowa w <u>art. 28 ust. 8</u> i <u>art. 46 ust. 2 lit. d)</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>zezwalanie na klauzule umowne, o których mowa w <u>art. 46 ust. 3 lit. a)</u>;
+    <span class="next-level">
+    <span class="pos">h)</span>zezwalanie na klauzule umowne, o których mowa w <u>art. 46 ust. 3 lit. a)</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>zezwalanie na uzgodnienia administracyjne, o których mowa w <u>art. 46 ust. 3 lit. b)</u>;
+    <span class="next-level">
+    <span class="pos">i)</span>zezwalanie na uzgodnienia administracyjne, o których mowa w <u>art. 46 ust. 3 lit. b)</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>zatwierdzanie wiążących reguł korporacyjnych na mocy <u>art. 47</u>.
+    <span class="next-level">
+    <span class="pos">j)</span>zatwierdzanie wiążących reguł korporacyjnych na mocy <u>art. 47</u>.
     </span>
     </p>
     <p>4. Wykonywanie uprawnień powierzonych organowi nadzorczemu na mocy niniejszego artykułu podlega odpowiednim zabezpieczeniom – w tym prawu do skutecznego środka ochrony prawnej przed sądem i rzetelnego procesu, określonym w prawie Unii i prawie państwa członkowskiego zgodnie z <?php echo a_href('KPP', 'Kartą praw podstawowych'); ?>.</p>
@@ -1774,11 +1776,11 @@ function echo_article($number) {
     <p>2. Każdy organ nadzorczy podejmuje wszelkie odpowiednie środki, by odpowiedzi na wniosek innego organu nadzorczego udzielić bez zbędnej zwłoki i nie później niż w terminie miesiąca od otrzymania wniosku. Środki takie mogą obejmować w szczególności przekazanie stosownych informacji o przebiegu postępowania.</p>
     <p>3. Wniosek o pomoc zawiera wszelkie niezbędne informacje, w tym cel i uzasadnienie wniosku. Uzyskane informacje są wykorzystywane wyłącznie do celu, w którym o nie wystąpiono.</p>
     <p>4. Wezwany organ nadzorczy nie może odmówić wykonania wniosku, chyba że:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>nie jest organem właściwym w przedmiocie wniosku lub środków, o których wykonanie wystąpiono; lub
+    <span class="next-level">
+    <span class="pos">a)</span>nie jest organem właściwym w przedmiocie wniosku lub środków, o których wykonanie wystąpiono; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>wykonanie wniosku stanowiłoby naruszenie niniejszego rozporządzenia, prawa Unii lub prawa państwa członkowskiego, któremu podlega wezwany organ nadzorczy.
+    <span class="next-level">
+    <span class="pos">b)</span>wykonanie wniosku stanowiłoby naruszenie niniejszego rozporządzenia, prawa Unii lub prawa państwa członkowskiego, któremu podlega wezwany organ nadzorczy.
     </span>
     </p>
     <p>5. Wezwany organ nadzorczy informuje wzywający organ nadzorczy, od którego wniosek pochodzi, o rezultatach lub w stosownym przypadku o postępach lub środkach zastosowanych w związku z tym wnioskiem. Wezwany organ nadzorczy uzasadnia odmowę wykonania wniosku na mocy ust. 4.</p>
@@ -1798,34 +1800,34 @@ function echo_article($number) {
     <p>Aby przyczynić się do spójnego stosowania niniejszego rozporządzenia w całej Unii, organy nadzorcze współpracują ze sobą, a w stosownym przypadku także z Komisją, stosując mechanizm spójności określony w niniejszej sekcji.</p>
     <?php break; case 64: ?>
     <p>1. Europejska Rada Ochrony Danych wydaje opinię w przypadku, gdy właściwy organ nadzorczy zamierza przyjąć środek wymieniony poniżej. W tym celu właściwy organ nadzorczy zgłasza Europejskiej Radzie Ochrony Danych projekt decyzji dotyczącej:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>przyjęcia na mocy <u>art. 35 ust. 4</u> wykazu operacji przetwarzania podlegających wymogowi dokonania oceny skutków dla ochrony danych;
+    <span class="next-level">
+    <span class="pos">a)</span>przyjęcia na mocy <u>art. 35 ust. 4</u> wykazu operacji przetwarzania podlegających wymogowi dokonania oceny skutków dla ochrony danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>stwierdzenia zgodnie z <u>art. 40 ust. 7</u>, czy projekt kodeksu postępowania, zmiana kodeksu lub rozszerzenie jego zakresu są zgodne z niniejszym rozporządzeniem;
+    <span class="next-level">
+    <span class="pos">b)</span>stwierdzenia zgodnie z <u>art. 40 ust. 7</u>, czy projekt kodeksu postępowania, zmiana kodeksu lub rozszerzenie jego zakresu są zgodne z niniejszym rozporządzeniem;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>zatwierdzenia kryteriów akredytacji podmiotu na mocy <u>art. 41 ust. 3</u> lub podmiotu certyfikującego na mocy <u>art. 43 ust. 3</u>;
+    <span class="next-level">
+    <span class="pos">c)</span>zatwierdzenia kryteriów akredytacji podmiotu na mocy <u>art. 41 ust. 3</u> lub podmiotu certyfikującego na mocy <u>art. 43 ust. 3</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>określenia standardowych klauzul ochrony danych, o których mowa w <u>art. 46 ust. 2 lit. d)</u> i <u>art. 28 ust. 8</u>;
+    <span class="next-level">
+    <span class="pos">d)</span>określenia standardowych klauzul ochrony danych, o których mowa w <u>art. 46 ust. 2 lit. d)</u> i <u>art. 28 ust. 8</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>wydania zezwolenia na klauzule umowne, o których mowa w <u>art. 46 ust. 3</u>; lub
+    <span class="next-level">
+    <span class="pos">e)</span>wydania zezwolenia na klauzule umowne, o których mowa w <u>art. 46 ust. 3</u>; lub
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>zatwierdzenia wiążących reguł korporacyjnych w rozumieniu <u>art. 47</u>.
+    <span class="next-level">
+    <span class="pos">f)</span>zatwierdzenia wiążących reguł korporacyjnych w rozumieniu <u>art. 47</u>.
     </span>
     </p>
     <p>2. Każdy organ nadzorczy, przewodniczący Europejskiej Rady Ochrony Danych lub Komisja mogą wystąpić o przeanalizowanie przez Europejską Radę Ochrony Danych w celu wydania opinii sprawy mającej charakter ogólny lub wywołującej skutki w więcej niż jednym państwie członkowskim, w szczególności jeżeli właściwy organ nadzorczy nie wywiązuje się z obowiązków dotyczących wzajemnej pomocy zgodnie z <u>art. 61</u> lub wspólnych operacji zgodnie z <u>art. 62</u>.</p>
     <p>3. W przypadkach, o których mowa w ust. 1 i 2, Europejska Rada Ochrony Danych wydaje opinię w przedłożonej jej sprawie, o ile wcześniej nie wydała już opinii w takiej samej sprawie. Europejska Rady Ochrony Danych przyjmuje tę opinię w terminie ośmiu tygodni zwykłą większością głosów swoich członków. Ze względu na złożony charakter sprawy termin ten można przedłużyć o sześć tygodni. Jeżeli chodzi o projekt decyzji, o którym mowa w ust. 1 i który został przekazany członkom Europejskiej Rady Ochrony Danych zgodnie z ust. 5, uznaje się, że członek, który w rozsądnym terminie wskazanym przez przewodniczącego nie zgłosił sprzeciwu, zgadza się z tym projektem.</p>
     <p>4. Organy nadzorcze i Komisja przekazują bez zbędnej zwłoki Europejskiej Radzie Ochrony Danych drogą elektroniczną w standardowym formacie wszelkie stosowne informacje, w tym w odpowiednim przypadku streszczenie stanu faktycznego, projekt decyzji, powody przemawiające za koniecznością przyjęcia takiego środka oraz opinię innych organów nadzorczych, których sprawa dotyczy.</p>
     <p>5. Przewodniczący Europejskiej Rady Ochrony Danych bez zbędnej zwłoki przekazuje drogą elektroniczną:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>członkom Europejskiej Rady Ochrony Danych i Komisji wszelkie stosowne informacje otrzymane w standardowym formacie. W razie potrzeby sekretariat Europejskiej Rady Ochrony Danych zapewnia tłumaczenie stosownych informacji; oraz
+    <span class="next-level">
+    <span class="pos">a)</span>członkom Europejskiej Rady Ochrony Danych i Komisji wszelkie stosowne informacje otrzymane w standardowym formacie. W razie potrzeby sekretariat Europejskiej Rady Ochrony Danych zapewnia tłumaczenie stosownych informacji; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>organowi nadzorczemu, o którym zależnie od sytuacji mowa w ust. 1 i 2, oraz Komisji opinię, którą podaje też do wiadomości publicznej.
+    <span class="next-level">
+    <span class="pos">b)</span>organowi nadzorczemu, o którym zależnie od sytuacji mowa w ust. 1 i 2, oraz Komisji opinię, którą podaje też do wiadomości publicznej.
     </span>
     </p>
     <p>6. Właściwy organ nadzorczy nie przyjmuje projektu decyzji, o którym mowa w <s>art.</s> ust. 1 przed upływem terminu, o którym mowa w ust. 3.</p>
@@ -1833,14 +1835,14 @@ function echo_article($number) {
     <p>8. Jeżeli w terminie, o którym mowa w ust. 7 niniejszego artykułu, organ nadzorczy, którego sprawa dotyczy, poinformuje przewodniczącego Europejskiej Rady Ochrony Danych, że nie zamierza się zastosować do całości lub części jej opinii podając odpowiednie uzasadnienie, zastosowanie ma <u>art. 65 ust. 1</u>.</p>
     <?php break; case 65: ?>
     <p>1. Aby w poszczególnych sytuacjach zapewnić właściwe i spójne stosowanie niniejszego rozporządzenia, Europejska Rada Ochrony Danych przyjmuje w następujących przypadkach wiążące decyzje:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>jeżeli w przypadku, o którym mowa w <u>art. 60 ust. 4</u>, organ nadzorczy, którego sprawa dotyczy, zgłosił mający znaczenie dla sprawy i uzasadniony sprzeciw wobec projektu decyzji wiodącego organu nadzorczego, a wiodący organ nadzorczy odrzucił taki sprzeciw jako niemający znaczenia dla sprawy lub nieuzasadniony. Wiążąca decyzja dotyczy wszystkich spraw, które są przedmiotem mającego znaczenie dla sprawy i uzasadnionego sprzeciwu, w szczególności dotyczy tego, czy doszło do naruszenia niniejszego rozporządzenia;
+    <span class="next-level">
+    <span class="pos">a)</span>jeżeli w przypadku, o którym mowa w <u>art. 60 ust. 4</u>, organ nadzorczy, którego sprawa dotyczy, zgłosił mający znaczenie dla sprawy i uzasadniony sprzeciw wobec projektu decyzji wiodącego organu nadzorczego, a wiodący organ nadzorczy odrzucił taki sprzeciw jako niemający znaczenia dla sprawy lub nieuzasadniony. Wiążąca decyzja dotyczy wszystkich spraw, które są przedmiotem mającego znaczenie dla sprawy i uzasadnionego sprzeciwu, w szczególności dotyczy tego, czy doszło do naruszenia niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>jeżeli panują sprzeczne opinie co do tego, który z organów nadzorczych, których sprawa dotyczy, jest właściwy względem głównej jednostki organizacyjnej;
+    <span class="next-level">
+    <span class="pos">b)</span>jeżeli panują sprzeczne opinie co do tego, który z organów nadzorczych, których sprawa dotyczy, jest właściwy względem głównej jednostki organizacyjnej;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>jeżeli właściwy organ nadzorczy nie wystąpił o opinię do Europejskiej Rady Ochrony Danych w przypadkach, o których mowa w <u>art. 64 ust. 1</u>, lub nie zastosował się do opinii Europejskiej Rady Ochrony Danych wydanej zgodnie z <u>art. 64</u>. W takim przypadku organ nadzorczy, którego sprawa dotyczy, lub Komisja mogą zgłosić sprawę Europejskiej Radzie Ochrony Danych.
+    <span class="next-level">
+    <span class="pos">c)</span>jeżeli właściwy organ nadzorczy nie wystąpił o opinię do Europejskiej Rady Ochrony Danych w przypadkach, o których mowa w <u>art. 64 ust. 1</u>, lub nie zastosował się do opinii Europejskiej Rady Ochrony Danych wydanej zgodnie z <u>art. 64</u>. W takim przypadku organ nadzorczy, którego sprawa dotyczy, lub Komisja mogą zgłosić sprawę Europejskiej Radzie Ochrony Danych.
     </span>
     </p>
     <p>2. Decyzję, o której mowa w ust. 1, Europejska Rada Ochrony Danych przyjmuje większością dwóch trzecich głosów swoich członków w terminie miesiąca od wpłynięcia sprawy. Ze względu na złożony charakter sprawy termin ten można przedłużyć o miesiąc. Decyzja, o której mowa w ust. 1, zostaje wraz z uzasadnieniem skierowana do wiodącego organu nadzorczego i wszystkich organów nadzorczych, których sprawa dotyczy, i jest dla nich wiążąca.</p>
@@ -1868,80 +1870,80 @@ function echo_article($number) {
     <p>2. Bez uszczerbku dla wniosków Komisji, o których mowa w <u>art. 70 ust. 1 lit. b)</u> i <u>art. 70 ust. 2</u>, Europejska Rada Ochrony Danych podczas wypełniania swoich zadań lub wykonywania swoich uprawnień nie zwraca się do nikogo o instrukcje ani ich od nikogo nie przyjmuje.</p>
     <?php break; case 70: ?>
     <p>1. Europejska Rada Ochrony Danych zapewnia spójne stosowanie niniejszego rozporządzenia. W tym celu z własnej inicjatywy lub w stosownych przypadkach na wniosek Komisji podejmuje w szczególności następujące działania:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>monitoruje i zapewnia właściwe stosowanie niniejszego rozporządzenia w przypadkach, o których mowa w <u>art. 64 i 65</u>, bez uszczerbku dla zadań krajowych organów nadzorczych;
+    <span class="next-level">
+    <span class="pos">a)</span>monitoruje i zapewnia właściwe stosowanie niniejszego rozporządzenia w przypadkach, o których mowa w <u>art. 64 i 65</u>, bez uszczerbku dla zadań krajowych organów nadzorczych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>doradza Komisji w sprawach związanych z ochroną danych osobowych w Unii, w tym w sprawie wszelkich proponowanych zmian do niniejszego rozporządzenia;
+    <span class="next-level">
+    <span class="pos">b)</span>doradza Komisji w sprawach związanych z ochroną danych osobowych w Unii, w tym w sprawie wszelkich proponowanych zmian do niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>doradza Komisji w sprawie formatu i procedur wymiany informacji między administratorami, podmiotami przetwarzającymi i organami nadzorczymi do celów wiążących reguł korporacyjnych;
+    <span class="next-level">
+    <span class="pos">c)</span>doradza Komisji w sprawie formatu i procedur wymiany informacji między administratorami, podmiotami przetwarzającymi i organami nadzorczymi do celów wiążących reguł korporacyjnych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>wydaje wytyczne, zalecenia oraz określa najlepsze praktyki dotyczące usuwania z ogólnodostępnych usług łączności łącz do danych osobowych, kopi tych danych lub ich replikacji, o czym mowa w <u>art. 17 ust. 2</u>;
+    <span class="next-level">
+    <span class="pos">d)</span>wydaje wytyczne, zalecenia oraz określa najlepsze praktyki dotyczące usuwania z ogólnodostępnych usług łączności łącz do danych osobowych, kopi tych danych lub ich replikacji, o czym mowa w <u>art. 17 ust. 2</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>z własnej inicjatywy lub na wniosek jednego ze swoich członków lub Komisji bada wszelkie kwestie dotyczące stosowania niniejszego rozporządzenia i wydaje wytyczne, zalecenia oraz określa najlepsze praktyki, by zachęcić do spójnego stosowania niniejszego rozporządzenia;
+    <span class="next-level">
+    <span class="pos">e)</span>z własnej inicjatywy lub na wniosek jednego ze swoich członków lub Komisji bada wszelkie kwestie dotyczące stosowania niniejszego rozporządzenia i wydaje wytyczne, zalecenia oraz określa najlepsze praktyki, by zachęcić do spójnego stosowania niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu, by na potrzeby <u>art. 22 ust. 2</u> doprecyzować kryteria i wymogi dotyczące decyzji opartych na profilowaniu;
+    <span class="next-level">
+    <span class="pos">f)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu, by na potrzeby <u>art. 22 ust. 2</u> doprecyzować kryteria i wymogi dotyczące decyzji opartych na profilowaniu;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu dotyczące stwierdzania naruszenia ochrony danych osobowych i określenia zbędnej zwłoki w rozumieniu <u>art. 33 ust. 1 i 2</u> oraz szczególnych okoliczności, w których administrator lub podmiot przetwarzający mają obowiązek zgłosić naruszenie ochrony danych osobowych;
+    <span class="next-level">
+    <span class="pos">g)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu dotyczące stwierdzania naruszenia ochrony danych osobowych i określenia zbędnej zwłoki w rozumieniu <u>art. 33 ust. 1 i 2</u> oraz szczególnych okoliczności, w których administrator lub podmiot przetwarzający mają obowiązek zgłosić naruszenie ochrony danych osobowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu wskazujące, w jakich okolicznościach naruszenie ochrony danych osobowych może powodować wysokie ryzyko naruszenia praw lub wolności osób fizycznych w rozumieniu <u>art. 34 ust. 1</u>;
+    <span class="next-level">
+    <span class="pos">h)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu wskazujące, w jakich okolicznościach naruszenie ochrony danych osobowych może powodować wysokie ryzyko naruszenia praw lub wolności osób fizycznych w rozumieniu <u>art. 34 ust. 1</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu, by doprecyzować kryteria i wymogi względem przekazywania danych osobowych, które opiera się na wiążących regułach korporacyjnych stosowanych przez administratorów i na wiążących regułach korporacyjnych stosowanych przez podmioty przetwarzające, oraz inne konieczne wymogi mające zapewnić ochronę danych osobowych osób, których dane dotyczą, zgodnie z <u>art. 47</u>;
+    <span class="next-level">
+    <span class="pos">i)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu, by doprecyzować kryteria i wymogi względem przekazywania danych osobowych, które opiera się na wiążących regułach korporacyjnych stosowanych przez administratorów i na wiążących regułach korporacyjnych stosowanych przez podmioty przetwarzające, oraz inne konieczne wymogi mające zapewnić ochronę danych osobowych osób, których dane dotyczą, zgodnie z <u>art. 47</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu, by doprecyzować kryteria i wymogi względem przekazywania danych osobowych na podstawie <u>art. 49 ust. 1</u>;
+    <span class="next-level">
+    <span class="pos">j)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu, by doprecyzować kryteria i wymogi względem przekazywania danych osobowych na podstawie <u>art. 49 ust. 1</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">k)</span>opracowuje wytyczne dla organów nadzorczych w sprawie stosowania środków, o których mowa w <u>art. 58 ust. 1, 2 i 3</u>, oraz w sprawie określania wysokości administracyjnych kar pieniężnych zgodnie z <u>art. 83</u>;
+    <span class="next-level">
+    <span class="pos">k)</span>opracowuje wytyczne dla organów nadzorczych w sprawie stosowania środków, o których mowa w <u>art. 58 ust. 1, 2 i 3</u>, oraz w sprawie określania wysokości administracyjnych kar pieniężnych zgodnie z <u>art. 83</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">l)</span>dokonuje przeglądu praktycznego stosowania wytycznych, zaleceń i najlepszych praktyk, o których mowa w lit. e) i f);
+    <span class="next-level">
+    <span class="pos">l)</span>dokonuje przeglądu praktycznego stosowania wytycznych, zaleceń i najlepszych praktyk, o których mowa w lit. e) i f);
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">m)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu, by na potrzeby <u>art. 54 ust. 2</u> określić wspólne procedury postępowania w przypadkach zgłaszania przez osoby fizyczne naruszeń niniejszego rozporządzenia;
+    <span class="next-level">
+    <span class="pos">m)</span>wydaje wytyczne, zalecenia i określa najlepsze praktyki zgodnie z lit. e) niniejszego ustępu, by na potrzeby <u>art. 54 ust. 2</u> określić wspólne procedury postępowania w przypadkach zgłaszania przez osoby fizyczne naruszeń niniejszego rozporządzenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">n)</span>zachęca do sporządzania kodeksów postępowania oraz do ustanawiania mechanizmów certyfikacji w dziedzinie ochrony danych oraz znaków jakości i oznaczeń w tej dziedzinie zgodnie z <u>art. 40 i 42</u>;
+    <span class="next-level">
+    <span class="pos">n)</span>zachęca do sporządzania kodeksów postępowania oraz do ustanawiania mechanizmów certyfikacji w dziedzinie ochrony danych oraz znaków jakości i oznaczeń w tej dziedzinie zgodnie z <u>art. 40 i 42</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">o)</span>akredytuje podmioty certyfikujące i dokonuje okresowego przeglądu certyfikacji zgodnie z <u>art. 43</u> oraz prowadzi publiczny rejestr podmiotów akredytowanych zgodnie z <u>art. 43 ust. 6</u> i administratorów i podmiotów przetwarzających akredytowanych zgodnie z <u>art. 42 ust. 7</u>, mających siedzibę w państwach trzecich;
+    <span class="next-level">
+    <span class="pos">o)</span>akredytuje podmioty certyfikujące i dokonuje okresowego przeglądu certyfikacji zgodnie z <u>art. 43</u> oraz prowadzi publiczny rejestr podmiotów akredytowanych zgodnie z <u>art. 43 ust. 6</u> i administratorów i podmiotów przetwarzających akredytowanych zgodnie z <u>art. 42 ust. 7</u>, mających siedzibę w państwach trzecich;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">p)</span>precyzuje wymogi, o których mowa w <u>art. 43 ust. 3</u>, z myślą o akredytacji podmiotów certyfikujących zgodnie z <u>art. 42</u>;
+    <span class="next-level">
+    <span class="pos">p)</span>precyzuje wymogi, o których mowa w <u>art. 43 ust. 3</u>, z myślą o akredytacji podmiotów certyfikujących zgodnie z <u>art. 42</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">q)</span>udziela Komisji opinii w sprawie wymogów certyfikacyjnych, o których mowa w <u>art. 43 ust. 8</u>;
+    <span class="next-level">
+    <span class="pos">q)</span>udziela Komisji opinii w sprawie wymogów certyfikacyjnych, o których mowa w <u>art. 43 ust. 8</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">r)</span>udziela Komisji opinii w sprawie znaków graficznych, o których mowa w <u>art. 12 ust. 7</u>;
+    <span class="next-level">
+    <span class="pos">r)</span>udziela Komisji opinii w sprawie znaków graficznych, o których mowa w <u>art. 12 ust. 7</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">s)</span>udziela Komisji opinii na potrzeby oceny, czy stopień ochrony w państwie trzecim lub organizacji międzynarodowej jest odpowiedni, w tym na potrzeby oceny, czy państwo trzecie, terytorium, określony sektor lub określone sektory w tym państwie trzecim lub organizacja międzynarodowa nie przestały zapewniać odpowiedniego stopnia ochrony. W tym celu Komisja udostępnia Europejskiej Radzie Ochrony Danych wszelką niezbędną dokumentację, w tym korespondencję z rządem państwa trzeciego w odniesieniu do tego państwa trzeciego, terytorium lub określonego sektora lub korespondencję z organizacją międzynarodową;
+    <span class="next-level">
+    <span class="pos">s)</span>udziela Komisji opinii na potrzeby oceny, czy stopień ochrony w państwie trzecim lub organizacji międzynarodowej jest odpowiedni, w tym na potrzeby oceny, czy państwo trzecie, terytorium, określony sektor lub określone sektory w tym państwie trzecim lub organizacja międzynarodowa nie przestały zapewniać odpowiedniego stopnia ochrony. W tym celu Komisja udostępnia Europejskiej Radzie Ochrony Danych wszelką niezbędną dokumentację, w tym korespondencję z rządem państwa trzeciego w odniesieniu do tego państwa trzeciego, terytorium lub określonego sektora lub korespondencję z organizacją międzynarodową;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">t)</span>wydaje opinie w sprawie projektów decyzji zgłoszonych przez organy nadzorcze zgodnie z mechanizmem spójności, o którym mowa w <u>art. 64 ust. 1</u>, w sprawach przedłożonych jej zgodnie z <u>art. 64 ust. 2</u> oraz wydaje wiążące decyzje zgodnie z <u>art. 65</u>, w tym w sprawach, o których mowa w <u>art. 66</u>;
+    <span class="next-level">
+    <span class="pos">t)</span>wydaje opinie w sprawie projektów decyzji zgłoszonych przez organy nadzorcze zgodnie z mechanizmem spójności, o którym mowa w <u>art. 64 ust. 1</u>, w sprawach przedłożonych jej zgodnie z <u>art. 64 ust. 2</u> oraz wydaje wiążące decyzje zgodnie z <u>art. 65</u>, w tym w sprawach, o których mowa w <u>art. 66</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">u)</span>upowszechnia współpracę oraz skuteczną dwustronną i wielostronną wymianę informacji i dobrych praktyk między organami nadzorczymi;
+    <span class="next-level">
+    <span class="pos">u)</span>upowszechnia współpracę oraz skuteczną dwustronną i wielostronną wymianę informacji i dobrych praktyk między organami nadzorczymi;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">v)</span>upowszechnia wspólne programy szkoleń oraz ułatwia wymianę personelu między organami nadzorczymi, a w stosownych przypadkach – z organami nadzorczymi państw trzecich lub organizacji międzynarodowych;
+    <span class="next-level">
+    <span class="pos">v)</span>upowszechnia wspólne programy szkoleń oraz ułatwia wymianę personelu między organami nadzorczymi, a w stosownych przypadkach – z organami nadzorczymi państw trzecich lub organizacji międzynarodowych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">w)</span>upowszechnia wymianę wiedzy i dokumentów na temat ustawodawstwa i praktyki w dziedzinie ochrony danych z organami nadzorczymi odpowiedzialnymi za ochronę danych na świecie;
+    <span class="next-level">
+    <span class="pos">w)</span>upowszechnia wymianę wiedzy i dokumentów na temat ustawodawstwa i praktyki w dziedzinie ochrony danych z organami nadzorczymi odpowiedzialnymi za ochronę danych na świecie;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">x)</span>wydaje opinie na temat kodeksów postępowania opracowywanych na szczeblu Unii zgodnie z <u>art. 40 ust. 9</u>; oraz
+    <span class="next-level">
+    <span class="pos">x)</span>wydaje opinie na temat kodeksów postępowania opracowywanych na szczeblu Unii zgodnie z <u>art. 40 ust. 9</u>; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">y)</span>prowadzi publicznie dostępny elektroniczny rejestr decyzji podjętych przez organy nadzorcze i wyroków sądowych w sprawach rozpatrywanych w ramach mechanizmu spójności.
+    <span class="next-level">
+    <span class="pos">y)</span>prowadzi publicznie dostępny elektroniczny rejestr decyzji podjętych przez organy nadzorcze i wyroków sądowych w sprawach rozpatrywanych w ramach mechanizmu spójności.
     </span>
     </p>
     <p>2. Jeżeli Komisja zwraca się do Europejskiej Rady Ochrony Danych o konsultację, może zależnie od pilności sprawy wskazać termin udzielenia odpowiedzi.</p>
@@ -1958,14 +1960,14 @@ function echo_article($number) {
     <p>2. Kadencja przewodniczącego i wiceprzewodniczących trwa pięć lat i może zostać jednokrotnie powtórzona.</p>
     <?php break; case 74: ?>
     <p>1. Przewodniczący ma następujące zadania:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>zwołuje posiedzenia Europejskiej Rady Ochrony Danych i sporządza porządek obrad;
+    <span class="next-level">
+    <span class="pos">a)</span>zwołuje posiedzenia Europejskiej Rady Ochrony Danych i sporządza porządek obrad;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>notyfikuje wiodącemu organowi nadzorczemu i organom nadzorczym, których sprawa dotyczy, decyzje przyjęte przez Europejską Radę Ochrony Danych na mocy <u>art. 65</u>;
+    <span class="next-level">
+    <span class="pos">b)</span>notyfikuje wiodącemu organowi nadzorczemu i organom nadzorczym, których sprawa dotyczy, decyzje przyjęte przez Europejską Radę Ochrony Danych na mocy <u>art. 65</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>zapewnia terminowe wykonanie zadań Europejskiej Rady Ochrony Danych, w szczególności w odniesieniu do mechanizmu spójności, o którym mowa w <u>art. 63</u>.
+    <span class="next-level">
+    <span class="pos">c)</span>zapewnia terminowe wykonanie zadań Europejskiej Rady Ochrony Danych, w szczególności w odniesieniu do mechanizmu spójności, o którym mowa w <u>art. 63</u>.
     </span>
     </p>
     <p>2. Europejska Rada Ochrony Danych określa w swoim regulaminie wewnętrznym podział zadań między przewodniczącego a wiceprzewodniczących.</p>
@@ -1976,26 +1978,26 @@ function echo_article($number) {
     <p>4. W stosownych przypadkach Europejska Rada Ochrony Danych i Europejski Inspektor Ochrony Danych opracowują i publikują protokół ustaleń, który służy wykonaniu niniejszego artykułu: określa on warunki współpracy i ma zastosowanie do personelu Europejskiego Inspektora Ochrony Danych wykonującego zadania powierzone niniejszym rozporządzeniem Europejskiej Radzie Ochrony Danych.</p>
     <p>5. Sekretariat zapewnia Europejskiej Radzie Ochrony Danych wsparcie analityczne, administracyjne i logistyczne.</p>
     <p>6. Sekretariat odpowiada w szczególności za:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>bieżącą działalność Europejskiej Rady Ochrony Danych;
+    <span class="next-level">
+    <span class="pos">a)</span>bieżącą działalność Europejskiej Rady Ochrony Danych;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>komunikację między członkami Europejskiej Rady Ochrony Danych, jej przewodniczącym i Komisją;
+    <span class="next-level">
+    <span class="pos">b)</span>komunikację między członkami Europejskiej Rady Ochrony Danych, jej przewodniczącym i Komisją;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>komunikację z innymi instytucjami i opinią publiczną;
+    <span class="next-level">
+    <span class="pos">c)</span>komunikację z innymi instytucjami i opinią publiczną;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>stosowanie elektronicznych środków komunikacji wewnętrznej i zewnętrznej;
+    <span class="next-level">
+    <span class="pos">d)</span>stosowanie elektronicznych środków komunikacji wewnętrznej i zewnętrznej;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>tłumaczenie stosownych informacji;
+    <span class="next-level">
+    <span class="pos">e)</span>tłumaczenie stosownych informacji;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>przygotowywanie posiedzeń Europejskiej Rady Ochrony Danych oraz działania następcze w związku z nimi;
+    <span class="next-level">
+    <span class="pos">f)</span>przygotowywanie posiedzeń Europejskiej Rady Ochrony Danych oraz działania następcze w związku z nimi;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>przygotowywanie, redagowanie i publikowanie opinii, decyzji w sprawie rozstrzygnięcia sporów między organami nadzorczymi oraz innych tekstów przyjmowanych przez Europejską Radę Ochrony Danych.
+    <span class="next-level">
+    <span class="pos">g)</span>przygotowywanie, redagowanie i publikowanie opinii, decyzji w sprawie rozstrzygnięcia sporów między organami nadzorczymi oraz innych tekstów przyjmowanych przez Europejską Radę Ochrony Danych.
     </span>
     <?php break; case 76: ?>
     <p>1. Dyskusje Europejskiej Rady Ochrony Danych są poufne, jeżeli taką konieczność stwierdzi Rada zgodnie ze swoim regulaminem wewnętrznym.</p>
@@ -2028,67 +2030,67 @@ function echo_article($number) {
     <?php break; case 83: ?>
     <p>1. Każdy organ nadzorczy zapewnia, by stosowane na mocy niniejszego artykułu za naruszenia niniejszego rozporządzenia administracyjne kary pieniężne, o których mowa w ust. 4, 5 i 6, były w każdym indywidualnym przypadku skuteczne, proporcjonalne i odstraszające.</p>
     <p>2. Administracyjne kary pieniężne nakłada się, zależnie od okoliczności każdego indywidualnego przypadku, oprócz lub zamiast środków, o których mowa w <u>art. 58 ust. 2 lit. a)–h) oraz j)</u>. Decydując, czy nałożyć administracyjną karę pieniężną, oraz ustalając jej wysokość, zwraca się w każdym indywidualnym przypadku należytą uwagę na:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>charakter, wagę i czas trwania naruszenia przy uwzględnieniu charakteru, zakresu lub celu danego przetwarzania, liczby poszkodowanych osób, których dane dotyczą, oraz rozmiaru poniesionej przez nie szkody;
+    <span class="next-level">
+    <span class="pos">a)</span>charakter, wagę i czas trwania naruszenia przy uwzględnieniu charakteru, zakresu lub celu danego przetwarzania, liczby poszkodowanych osób, których dane dotyczą, oraz rozmiaru poniesionej przez nie szkody;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>umyślny lub nieumyślny charakter naruszenia;
+    <span class="next-level">
+    <span class="pos">b)</span>umyślny lub nieumyślny charakter naruszenia;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>działania podjęte przez administratora lub podmiot przetwarzający w celu zminimalizowania szkody poniesionej przez osoby, których dane dotyczą;
+    <span class="next-level">
+    <span class="pos">c)</span>działania podjęte przez administratora lub podmiot przetwarzający w celu zminimalizowania szkody poniesionej przez osoby, których dane dotyczą;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>stopień odpowiedzialności administratora lub podmiotu przetwarzającego z uwzględnieniem środków technicznych i organizacyjnych wdrożonych przez nich na mocy <u>art. 25 i 32</u>;
+    <span class="next-level">
+    <span class="pos">d)</span>stopień odpowiedzialności administratora lub podmiotu przetwarzającego z uwzględnieniem środków technicznych i organizacyjnych wdrożonych przez nich na mocy <u>art. 25 i 32</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>wszelkie stosowne wcześniejsze naruszenia ze strony administratora lub podmiotu przetwarzającego;
+    <span class="next-level">
+    <span class="pos">e)</span>wszelkie stosowne wcześniejsze naruszenia ze strony administratora lub podmiotu przetwarzającego;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">f)</span>stopień współpracy z organem nadzorczym w celu usunięcia naruszenia oraz złagodzenia jego ewentualnych negatywnych skutków;
+    <span class="next-level">
+    <span class="pos">f)</span>stopień współpracy z organem nadzorczym w celu usunięcia naruszenia oraz złagodzenia jego ewentualnych negatywnych skutków;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">g)</span>kategorie danych osobowych, których dotyczyło naruszenie;
+    <span class="next-level">
+    <span class="pos">g)</span>kategorie danych osobowych, których dotyczyło naruszenie;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">h)</span>sposób, w jaki organ nadzorczy dowiedział się o naruszeniu, w szczególności, czy i w jakim zakresie administrator lub podmiot przetwarzający zgłosili naruszenie;
+    <span class="next-level">
+    <span class="pos">h)</span>sposób, w jaki organ nadzorczy dowiedział się o naruszeniu, w szczególności, czy i w jakim zakresie administrator lub podmiot przetwarzający zgłosili naruszenie;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">i)</span>jeżeli wobec administratora lub podmiotu przetwarzającego, których sprawa dotyczy, zostały wcześniej zastosowane w tej samej sprawie środki, o których mowa w <u>art. 58 ust. 2</u> – przestrzeganie tych środków;
+    <span class="next-level">
+    <span class="pos">i)</span>jeżeli wobec administratora lub podmiotu przetwarzającego, których sprawa dotyczy, zostały wcześniej zastosowane w tej samej sprawie środki, o których mowa w <u>art. 58 ust. 2</u> – przestrzeganie tych środków;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">j)</span>stosowanie zatwierdzonych kodeksów postępowania na mocy <u>art. 40</u> lub zatwierdzonych mechanizmów certyfikacji na mocy <u>art. 42</u>; oraz
+    <span class="next-level">
+    <span class="pos">j)</span>stosowanie zatwierdzonych kodeksów postępowania na mocy <u>art. 40</u> lub zatwierdzonych mechanizmów certyfikacji na mocy <u>art. 42</u>; oraz
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">k)</span>wszelkie inne obciążające lub łagodzące czynniki mające zastosowanie do okoliczności sprawy, takie jak osiągnięte bezpośrednio lub pośrednio w związku z naruszeniem korzyści finansowe lub uniknięte straty.
+    <span class="next-level">
+    <span class="pos">k)</span>wszelkie inne obciążające lub łagodzące czynniki mające zastosowanie do okoliczności sprawy, takie jak osiągnięte bezpośrednio lub pośrednio w związku z naruszeniem korzyści finansowe lub uniknięte straty.
     </span>
     </p>
     <p>3. Jeżeli administrator lub podmiot przetwarzający narusza umyślnie lub nieumyślnie w ramach tych samych lub powiązanych operacji przetwarzania kilka przepisów niniejszego rozporządzenia, całkowita wysokość administracyjnej kary pieniężnej nie przekracza wysokości kary za najpoważniejsze naruszenie.</p>
     <p>4. Naruszenia przepisów dotyczących następujących kwesti podlegają zgodnie z ust. 2 administracyjnej karze pieniężnej w wysokości do 10 000 000 EUR, a w przypadku przedsiębiorstwa – w wysokości do 2 % jego całkowitego rocznego światowego obrotu z poprzedniego roku obrotowego, przy czym zastosowanie ma kwota wyższa:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>obowiązków administratora i podmiotu przetwarzającego, o których mowa w <u>art. 8, 11, 25–39 oraz 42 i 43</u>;
+    <span class="next-level">
+    <span class="pos">a)</span>obowiązków administratora i podmiotu przetwarzającego, o których mowa w <u>art. 8, 11, 25–39 oraz 42 i 43</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>obowiązków podmiotu certyfikującego, o których mowa w <u>art. 42 oraz 43</u>;
+    <span class="next-level">
+    <span class="pos">b)</span>obowiązków podmiotu certyfikującego, o których mowa w <u>art. 42 oraz 43</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>obowiązków podmiotu monitorującego, o których mowa w <u>art. 41 ust. 4</u>;
+    <span class="next-level">
+    <span class="pos">c)</span>obowiązków podmiotu monitorującego, o których mowa w <u>art. 41 ust. 4</u>;
     </span>
     </p>
     <p>5. Naruszenia przepisów dotyczących następujących kwestii podlegają zgodnie z ust. 2 administracyjnej karze pieniężnej w wysokości do 20 000 000 EUR, a w przypadku przedsiębiorstwa – w wysokości do 4 % jego całkowitego rocznego światowego obrotu z poprzedniego roku obrotowego, przy czym zastosowanie ma kwota wyższa:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>podstawowych zasad przetwarzania, w tym warunków zgody, o których to zasadach i warunkach mowa w <u>art. 5, 6, 7 oraz 9</u>;
+    <span class="next-level">
+    <span class="pos">a)</span>podstawowych zasad przetwarzania, w tym warunków zgody, o których to zasadach i warunkach mowa w <u>art. 5, 6, 7 oraz 9</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>praw osób, których dane dotyczą, o których mowa w <u>art. 12–22</u>;
+    <span class="next-level">
+    <span class="pos">b)</span>praw osób, których dane dotyczą, o których mowa w <u>art. 12–22</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">c)</span>przekazywania danych osobowych odbiorcy w państwie trzecim lub organizacji międzynarodowej, o którym to przekazywaniu mowa w <u>art. 44–49</u>;
+    <span class="next-level">
+    <span class="pos">c)</span>przekazywania danych osobowych odbiorcy w państwie trzecim lub organizacji międzynarodowej, o którym to przekazywaniu mowa w <u>art. 44–49</u>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">d)</span>wszelkich obowiązków wynikających z prawa państwa członkowskiego przyjętego na podstawie rozdziału IX;
+    <span class="next-level">
+    <span class="pos">d)</span>wszelkich obowiązków wynikających z prawa państwa członkowskiego przyjętego na podstawie rozdziału IX;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">e)</span>nieprzestrzegania nakazu, tymczasowego lub ostatecznego ograniczenia przetwarzania lub zawieszenia przepływu danych orzeczonego przez organ nadzorczy na podstawie <u>art. 58 ust. 2</u> lub niezapewnienia dostępu skutkującego naruszeniem <u>art. 58 ust. 1</u>.
+    <span class="next-level">
+    <span class="pos">e)</span>nieprzestrzegania nakazu, tymczasowego lub ostatecznego ograniczenia przetwarzania lub zawieszenia przepływu danych orzeczonego przez organ nadzorczy na podstawie <u>art. 58 ust. 2</u> lub niezapewnienia dostępu skutkującego naruszeniem <u>art. 58 ust. 1</u>.
     </span>
     </p>
     <p>6. Nieprzestrzeganie nakazu orzeczonego przez organ nadzorczy na podstawie <u>art. 58 ust. 2</u> podlega na mocy ust. 2 niniejszego artykułu administracyjnej karze pieniężnej w wysokości do 20 000 000 EUR, a w przypadku przedsiębiorstwa – w wysokości do 4 % jego całkowitego rocznego światowego obrotu z poprzedniego roku obrotowego, przy czym zastosowanie ma kwota wyższa.</p>
@@ -2141,11 +2143,11 @@ function echo_article($number) {
     <?php break; case 97: ?>
     <p>1. Do dnia 25 maja 2020 r., a następie co cztery lata Komisja przedkłada Parlamentowi Europejskiemu i Radzie sprawozdania z oceny i przeglądu niniejszego rozporządzenia. Sprawozdania te są podawane do wiadomości publicznej.</p>
     <p>2. W ramach tych ocen Komisja analizuje i dokonuje przeglądu, o którym mowa w ust. 1, w szczególności stosowania i funkcjonowania przepisów:
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">a)</span>rozdziału V dotyczącego przekazywania danych osobowych do państw trzecich lub organizacji międzynarodowych ze szczególnym uwzględnieniem decyzji przyjętych na mocy <u>art. 45 ust. 3</u> niniejszego rozporządzenia oraz decyzji przyjętych na podstawie art. 25 ust. 6 <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?>;
+    <span class="next-level">
+    <span class="pos">a)</span>rozdziału V dotyczącego przekazywania danych osobowych do państw trzecich lub organizacji międzynarodowych ze szczególnym uwzględnieniem decyzji przyjętych na mocy <u>art. 45 ust. 3</u> niniejszego rozporządzenia oraz decyzji przyjętych na podstawie art. 25 ust. 6 <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?>;
     </span>
-    <span class="next-level" style="padding-left: 3rem; display: block; position: relative;">
-    <span class="pos" style="position: absolute; top: 0; left: 0;">b)</span>rozdziału VII dotyczącego współpracy i spójności.
+    <span class="next-level">
+    <span class="pos">b)</span>rozdziału VII dotyczącego współpracy i spójności.
     </span>
     </p>
     <p>3. Na potrzeby ust. 1, Komisja może wystąpić do państw członkowskich i organów nadzorczych o udzielenie informacji.</p>
@@ -2390,7 +2392,8 @@ if (isset($_GET['article'])) {
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <style>
     body {
       color: #444444;
@@ -2439,6 +2442,16 @@ if (isset($_GET['article'])) {
       border: 1px solid #444444;
       padding: 0 1rem;
       background-color: aliceblue;
+    }
+    .next-level {
+      padding-left: 3rem;
+      display: block;
+      position: relative;
+    }
+    .next-level > .pos {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   </style>
 
@@ -2564,7 +2577,7 @@ if (isset($_GET['article'])) {
        <a id="recital-<?php echo $number; ?>"></a>
 
        <div class="next-level" style="padding-left: 3rem; position: relative;">
-           <span class="pos" style="position: absolute; top: 0; left: 0;">(<?php echo $number; ?>)
+           <span class="pos">(<?php echo $number; ?>)
            </span><?php echo_recital($number); ?>
        </div>
      <?php } ?>
