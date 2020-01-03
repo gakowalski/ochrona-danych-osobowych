@@ -2663,8 +2663,7 @@ if (isset($_GET['article'])) {
      <p>stanowiąc zgodnie ze <abbr title="Stanowisko Parlamentu Europejskiego z dnia 12 marca 2014 r. (dotychczas nieopublikowane w Dzienniku Urzędowym) oraz stanowisko Rady w pierwszym czytaniu z dnia 8 kwietnia 2016 r. (dotychczas nieopublikowane w Dzienniku Urzędowym). Stanowisko Parlamentu Europejskiego z dnia 14 kwietnia 2016 r.">zwykłą procedurą ustawodawczą</abbr>,</p>
      <p>a także mając na uwadze, co następuje:</p>
 
-  <!-- <h2>(Motywy)</h2> -->
-
+  <details><summary>(...motywy...)</summary>
      <?php for ($number = 1; $number < 173; $number++) { ?>
        <a id="recital-<?php echo $number; ?>"></a>
 
@@ -2673,6 +2672,7 @@ if (isset($_GET['article'])) {
            </span><?php echo_recital($number); ?>
        </div>
      <?php } ?>
+  </details>
 
      <p class="not-neccessary">PRZYJMUJĄ NINIEJSZE ROZPORZĄDZENIE:</p>
 
