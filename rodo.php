@@ -2642,7 +2642,6 @@ if (isset($_GET['article'])) {
     <p>w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia <?php echo a_href('95/46/WE', 'dyrektywy 95/46/WE'); ?></p>
     <p>(ogólne rozporządzenie o ochronie danych)</p>
   </header>
-<?php if ($short_text): ?>
   <nav>
     <details>
       <summary>Szybkie przejście do artykułu</summary>
@@ -2651,7 +2650,6 @@ if (isset($_GET['article'])) {
       <?php } ?>
     </details>
   </nav>
-<?php endif; ?>
   <main>
      <p class="not-neccessary">(Tekst mający znaczenie dla EOG)</p>
      <p class="not-neccessary">PARLAMENT EUROPEJSKI I RADA UNII EUROPEJSKIEJ,</p>
